@@ -23,14 +23,25 @@ public class StartButton : MonoBehaviour
     public int power; 
     public Button button;
     private TextShowTest tst;
+    private int spy= 0;
+    public Token_Stats ts;
+    public Button endButton;
+    public bool finishStartTurn;
+    public TurnStats turnStats;
 
+    int cnt2 = 0;
 
     // Start is called before the first frame update
     void Start()
     {
 
-    bagOfTokens = GameObject.FindGameObjectsWithTag("Token");
+    /*GameObject [] mainCam = GameObject.FindGameObjectsWithTag("MainCamera");
+    mainCam.GetComponent<clickObject>().*/
+
+    turnStats = GameObject.FindObjectOfType<TurnStats>();
+    initTokenBag();
     createRandomChoices();
+    
     //StartTurn sstartTurn = GameObject.FindGameObjectWithTag("StartTurn");
 
     //button.onClick.AddListener(startTurn);
@@ -46,26 +57,56 @@ public class StartButton : MonoBehaviour
         endTurn();
     }
 
+    public void initTokenBag(){
+        bagOfTokens = GameObject.FindGameObjectsWithTag("Token"); 
+        
+       //spy++;
+        /*Debug.Log("spy: " + spy);
+        for (int n = 0 ; n < bagOfTokens.Length; n++){
+            tst = bagOfTokens[n].GetComponent<TextShowTest>();
+            cnt2++;
+            //Debug.Log("cnt2: " + cnt2);
+            Debug.Log("Testing " + tst.name);
+            
+            //tst.stats.backOutline = bagOfTokens[n].transform.Find("BackOutline").gameObject;
+            /*if (tst.stats.backOutline != null){
+                Debug.Log("It worked!!!!  " +  "------> " + token.gameObject.name);
+            }else if (tst.stats.backOutline = null){
+                Debug.Log("nope XXXXXXXXX " + token.gameObject.name);
+            }else{
+                Debug.Log("something here");
+            }*/
+             //token.stats.backOutline = token.transform.Find("BackOutline").gameObject;
+            
+        //}
+    }
+
     public void endTurn(){
-        whiteCnt = 0; 
-        blueCnt = 0;
-        redCnt = 0;
-        yellowCnt = 0;
-        greenCnt = 0;
-        power = 0;
-        Debug.Log("Here are the numbers. White = " + whiteCnt + " Blue " + blueCnt + " Yellow " + yellowCnt + "Red " + redCnt + "total Power " + power);
-        for (int i = 0; i < bagOfTokens.Length; i++){
-            tst = bagOfTokens[i].GetComponent<TextShowTest>();
-            tst.stats.isDrawn = false;
+            if(finishStartTurn){
+
+                whiteCnt = 0; 
+                blueCnt = 0;
+                redCnt = 0;
+                yellowCnt = 0;
+                greenCnt = 0;
+                power = 0;
+                Debug.Log("Here are the numbers. White = " + whiteCnt + " Blue " + blueCnt + " Yellow " + yellowCnt + "Red " + redCnt + "total Power " + power);
+                for (int i = 0; i < bagOfTokens.Length; i++){
+                    tst = bagOfTokens[i].GetComponent<TextShowTest>();
+                    ts = bagOfTokens[i].GetComponent<Token_Stats>();
+                    tst.stats.isDrawn = false;
+                    ts.isActiveToken(false);
+                }
+                createRandomChoices();
+                finishStartTurn = false;
         }
-        createRandomChoices();
 
     }
 
     private void createRandomChoices(){
         for (int count = 0; count < bagOfTokens.Length; count++){
             shuffledInts.Add(count+1);
-            //Debug.Log("adding: " + count+1 + " shuflledInts = " + shuffledInts.Count);
+            //Debug.Log("adding: " + (count+1) + " shuflledInts = " + shuffledInts.Count);
         }
     }
 
@@ -87,7 +128,8 @@ public class StartButton : MonoBehaviour
                     //Debug.Log("Chosen = " + chosen);
                     //Debug.Log("the random number is " + randInt);
                     tst = bagOfTokens[chosen].GetComponent<TextShowTest>();
-                    //Debug.Log("# of ints = " + (shuffledInts.Count-1) + " renadom int = " + (bagOfTokens.Length - shuffledInts[randInt]));
+                    ts = bagOfTokens[chosen].GetComponent<Token_Stats>();
+                    Debug.Log("# of ints = " + (shuffledInts.Count-1) + " renadom int = " + (bagOfTokens.Length - shuffledInts[randInt]));
                     //Debug.Log("Test: " + tst.stats.name + " " + tst.stats.color  + " " + tst.stats.Tvalue + "randInt = " + randInt + " count" + " number of ints = " + shuffledInts.Count); 
                     if(tst.stats.isDrawn){
                         Debug.Log("randInt = " + randInt + " whiteCount = " + whiteCnt + " name = " + tst.stats.name);
@@ -115,6 +157,7 @@ public class StartButton : MonoBehaviour
                         //Debug.Log("drawing " + bagOfTokens[chosen].name);
                         tst.stats.isDrawn = true;
                         power = (power + tst.stats.Tvalue);
+                        ts.isActiveToken(true);
                        // Debug.Log("Tvalue = " + tst.stats.Tvalue);
                         //Debug.Log("power " + power + " colr:" + tst.stats.color);
                         shuffledInts.RemoveAt(randInt);
@@ -134,8 +177,11 @@ public class StartButton : MonoBehaviour
         }
         Debug.Log("Here are the numbers. White = " + whiteCnt + " Blue " + blueCnt + " Yellow " + yellowCnt + "Red " + redCnt + "total Power " + power);   
     }
+    string updatedStats = ("White:" + whiteCnt.ToString() + " Blue: " + blueCnt.ToString() + " Red: " + redCnt.ToString()+
+        "Power: " + power.ToString());
+    turnStats.updateTurnStats(updatedStats);
+    finishStartTurn = true;
         
-
         /*public int[] randomizedInts(int bagLength){
             for (int i = 0; i < shuffledInts.Length; i++)
         {
@@ -159,7 +205,6 @@ public class StartButton : MonoBehaviour
     private void OnDestroy(){
         startButton.onClick.RemoveListener(startTurn);
     }*/
-
-
-    }}
+    }
+ }
 

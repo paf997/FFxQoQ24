@@ -10,14 +10,13 @@ public class TextShowTest : MonoBehaviour
     public TextMeshPro text;
     private string tokenColor = "red";
     public Token_Stats stats;
-
+    //public Transform backOutline;
     public int retrievedTValue;
     public string retrievedColor;
 
     // Start is called before the first frame update
     void Start()
     {
-
         stats = GetComponent<Token_Stats>();
         retrievedTValue =  getTValue();
         retrievedColor = getTColor();
