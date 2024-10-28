@@ -177,9 +177,9 @@ public class StartButton : MonoBehaviour
         }
         Debug.Log("Here are the numbers. White = " + whiteCnt + " Blue " + blueCnt + " Yellow " + yellowCnt + "Red " + redCnt + "total Power " + power);   
     }
-    string updatedStats = ("White:" + whiteCnt.ToString() + " Blue: " + blueCnt.ToString() + " Red: " + redCnt.ToString()+
-        "Power: " + power.ToString());
-    turnStats.updateTurnStats(updatedStats);
+    /*string updatedStats = ("White:" + whiteCnt.ToString() + " Blue: " + blueCnt.ToString() + " Red: " + redCnt.ToString()+
+        "Power: " + power.ToString());*/
+    turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
     finishStartTurn = true;
         
         /*public int[] randomizedInts(int bagLength){
