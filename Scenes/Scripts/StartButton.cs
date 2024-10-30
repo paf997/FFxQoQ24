@@ -98,6 +98,7 @@ public class StartButton : MonoBehaviour
                     ts.isActiveToken(false);
                 }
                 createRandomChoices();
+                turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
                 finishStartTurn = false;
         }
 
@@ -111,7 +112,7 @@ public class StartButton : MonoBehaviour
     }
 
     public void startTurn (){
-    
+        if(!finishStartTurn){
         //GC_Script GCStats = gameController.GetComponent<GC_Script>();
         //text.text = "Bye Bye";
         int whiteCnt = 0;
@@ -179,32 +180,9 @@ public class StartButton : MonoBehaviour
     }
     /*string updatedStats = ("White:" + whiteCnt.ToString() + " Blue: " + blueCnt.ToString() + " Red: " + redCnt.ToString()+
         "Power: " + power.ToString());*/
-    turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
-    finishStartTurn = true;
-        
-        /*public int[] randomizedInts(int bagLength){
-            for (int i = 0; i < shuffledInts.Length; i++)
-        {
-            shuffledInts[i] = i;
-            int temp = shuffledInts[i];
-            int objIndex = Random.Range(0, shuffledInts.Length);
-            shuffledInts[i] = shuffledInts[objIndex];
-            shuffledInts[objIndex] = temp;
-            Debug.Log( "pos: " + i + " = " + shuffledInts[i]);
+        turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
+        finishStartTurn = true;
         }
-        return shuffledInts;
-       }*/
-
-
-    //public Button startTurn; //start turn and draw chips
-
-    /*private void Start(){
-        startButton.onClick.AddListener(startTurn);
-    }
-
-    private void OnDestroy(){
-        startButton.onClick.RemoveListener(startTurn);
-    }*/
     }
  }
 
