@@ -27,7 +27,7 @@ public class Token_Stats : MonoBehaviour
 
     public void isActiveToken(bool answer){
         if(isDrawn){
-            Debug.Log("Token is active");
+            //Debug.Log("Token is active");
         }
         backOutline.SetActive(answer);
     }

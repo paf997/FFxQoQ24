@@ -28,6 +28,7 @@ public class StartButton : MonoBehaviour
     public Button endButton;
     public bool finishStartTurn;
     public TurnStats turnStats;
+    public PlayerStats playerStats;
 
     int cnt2 = 0;
 
@@ -37,7 +38,7 @@ public class StartButton : MonoBehaviour
 
     /*GameObject [] mainCam = GameObject.FindGameObjectsWithTag("MainCamera");
     mainCam.GetComponent<clickObject>().*/
-
+    playerStats = GameObject.FindObjectOfType<PlayerStats>();
     turnStats = GameObject.FindObjectOfType<TurnStats>();
     initTokenBag();
     createRandomChoices();
@@ -60,37 +61,18 @@ public class StartButton : MonoBehaviour
     public void initTokenBag(){
         bagOfTokens = GameObject.FindGameObjectsWithTag("Token"); 
         
-       //spy++;
-        /*Debug.Log("spy: " + spy);
-        for (int n = 0 ; n < bagOfTokens.Length; n++){
-            tst = bagOfTokens[n].GetComponent<TextShowTest>();
-            cnt2++;
-            //Debug.Log("cnt2: " + cnt2);
-            Debug.Log("Testing " + tst.name);
-            
-            //tst.stats.backOutline = bagOfTokens[n].transform.Find("BackOutline").gameObject;
-            /*if (tst.stats.backOutline != null){
-                Debug.Log("It worked!!!!  " +  "------> " + token.gameObject.name);
-            }else if (tst.stats.backOutline = null){
-                Debug.Log("nope XXXXXXXXX " + token.gameObject.name);
-            }else{
-                Debug.Log("something here");
-            }*/
-             //token.stats.backOutline = token.transform.Find("BackOutline").gameObject;
-            
-        //}
     }
 
     public void endTurn(){
             if(finishStartTurn){
-
+                playerStats.basicAttack(power);      
                 whiteCnt = 0; 
                 blueCnt = 0;
                 redCnt = 0;
                 yellowCnt = 0;
                 greenCnt = 0;
                 power = 0;
-                Debug.Log("Here are the numbers. White = " + whiteCnt + " Blue " + blueCnt + " Yellow " + yellowCnt + "Red " + redCnt + "total Power " + power);
+                //Debug.Log("Here are the numbers. White = " + whiteCnt + " Blue " + blueCnt + " Yellow " + yellowCnt + "Red " + redCnt + "total Power " + power);
                 for (int i = 0; i < bagOfTokens.Length; i++){
                     tst = bagOfTokens[i].GetComponent<TextShowTest>();
                     ts = bagOfTokens[i].GetComponent<Token_Stats>();
@@ -130,11 +112,11 @@ public class StartButton : MonoBehaviour
                     //Debug.Log("the random number is " + randInt);
                     tst = bagOfTokens[chosen].GetComponent<TextShowTest>();
                     ts = bagOfTokens[chosen].GetComponent<Token_Stats>();
-                    Debug.Log("# of ints = " + (shuffledInts.Count-1) + " renadom int = " + (bagOfTokens.Length - shuffledInts[randInt]));
+                    //Debug.Log("# of ints = " + (shuffledInts.Count-1) + " renadom int = " + (bagOfTokens.Length - shuffledInts[randInt]));
                     //Debug.Log("Test: " + tst.stats.name + " " + tst.stats.color  + " " + tst.stats.Tvalue + "randInt = " + randInt + " count" + " number of ints = " + shuffledInts.Count); 
                     if(tst.stats.isDrawn){
-                        Debug.Log("randInt = " + randInt + " whiteCount = " + whiteCnt + " name = " + tst.stats.name);
-                        Debug.Log("Already drawn" + tst.stats.name);
+                        //.Log("randInt = " + randInt + " whiteCount = " + whiteCnt + " name = " + tst.stats.name);
+                        //Debug.Log("Already drawn" + tst.stats.name);
                         repeat = true;
                     }else{
                         switch(tst.stats.color){
@@ -176,7 +158,7 @@ public class StartButton : MonoBehaviour
         
             //Debug.Log("cnt:  " + count);  
         }
-        Debug.Log("Here are the numbers. White = " + whiteCnt + " Blue " + blueCnt + " Yellow " + yellowCnt + "Red " + redCnt + "total Power " + power);   
+       // Debug.Log("Here are the numbers. White = " + whiteCnt + " Blue " + blueCnt + " Yellow " + yellowCnt + "Red " + redCnt + "total Power " + power);   
     }
     /*string updatedStats = ("White:" + whiteCnt.ToString() + " Blue: " + blueCnt.ToString() + " Red: " + redCnt.ToString()+
         "Power: " + power.ToString());*/
