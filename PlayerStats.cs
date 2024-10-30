@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     public int attDMG = 3;
     public int def;
     public int initDEF;
-    public int bonuses;
+    public int bonuses = 0;
     void Start()
     {
         stats = GetComponent<PlayerStats>();
@@ -33,7 +33,6 @@ public class PlayerStats : MonoBehaviour
             string attackAction = ("basic attack: " + (attDMG + bonuses) + " cost: " + pwrCost);
             gcs.reportAction(attackAction,1 );
         }
-        
     }
 
     public void basicDefend(){
