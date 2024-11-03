@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    int buttonX = 200;
+    int buttonY = 100;
+    int width = 75;
+    int height = 75;
+    int buttonSpace;
 
     public GameControlScript gcs;
     public PlayerStats stats;
@@ -20,7 +25,8 @@ public class PlayerStats : MonoBehaviour
         stats = GetComponent<PlayerStats>();
         currentHP = startingHP;
         gcs = GameObject.FindGameObjectWithTag("ButtonMgr").GetComponent<GameControlScript>();
-
+        def = 2;
+        buttonSpace = width;
     }
 
     public void basicAttack(int pwr){
@@ -42,9 +48,12 @@ public class PlayerStats : MonoBehaviour
     public void adjustHP(int adjustment, int type){
         if(type == 0){
             Debug.Log("Player loses " + adjustment + " HP");
+            adjustment = (adjustment < def) ? 0 : (adjustment-def);
             currentHP = (currentHP - adjustment);
             if(currentHP <= 0){
+                currentHP = 0;
                 Debug.Log("Player has died");
+                isDead();
             }
         }else{
             Debug.Log("Player gains " + adjustment + " HP");
@@ -59,6 +68,32 @@ public class PlayerStats : MonoBehaviour
     public void choseActions(int pwrCost, int manaCost){
         
 
+    }
+
+    public bool isDead(){
+       return (currentHP < 0) ?  true :  false;
+    }
+    void OnGUI(){
+        if(GUI.Button(new Rect (buttonX, buttonY, width, height), "Attack" + " ")){
+            //Debug.Log("Test successful");
+            attDMG = 2;
+        }
+
+        if(GUI.Button(new Rect ((buttonX+buttonSpace), buttonY, width, height), "Defense" + " ")){
+            def = def+1;
+        }
+
+        if(GUI.Button(new Rect (buttonX + (buttonSpace*2), buttonY,  width, height), "Att Bonus" )){
+
+        }
+
+        if(GUI.Button(new Rect (buttonX + (buttonSpace*3), buttonY,  width, height), "Def Bonus" )){
+
+        }
+        if(GUI.Button(new Rect (buttonX + (buttonSpace*4), buttonY,  width, height), "Item" )){
+
+        }
+        
     }
 
 }

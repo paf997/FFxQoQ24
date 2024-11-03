@@ -29,6 +29,7 @@ public class StartButton : MonoBehaviour
     public bool finishStartTurn;
     public TurnStats turnStats;
     public PlayerStats playerStats;
+    public MonsterStats monsterStats;
 
     int cnt2 = 0;
 
@@ -38,6 +39,7 @@ public class StartButton : MonoBehaviour
 
     /*GameObject [] mainCam = GameObject.FindGameObjectsWithTag("MainCamera");
     mainCam.GetComponent<clickObject>().*/
+    monsterStats = GameObject.FindObjectOfType<MonsterStats>();
     playerStats = GameObject.FindObjectOfType<PlayerStats>();
     turnStats = GameObject.FindObjectOfType<TurnStats>();
     initTokenBag();
@@ -65,7 +67,8 @@ public class StartButton : MonoBehaviour
 
     public void endTurn(){
             if(finishStartTurn){
-                playerStats.basicAttack(power);      
+                
+                //playerStats.basicAttack(power);      
                 whiteCnt = 0; 
                 blueCnt = 0;
                 redCnt = 0;
@@ -97,6 +100,7 @@ public class StartButton : MonoBehaviour
         if(!finishStartTurn){
         //GC_Script GCStats = gameController.GetComponent<GC_Script>();
         //text.text = "Bye Bye";
+        monsterStats.action(5);
         int whiteCnt = 0;
         power = 0;
 
