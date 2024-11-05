@@ -44,6 +44,7 @@ public class GameControlScript : MonoBehaviour
         //Debug.Log ("The def: "  + player.def.ToString());
         MonsterStats mdText = enemy.GetComponent<MonsterStats>();
         monsterDisplay.text = ("HP:" + mdText.hp.ToString() + " DEF:" + mdText.DFS.ToString());
+        
     }
 
     public void reportAction

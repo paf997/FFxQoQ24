@@ -44,6 +44,7 @@ public class MonsterStats : MonoBehaviour
         actionMsg = ("Goblin Basic Defense. Goblin  generates" + (baseDFS) + "DFS");
         gcs.reportAction(actionMsg, 1);
         DFS = (baseDFS);
+        DFS = DFS + baseDFS;
     }
     public void poisonAttack(){
         Debug.Log("Goblin Poison Attack. Goblin deals " + "1 " + "Poison");
@@ -56,6 +57,10 @@ public class MonsterStats : MonoBehaviour
         gcs.reportAction(actionMsg, 1);
         attacks.Add((2*baseDMG));
         //Debug.Log("Attacks: " + attacks.Count );
+    }
+    public void resetStats(){
+        DFS = 0;
+        dmg = 0;
     }
 
     public void action(int nActions,int nEnemies = 1){
