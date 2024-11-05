@@ -73,11 +73,11 @@ public class PlayerStats : MonoBehaviour
     public bool isDead(){
        return (currentHP < 0) ?  true :  false;
     }
-    void OnGUI(){
+    /*void OnGUI(){
         if(GUI.Button(new Rect (buttonX, buttonY, width, height), "Attack" + " ")){
             //Debug.Log("Test successful");
             attDMG = 2;
-            
+
         }
 
         if(GUI.Button(new Rect ((buttonX+buttonSpace), buttonY, width, height), "Defense" + " ")){
@@ -95,6 +95,6 @@ public class PlayerStats : MonoBehaviour
 
         }
         
-    }
+    }*/
 
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5343cd02e3b5a4b49ac122cb959bc55c, type: 3}
   m_Name: PowerAttack
   m_EditorClassIdentifier: 
-  dmg: 0
-  nAttacks: 0
+  dmg: 6
+  nAttacks: 1
   def: 0
-  name: 
-  initiative: 0
+  name: Power Attack
+  initiative: 8

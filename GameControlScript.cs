@@ -16,6 +16,8 @@ public class GameControlScript : MonoBehaviour
     public TextMeshProUGUI monsterDisplay;
     public PlayerStats player;
     public MonsterStats monsterStats;
+
+    public EnemyActions [] enemyActions = new EnemyActions[4];
    // public GameObject
     void Start()
     {
@@ -29,6 +31,8 @@ public class GameControlScript : MonoBehaviour
         battleDisplay = GameObject.FindGameObjectWithTag("BattleDisplay");
         text = battleDisplay.GetComponent<TextMeshProUGUI>();
         playerDisplay = GameObject.FindGameObjectWithTag("PlayerDisplay").GetComponent<TextMeshProUGUI>();
+        getEnemyActions();
+        
         updateStats();
         
     }
@@ -44,7 +48,7 @@ public class GameControlScript : MonoBehaviour
         //Debug.Log ("The def: "  + player.def.ToString());
         MonsterStats mdText = enemy.GetComponent<MonsterStats>();
         monsterDisplay.text = ("HP:" + mdText.hp.ToString() + " DEF:" + mdText.DFS.ToString());
-        
+
     }
 
     public void reportAction
@@ -70,5 +74,9 @@ public class GameControlScript : MonoBehaviour
         }
         updateStats();
         
+    }
+
+    public void getEnemyActions(){
+        //enemyActions = GameObject.FindObjectsOfType;
     }
 }
