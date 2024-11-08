@@ -37,17 +37,13 @@ public class EnemyBase : ScriptableObject
         def = startingDef;
         rangeDef = startingRangeDef;
         magDef = startingMagDef;
+        randomAction();
+        
     }
 
     void Update()
     {
-
-    }
-
-    public void randomAction(){
-        if(hp <1 ){
-            int rand = Random.Range(0,enemyAttacks.Count);   
-        }
+       // randomAction();
     }
 
     public void adjustDefense(int adjDef = 0, int adjRDef = 0, int adjMDef = 0 ){//0= att, 1 = ranged, 2 = magic 
@@ -77,6 +73,44 @@ public class EnemyBase : ScriptableObject
             hp = (startingHP > (hp + amount))?  startingHP: (hp + amount);
         }
  
+    }
+
+    public void randomAction(){
+        if(hp >0 && !isFinsihed){
+            int rand = Random.Range(0,enemyAttacks.Count);  
+            Debug.Log("random action: " + rand);
+            switch(rand) {
+                case 0:baseAttack(); break;
+                case 1:baseAttack(); break;
+                case 2:baseDefense(); break;
+                case 3:baseDefense(); break;
+                case 4:powerAttack(); break;
+                case 5:specialAttack();break;
+                case 6:specialAttack2();break;
+                case 7:specialAttack3();break;
+                case 8:specialAttack(); break;
+            }
+            endTurn();
+        }
+    }
+    public void baseAttack(){
+        
+    }
+
+    public void baseDefense(){
+       
+    }
+    public void powerAttack(){
+        
+    }
+    public void specialAttack(){
+        
+    }
+    public void specialAttack2(){
+        
+    }
+    public void specialAttack3(){
+        
     }
 
     public void endTurn(){

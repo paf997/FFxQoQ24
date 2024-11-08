@@ -18,7 +18,20 @@ public class EnemyAttack : ScriptableObject
         
     }
 
-    public void action(){
-        
+    public void baseAttack(){
+        enemy.baseAttack();
+    }
+
+    public void baseDefensek(){
+        enemy.baseAttack();
+    }
+    public void specialAttack(){
+        enemy.baseAttack();
+    }
+    public void specialAttack2(){
+        enemy.baseAttack();
+    }
+    public void specialAttack3(){
+        enemy.baseAttack();
     }
 }
