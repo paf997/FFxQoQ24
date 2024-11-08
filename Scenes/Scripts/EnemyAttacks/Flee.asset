@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5343cd02e3b5a4b49ac122cb959bc55c, type: 3}
-  m_Name: FlurryOfAttacks
+  m_Script: {fileID: 11500000, guid: fd224b7aecf624577980aee850bf4a90, type: 3}
+  m_Name: Flee
   m_EditorClassIdentifier: 
-  dmg: 2
-  nAttacks: 3
-  def: 1
-  name: Flurry of Attacks
-  initiative: 12
