@@ -30,6 +30,8 @@ public class StartButton : MonoBehaviour
     public TurnStats turnStats;
     public PlayerStats playerStats;
     public MonsterStats monsterStats;
+    [SerializeField] BattleController battleControl;
+
 
     int cnt2 = 0;
 
@@ -42,6 +44,7 @@ public class StartButton : MonoBehaviour
     monsterStats = GameObject.FindObjectOfType<MonsterStats>();
     playerStats = GameObject.FindObjectOfType<PlayerStats>();
     turnStats = GameObject.FindObjectOfType<TurnStats>();
+
     initTokenBag();
     createRandomChoices();
     
@@ -98,9 +101,11 @@ public class StartButton : MonoBehaviour
 
     public void startTurn (){
         if(!finishStartTurn){
+        battleControl.setUpBattle();
         //GC_Script GCStats = gameController.GetComponent<GC_Script>();
         //text.text = "Bye Bye";
-        monsterStats.action(5);
+        //monsterStats.action(5);
+        
         int whiteCnt = 0;
         power = 0;
 

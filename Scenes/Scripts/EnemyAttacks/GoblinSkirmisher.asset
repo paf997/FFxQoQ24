@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66d148ec587f4168ac4ca484e9bbbea, type: 3}
   m_Name: GoblinSkirmisher
   m_EditorClassIdentifier: 
-  dmg: 0
-  nAttacks: 0
-  def: 0
-  name: 
+  startingHP: 10
+  startingDmg: 2
+  startingMDmg: 0
+  startingRDmg: 1
+  startingDef: 2
+  startingMagDef: 2
+  startingRangeDef: 2
+  name: Goblin Skirmisher
   initiative: 0
-  enemyAttacks:
-  - {fileID: 11400000, guid: 5fac68e8b82374a2d8d2f5380400940a, type: 2}
-  - {fileID: 11400000, guid: 5fac68e8b82374a2d8d2f5380400940a, type: 2}
-  - {fileID: 11400000, guid: f22d9bf59a3fb4bfb9f20a38ca5aad0b, type: 2}
-  - {fileID: 11400000, guid: f22d9bf59a3fb4bfb9f20a38ca5aad0b, type: 2}
+  attacks: 1
+  enemyAttacks: []
+  gcs: {fileID: 0}

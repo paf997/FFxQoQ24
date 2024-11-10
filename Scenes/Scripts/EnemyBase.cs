@@ -21,12 +21,13 @@ public class EnemyBase : ScriptableObject
     int magDef;
     [SerializeField] int startingRangeDef;
     int rangeDef;
-    
     [SerializeField] string name;
     [SerializeField] int initiative;
     [SerializeField] int attacks;
     [SerializeField] List <EnemyAttack> enemyAttacks = new List<EnemyAttack>();
     bool isFinsihed;
+    private string actionMsg;
+    public GameControlScript gcs;
 
     void Start()
     {

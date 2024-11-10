@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterStats : MonoBehaviour
 {
+    public EnemyBase eb;
     public MonsterStats stats;
     public int baseDMG = 3;
     public int baseDFS = 2;
