@@ -8,7 +8,7 @@ public class EnemyBase : ScriptableObject
 {
 
     [SerializeField] int startingHP;
-    int hp;
+    public int hp;
     [SerializeField] int startingDmg;
     int dmg;
     [SerializeField] int startingMDmg;
@@ -28,6 +28,7 @@ public class EnemyBase : ScriptableObject
     bool isFinsihed;
     private string actionMsg;
     public GameControlScript gcs;
+
 
     void Start()
     {

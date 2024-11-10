@@ -9,48 +9,56 @@ public class BattleController : MonoBehaviour
     //private List <EnemyBase> enemiesInBattle = new List<EnemyBase>();
     //[SerializeField] int [] battlePositions =  new int [4];
     //private List <Player> players;
-    List <GameObject> initiative = new List<GameObject>();
+    [SerializeField] List <GameObject> initiative = new List<GameObject>();
     [SerializeField] GameObject [] battlePositions2 = new GameObject [4];
     SpriteRenderer enemySprite;
+    int nEnemies;
     //[SerializeField] BattlePos [] battlePositions2;
 
 
-        void Start()
-    {
-        //battlePositions2 = FindObjectsOfType<battlePos>();
-       // players = GameObject.FindGameObjectsWithTag("Player");
-       for (int i = 0;i < battlePositions2.Length;i++){
-            GameObject position = battlePositions2[i];
-            /*SpriteRenderer sprite = position.GetComponent<SpriteRenderer>();
-            sprite.enabled = true;
-            sprite = enemySprite; */
-            //image = position.GetComponent<Image>();
-
-           
-       }
-
-
+    void Start(){
+        nEnemies = Random.Range(1,5);
     }
 
     void Update()
     {
-        
+        /*if(hasBattleStarted){
+            hasBattleEnded(nEnemies);
+        }*/
     }
 
     public void setUpBattle(){
         if (!hasBattleStarted){
             hasBattleStarted = true;
-            int nEnemies = Random.Range(1,4);
             Debug.Log("Monsters = " + nEnemies);
             int enemy;
             for (int i = 0;i < nEnemies; i++){
-                enemy = Random.Range(0,enemiesInArea.Count);
-                Debug.Log(enemiesInArea[enemy].name);
+                
+                enemy = Random.Range(0,nEnemies);
+                MonsterStats ms = enemiesInArea[enemy].GetComponent<MonsterStats>();
+                while (ms.isAvailableForBattle == false){
+                    enemy = Random.Range(0,nEnemies);
+                }
+                ms.isAvailableForBattle = false;
+                Debug.Log("yes");
                 enemiesInArea[enemy].SetActive(true);
                 enemiesInArea[enemy].transform.position = battlePositions2[i].transform.position;
+                initiative.Add(enemiesInArea[enemy]);
+                /*while(ms.isAvailableForBattle == false){
+                    //Debug.Log(enemiesInArea[enemy].name);
+                    enemy = Random.Range(0,enemiesInArea.Count);
+                }*/
             }
         }
         //initiative.AddRange(players);
         //initiative.AddRange(enemiesInBattle);
+    }
+
+    private void hasBattleEnded(int enemies){
+        for(int i = 0;i < enemies;i++) {
+            if (enemiesInArea[i].GetComponent<EnemyBase>()){
+                
+            }
+        }
     }
 }

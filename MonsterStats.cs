@@ -16,13 +16,14 @@ public class MonsterStats : MonoBehaviour
     public int maxHp = 8;
     public int dmg;
     public List <int> attacks = new List<int>();
+    public bool isAvailableForBattle;
 
-    // Start is called before the first frame update
     void Start()
     {
         stats = GetComponent<MonsterStats>();
         gcs = GameObject.FindGameObjectWithTag("ButtonMgr").GetComponent<GameControlScript>();
-        hp = maxHp;
+        hp = eb.hp;
+        isAvailableForBattle = true;
     }
 
     // Update is called once per frame
