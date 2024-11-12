@@ -26,6 +26,7 @@ public class MonsterStats : MonoBehaviour
         gcs = GameObject.FindGameObjectWithTag("ButtonMgr").GetComponent<GameControlScript>();
         SetHP();
         isAvailableForBattle = true;
+       // Invoke("adjustHP", 2.0f); for testing only
     }
 
     // Update is called once per frame
@@ -41,15 +42,20 @@ public class MonsterStats : MonoBehaviour
         hpSlider.value = hpSlider.maxValue;
     }
 
-    /*****public int adjustHP(int amount){
+    public void adjustHP(int amount){
+        //Debug.Log("Testing");
+        //int amount = 5;
         if(amount > 0){
-            hp = (hp < 1) ? 0: ( hp - amount);
+            hp = ((hp-amount) < 1) ? 0: ( hp - amount);
         } else{
-            hp = (startingHP > (hp + amount))?  startingHP: (hp + amount);
+            hp = ((hp + amount) > maxHp) ?  maxHp : (hp + amount);
         }
-        return hp;
+        //return hp;
+        hpSlider.value = hp;
+        
+    
  
-    }*/
+    }
 
     public void basicAttack(){
         Debug.Log("Goblin Basic Attack. Goblin deals " + (baseDMG) + "DMG");
