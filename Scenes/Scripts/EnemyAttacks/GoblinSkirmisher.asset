@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66d148ec587f4168ac4ca484e9bbbea, type: 3}
   m_Name: GoblinSkirmisher
   m_EditorClassIdentifier: 
-  startingHP: 10
+  startingHP: 12
+  hp: 0
   startingDmg: 2
   startingMDmg: 0
   startingRDmg: 1

@@ -17,7 +17,8 @@ public class BattleController : MonoBehaviour
 
 
     void Start(){
-        nEnemies = Random.Range(1,5);
+        nEnemies = Random.Range(1,4);
+        Debug.Log("Random = " + nEnemies);
     }
 
     void Update()
@@ -38,6 +39,7 @@ public class BattleController : MonoBehaviour
                 MonsterStats ms = enemiesInArea[enemy].GetComponent<MonsterStats>();
                 while (ms.isAvailableForBattle == false){
                     enemy = Random.Range(0,nEnemies);
+                    ms = enemiesInArea[enemy].GetComponent<MonsterStats>();
                 }
                 ms.isAvailableForBattle = false;
                 Debug.Log("yes");

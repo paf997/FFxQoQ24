@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonsterStats : MonoBehaviour
 {
@@ -13,24 +14,42 @@ public class MonsterStats : MonoBehaviour
     public string actionMsg;
     public GameControlScript gcs;
     public int hp;
-    public int maxHp = 8;
+    public int maxHp;
     public int dmg;
     public List <int> attacks = new List<int>();
     public bool isAvailableForBattle;
+    [SerializeField] Slider hpSlider;
 
     void Start()
     {
         stats = GetComponent<MonsterStats>();
         gcs = GameObject.FindGameObjectWithTag("ButtonMgr").GetComponent<GameControlScript>();
-        hp = eb.hp;
+        SetHP();
         isAvailableForBattle = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
+    public void SetHP(){
+        hp = eb.getStartingHP();
+        maxHp = eb.getStartingHP();
+        hpSlider.maxValue = maxHp;
+        hpSlider.value = hpSlider.maxValue;
+    }
+
+    /*****public int adjustHP(int amount){
+        if(amount > 0){
+            hp = (hp < 1) ? 0: ( hp - amount);
+        } else{
+            hp = (startingHP > (hp + amount))?  startingHP: (hp + amount);
+        }
+        return hp;
+ 
+    }*/
 
     public void basicAttack(){
         Debug.Log("Goblin Basic Attack. Goblin deals " + (baseDMG) + "DMG");

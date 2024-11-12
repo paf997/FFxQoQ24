@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu()]
 
@@ -8,7 +9,6 @@ public class EnemyBase : ScriptableObject
 {
 
     [SerializeField] int startingHP;
-    public int hp;
     [SerializeField] int startingDmg;
     int dmg;
     [SerializeField] int startingMDmg;
@@ -28,24 +28,32 @@ public class EnemyBase : ScriptableObject
     bool isFinsihed;
     private string actionMsg;
     public GameControlScript gcs;
-
-
-    void Start()
+    
+ 
+    void Awake()
     {
-        hp = startingHP;
         dmg = startingDmg;
         rDmg  = startingRDmg;
         mDmg = startingMDmg;
         def = startingDef;
         rangeDef = startingRangeDef;
         magDef = startingMagDef;
+
+    }
+
+    void Start()
+    {
+
         randomAction();
-        
     }
 
     void Update()
     {
        // randomAction();
+    }
+
+    public int getStartingHP(){
+        return startingHP;
     }
 
     public void adjustDefense(int adjDef = 0, int adjRDef = 0, int adjMDef = 0 ){//0= att, 1 = ranged, 2 = magic 
@@ -68,17 +76,8 @@ public class EnemyBase : ScriptableObject
         rDmg =  dmg + rAttAdj;
     }
 
-    public void adjustHP(bool isHeal, int amount){
-        if(!isHeal){
-            hp = (hp < 1) ? 0: ( hp - amount);
-        } else{
-            hp = (startingHP > (hp + amount))?  startingHP: (hp + amount);
-        }
- 
-    }
-
     public void randomAction(){
-        if(hp >0 && !isFinsihed){
+        if(!isFinsihed){
             int rand = Random.Range(0,enemyAttacks.Count);  
             Debug.Log("random action: " + rand);
             switch(rand) {
@@ -95,6 +94,8 @@ public class EnemyBase : ScriptableObject
             endTurn();
         }
     }
+
+    
     public void baseAttack(){
         
     }
