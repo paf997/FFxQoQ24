@@ -24,6 +24,6 @@ public class PlayerIcon : MonoBehaviour
     }
 
     public void attAction(){
-        int dmgDealt = ps.
+        int dmgDealt = ps.attDMG;
     }
 }
