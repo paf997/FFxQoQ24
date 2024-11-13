@@ -14,7 +14,7 @@ public class BattleController : MonoBehaviour
     [SerializeField] List <GameObject> initiative = new List<GameObject>();
     [SerializeField] GameObject [] battlePositions2 = new GameObject [4];
     SpriteRenderer enemySprite;
-    int nEnemies;
+     int nEnemies;
     //[SerializeField] BattlePos [] battlePositions2;
     [SerializeField] TextMeshProUGUI turnText;
     [SerializeField] int round = 0;
@@ -46,6 +46,7 @@ public class BattleController : MonoBehaviour
                 
                 enemy = Random.Range(0,nEnemies);
                 MonsterStats ms = enemiesInArea[enemy].GetComponent<MonsterStats>();
+                ms.setBattlePos(i);
                 while (ms.isAvailableForBattle == false){
                     enemy = Random.Range(0,nEnemies);
                     ms = enemiesInArea[enemy].GetComponent<MonsterStats>();
@@ -64,6 +65,10 @@ public class BattleController : MonoBehaviour
         turnsAndInitiative();
         //initiative.AddRange(players);
         //initiative.AddRange(enemiesInBattle);
+    }
+
+    public int getEnemiesN (){
+        return nEnemies;
     }
 
     private void hasBattleEnded(int enemies){

@@ -25,8 +25,6 @@ public class clickObject : MonoBehaviour
                     PrintName(hit.transform.gameObject);
                     activateToken(hit.transform.gameObject);
                 }
-
-            
         }
         
     }

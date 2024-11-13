@@ -22,6 +22,9 @@ public class MonsterStats : MonoBehaviour
     [SerializeField] Slider hpSlider;
     [SerializeField] TextMeshProUGUI defText;
     [SerializeField] TextMeshProUGUI attText;
+    [SerializeField] int battlePos;
+
+    [SerializeField] PlayerIcon playerFrame;
 
     void Start()
     {
@@ -30,6 +33,7 @@ public class MonsterStats : MonoBehaviour
         SetHP();
         isAvailableForBattle = true;
         Invoke ("actionTempHelper",2);
+        
        // Invoke("adjustHP", 2.0f); for testing only
     }
 
@@ -62,10 +66,14 @@ public class MonsterStats : MonoBehaviour
         }
         //return hp;
         hpSlider.value = hp;
-        
-        
-    
- 
+    }
+
+    public void setBattlePos(int index){
+        battlePos = index;
+    } 
+
+    public void getBattlePositions(){
+        playerFrame.target = battlePos;getBattlePositions
     }
     public void basicAttack(){
         Debug.Log("Goblin Basic Attack. Goblin deals " + (baseDMG) + "DMG");
