@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class BattleController : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class BattleController : MonoBehaviour
     SpriteRenderer enemySprite;
     int nEnemies;
     //[SerializeField] BattlePos [] battlePositions2;
+    [SerializeField] TextMeshProUGUI turnText;
+    [SerializeField] int round = 0;
 
 
     void Start(){
@@ -26,6 +30,11 @@ public class BattleController : MonoBehaviour
         /*if(hasBattleStarted){
             hasBattleEnded(nEnemies);
         }*/
+    }
+
+    public void turnsAndInitiative(){
+        round++;
+        turnText.text = round.ToString();
     }
 
     public void setUpBattle(){
@@ -52,6 +61,7 @@ public class BattleController : MonoBehaviour
                 }*/
             }
         }
+        turnsAndInitiative();
         //initiative.AddRange(players);
         //initiative.AddRange(enemiesInBattle);
     }

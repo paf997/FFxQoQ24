@@ -88,6 +88,7 @@ public class StartButton : MonoBehaviour
                 createRandomChoices();
                 turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
                 finishStartTurn = false;
+
         }
 
     }
@@ -171,6 +172,7 @@ public class StartButton : MonoBehaviour
     }
     /*string updatedStats = ("White:" + whiteCnt.ToString() + " Blue: " + blueCnt.ToString() + " Red: " + redCnt.ToString()+
         "Power: " + power.ToString());*/
+        power = (power/5);
         turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
         finishStartTurn = true;
         getPlayerAction();
@@ -179,7 +181,7 @@ public class StartButton : MonoBehaviour
 
     public void getPlayerAction() {
         Debug.Log ("GetPlayerAction");
-        
+
     }
  }
 

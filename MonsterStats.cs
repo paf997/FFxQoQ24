@@ -72,6 +72,7 @@ public class MonsterStats : MonoBehaviour
         actionMsg = ("Goblin Basic Attack. Goblin deals " + (baseDMG) + "DMG");
         gcs.reportAction(actionMsg, 1);
         attacks.Add((baseDMG));
+        dmg = baseDMG;
 
         /****/
         //Debug.Log("Attacks: " + attacks.Count );
