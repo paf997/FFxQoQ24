@@ -173,7 +173,13 @@ public class StartButton : MonoBehaviour
         "Power: " + power.ToString());*/
         turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
         finishStartTurn = true;
+        getPlayerAction();
         }
+    }
+
+    public void getPlayerAction() {
+        Debug.Log ("GetPlayerAction");
+        
     }
  }
 

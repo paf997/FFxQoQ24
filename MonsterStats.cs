@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MonsterStats : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class MonsterStats : MonoBehaviour
     public List <int> attacks = new List<int>();
     public bool isAvailableForBattle;
     [SerializeField] Slider hpSlider;
+    [SerializeField] TextMeshProUGUI defText;
+    [SerializeField] TextMeshProUGUI attText;
 
     void Start()
     {
@@ -26,6 +29,7 @@ public class MonsterStats : MonoBehaviour
         gcs = GameObject.FindGameObjectWithTag("ButtonMgr").GetComponent<GameControlScript>();
         SetHP();
         isAvailableForBattle = true;
+        Invoke ("actionTempHelper",2);
        // Invoke("adjustHP", 2.0f); for testing only
     }
 
@@ -33,6 +37,12 @@ public class MonsterStats : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void updateStats(){
+        defText.text = DFS.ToString();
+        attText.text = dmg.ToString();
+        //return baseDFS;
     }
 
     public void SetHP(){
@@ -53,25 +63,27 @@ public class MonsterStats : MonoBehaviour
         //return hp;
         hpSlider.value = hp;
         
+        
     
  
     }
-
     public void basicAttack(){
         Debug.Log("Goblin Basic Attack. Goblin deals " + (baseDMG) + "DMG");
         actionMsg = ("Goblin Basic Attack. Goblin deals " + (baseDMG) + "DMG");
         gcs.reportAction(actionMsg, 1);
         attacks.Add((baseDMG));
-        //Debug.Log("Attacks: " + attacks.Count );
 
+        /****/
+        //Debug.Log("Attacks: " + attacks.Count );
         //target.adjustHP(3*baseDMG);
     }
     public void basicDefense(){
         Debug.Log("Goblin Basic Defense. Goblin  generates" + (baseDFS) + "DFS");
         actionMsg = ("Goblin Basic Defense. Goblin  generates" + (baseDFS) + "DFS");
         gcs.reportAction(actionMsg, 1);
-        DFS = (baseDFS);
-        DFS = DFS + baseDFS;
+        /*DFS = (baseDFS);
+        DFS = DFS + baseDFS; ?*/
+        DFS = baseDFS *2;
     }
     public void poisonAttack(){
         Debug.Log("Goblin Poison Attack. Goblin deals " + "1 " + "Poison");
@@ -88,6 +100,11 @@ public class MonsterStats : MonoBehaviour
     public void resetStats(){
         DFS = 0;
         dmg = 0;
+    }
+
+    public void actionTempHelper(){
+        Debug.Log("Action helper");
+        action(1,1);
     }
 
     public void action(int nActions,int nEnemies = 1){
@@ -123,6 +140,7 @@ public class MonsterStats : MonoBehaviour
                 Debug.Log("Nothing Happens");
                 break;
             }
+        updateStats();
         }
     }
 }
