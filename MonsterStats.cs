@@ -23,6 +23,7 @@ public class MonsterStats : MonoBehaviour
     [SerializeField] TextMeshProUGUI defText;
     [SerializeField] TextMeshProUGUI attText;
     [SerializeField] int battlePos;
+    [SerializeField] BattleController bc;
 
     [SerializeField] PlayerIcon playerFrame;
 
@@ -70,10 +71,11 @@ public class MonsterStats : MonoBehaviour
 
     public void setBattlePos(int index){
         battlePos = index;
+        Debug.Log("SetBattlePos Monster Stats");
     } 
 
-    public void getBattlePositions(){
-        playerFrame.target = battlePos;getBattlePositions
+    public void reportBattlePos(){
+        bc.findTarget(battlePos);
     }
     public void basicAttack(){
         Debug.Log("Goblin Basic Attack. Goblin deals " + (baseDMG) + "DMG");

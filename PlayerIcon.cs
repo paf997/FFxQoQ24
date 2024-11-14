@@ -44,10 +44,7 @@ public class PlayerIcon : MonoBehaviour
         //int pos = ms.getBattlePos();
         //target = eia.transform.GetChild(pos).GetComponent<MonsterStats>();
         int dmgDealt = ps.attDMG;
-        if(target != null){
-            
-            Debug.Log("attAction works");
-        }
+        bc.reportAction(dmgDealt);
         //ms.adjustHP(dmgDealt);
     }
 }

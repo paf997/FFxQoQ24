@@ -18,11 +18,15 @@ public class BattleController : MonoBehaviour
     //[SerializeField] BattlePos [] battlePositions2;
     [SerializeField] TextMeshProUGUI turnText;
     [SerializeField] int round = 0;
+    [SerializeField] int target;
+    public bool hasTarget = false;
+    public bool hasAction = false;
+    
 
 
     void Start(){
         nEnemies = Random.Range(1,4);
-        Debug.Log("Random = " + nEnemies);
+        //Debug.Log("Random = " + nEnemies);
     }
 
     void Update()
@@ -30,6 +34,25 @@ public class BattleController : MonoBehaviour
         /*if(hasBattleStarted){
             hasBattleEnded(nEnemies);
         }*/
+        if(hasTarget && hasAction) { calculateResult(); }
+        
+    }
+
+    void calculateResult(){
+        hasAction = false;
+        hasTarget = false;
+        Debug.Log("Calculate");
+    }
+
+    public void findTarget(int reportedPos){
+        Debug.Log("FindTarget Monster Stats");
+        target = reportedPos;
+        hasTarget = true;
+    }
+
+    public void reportAction(int reportedAct){
+        hasAction = true;
+        Debug.Log("Report Action Monster Stats");
     }
 
     public void turnsAndInitiative(){
@@ -40,7 +63,7 @@ public class BattleController : MonoBehaviour
     public void setUpBattle(){
         if (!hasBattleStarted){
             hasBattleStarted = true;
-            Debug.Log("Monsters = " + nEnemies);
+            //Debug.Log("Monsters = " + nEnemies);
             int enemy;
             for (int i = 0;i < nEnemies; i++){
                 
@@ -52,7 +75,7 @@ public class BattleController : MonoBehaviour
                     ms = enemiesInArea[enemy].GetComponent<MonsterStats>();
                 }
                 ms.isAvailableForBattle = false;
-                Debug.Log("yes");
+                //Debug.Log("yes");
                 enemiesInArea[enemy].SetActive(true);
                 enemiesInArea[enemy].transform.position = battlePositions2[i].transform.position;
                 initiative.Add(enemiesInArea[enemy]);
