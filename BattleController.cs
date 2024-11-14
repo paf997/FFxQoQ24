@@ -75,6 +75,7 @@ public class BattleController : MonoBehaviour
                     ms = enemiesInArea[enemy].GetComponent<MonsterStats>();
                 }
                 ms.isAvailableForBattle = false;
+                ms.action();
                 //Debug.Log("yes");
                 enemiesInArea[enemy].SetActive(true);
                 enemiesInArea[enemy].transform.position = battlePositions2[i].transform.position;
