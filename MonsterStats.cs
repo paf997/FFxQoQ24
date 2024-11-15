@@ -57,9 +57,17 @@ public class MonsterStats : MonoBehaviour
         hpSlider.value = hpSlider.maxValue;
     }
 
+    public int getDFS(){
+        return DFS;
+    }
+
     public void adjustHP(int amount){
         //Debug.Log("Testing");
         //int amount = 5;
+
+        if((amount - DFS) == 0) {amount = 0;}
+
+
         if(amount > 0){
             hp = ((hp-amount) < 1) ? 0: ( hp - amount);
         } else{

@@ -70,8 +70,6 @@ public class StartButton : MonoBehaviour
 
     public void endTurn(){
             if(finishStartTurn){
-                
-                //playerStats.basicAttack(power);      
                 whiteCnt = 0; 
                 blueCnt = 0;
                 redCnt = 0;
@@ -86,7 +84,9 @@ public class StartButton : MonoBehaviour
                     ts.isActiveToken(false);
                 }
                 createRandomChoices();
+                
                 turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
+                 
                 finishStartTurn = false;
 
         }
@@ -173,6 +173,8 @@ public class StartButton : MonoBehaviour
     /*string updatedStats = ("White:" + whiteCnt.ToString() + " Blue: " + blueCnt.ToString() + " Red: " + redCnt.ToString()+
         "Power: " + power.ToString());*/
         power = (power/5);
+        Debug.Log("Start " + power);
+        playerStats.pwr = power;
         turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
         finishStartTurn = true;
         getPlayerAction();

@@ -20,6 +20,8 @@ public class PlayerStats : MonoBehaviour
     public int def;
     public int initDEF;
     public int bonuses = 0;
+
+    public int pwr;
     void Start()
     {
         stats = GetComponent<PlayerStats>();

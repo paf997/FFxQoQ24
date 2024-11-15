@@ -40,11 +40,16 @@ public class PlayerIcon : MonoBehaviour
     }
 
     public void attAction(){
+        if(ps.pwr > 0){
         //ms = eia.transform.GetChild(pos).GetComponent<MonsterStats>();
         //int pos = ms.getBattlePos();
         //target = eia.transform.GetChild(pos).GetComponent<MonsterStats>();
-        int dmgDealt = ps.attDMG;
-        bc.reportAction(dmgDealt);
+            int dmgDealt = ps.attDMG;
+            bc.reportAction(dmgDealt);
+        }else{
+
+            Debug.Log("Not enough power " + ps.pwr);
+        }
         //ms.adjustHP(dmgDealt);
     }
 }

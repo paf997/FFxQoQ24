@@ -21,8 +21,10 @@ public class BattleController : MonoBehaviour
     [SerializeField] int target;
     public bool hasTarget = false;
     public bool hasAction = false;
+    [SerializeField] int dmg;
+    [SerializeField] int dfs;
+    [SerializeField] GameObject battleContainer;
     
-
 
     void Start(){
         nEnemies = Random.Range(1,4);
@@ -34,25 +36,27 @@ public class BattleController : MonoBehaviour
         /*if(hasBattleStarted){
             hasBattleEnded(nEnemies);
         }*/
-        if(hasTarget && hasAction) { calculateResult(); }
-        
+        if(hasTarget && hasAction)  calculateResult(); 
     }
 
     void calculateResult(){
         hasAction = false;
         hasTarget = false;
         Debug.Log("Calculate");
+        enemiesInArea[target].GetComponent<MonsterStats>().adjustHP(dmg);
+
     }
 
     public void findTarget(int reportedPos){
-        Debug.Log("FindTarget Monster Stats");
+       // Debug.Log("FindTarget Monster Stats");
         target = reportedPos;
         hasTarget = true;
     }
 
-    public void reportAction(int reportedAct){
+    public void reportAction(int reportedDMG){
         hasAction = true;
-        Debug.Log("Report Action Monster Stats");
+       // Debug.Log("Report Action Monster Stats");
+        dmg = reportedDMG;
     }
 
     public void turnsAndInitiative(){
