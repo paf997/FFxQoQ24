@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -9,7 +11,6 @@ public class PlayerStats : MonoBehaviour
     int width = 75;
     int height = 75;
     int buttonSpace;
-
     public GameControlScript gcs;
     public PlayerStats stats;
     public int startingHP = 12;
@@ -17,17 +18,18 @@ public class PlayerStats : MonoBehaviour
     public int speed = 5;
     //public int pwr;
     public int attDMG = 3;
-    public int def;
+    [SerializeField] int def = 0;
     public int initDEF;
     public int bonuses = 0;
-
     public int pwr;
+    [SerializeField] TextMeshProUGUI defIcon;
+
+    [SerializeField] TextMeshProUGUI hpIcon;
     void Start()
     {
         stats = GetComponent<PlayerStats>();
         currentHP = startingHP;
         gcs = GameObject.FindGameObjectWithTag("ButtonMgr").GetComponent<GameControlScript>();
-        def = 2;
         buttonSpace = width;
     }
 
@@ -47,11 +49,30 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Player Basic Defend");
     }
 
+    public void adjustDef(int amount){
+        def = def+amount;
+        Debug.Log("Adjust Def: " + def);
+        if(def < 0) def =0;
+        defIcon.text = def.ToString();
+    }
+
+    public int getDef(){
+        return def;
+    }
+
     public void adjustHP(int adjustment, int type){
         if(type == 0){
-            Debug.Log("Player loses " + adjustment + " HP");
-            adjustment = (adjustment < def) ? 0 : (adjustment-def);
-            currentHP = (currentHP - adjustment);
+
+            /*if(adjustment - def < 0) {adjustment = 0; 
+                Debug.Log( "Adjustment: " + adjustment + " - Def: " + def);}
+            else{adjustment = (adjustment - def);
+                Debug.Log( "Adjustment: " + adjustment + " - Def: " + def);}*/
+            Debug.Log("Adjustment: " + adjustment);
+            Debug.Log( " 1st Adjustment: " + adjustment + " - Def: " + def);
+            int newAdjust = (adjustment < def) ? 0 : (adjustment-def);
+            currentHP = (currentHP - newAdjust);
+            Debug.Log( "Adjustment: " + adjustment + " - Def: " + def);
+            Debug.Log(" after Adjustment: " + adjustment);
             if(currentHP <= 0){
                 currentHP = 0;
                 Debug.Log("Player has died");
@@ -65,6 +86,7 @@ public class PlayerStats : MonoBehaviour
                 Debug.Log("Player at full health " + currentHP);
             }
         }
+        hpIcon.text = currentHP.ToString();
     }
 
     public void choseActions(int pwrCost, int manaCost){

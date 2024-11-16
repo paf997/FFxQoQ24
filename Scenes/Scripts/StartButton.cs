@@ -70,12 +70,14 @@ public class StartButton : MonoBehaviour
 
     public void endTurn(){
             if(finishStartTurn){
+                battleControl.executeEnemyActions();
                 whiteCnt = 0; 
                 blueCnt = 0;
                 redCnt = 0;
                 yellowCnt = 0;
                 greenCnt = 0;
                 power = 0;
+                //playerStats.adjustDef(-1 * playerStats.getDef());
                 //Debug.Log("Here are the numbers. White = " + whiteCnt + " Blue " + blueCnt + " Yellow " + yellowCnt + "Red " + redCnt + "total Power " + power);
                 for (int i = 0; i < bagOfTokens.Length; i++){
                     tst = bagOfTokens[i].GetComponent<TextShowTest>();
@@ -86,7 +88,6 @@ public class StartButton : MonoBehaviour
                 createRandomChoices();
                 
                 turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
-                 
                 finishStartTurn = false;
 
         }
@@ -136,6 +137,7 @@ public class StartButton : MonoBehaviour
                                 break;
                             case "blue":
                                 blueCnt = blueCnt + tst.stats.Tvalue;
+                                playerStats.adjustDef(tst.stats.Tvalue);
                                 break;
                             case "yellow":
                                 yellowCnt = yellowCnt + tst.stats.Tvalue;
@@ -173,7 +175,7 @@ public class StartButton : MonoBehaviour
     /*string updatedStats = ("White:" + whiteCnt.ToString() + " Blue: " + blueCnt.ToString() + " Red: " + redCnt.ToString()+
         "Power: " + power.ToString());*/
         power = (power/5);
-        Debug.Log("Start " + power);
+        //Debug.Log("Start " + power);
         playerStats.pwr = power;
         turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
         finishStartTurn = true;

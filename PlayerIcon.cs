@@ -7,6 +7,7 @@ using TMPro;
 public class PlayerIcon : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI hpIcon;
+    [SerializeField] TextMeshProUGUI defIcon;
     [SerializeField] PlayerStats ps;
     [SerializeField] BattleController bc;
     [SerializeField] GameObject eia;
@@ -36,7 +37,7 @@ public class PlayerIcon : MonoBehaviour
         for (int i = 0; i < targets.Length; i++){
 
         }
-        Debug.Log("targets:" + targets.Length + "");
+        //Debug.Log("targets:" + targets.Length + "");
     }
 
     public void attAction(){
@@ -46,6 +47,7 @@ public class PlayerIcon : MonoBehaviour
         //target = eia.transform.GetChild(pos).GetComponent<MonsterStats>();
             int dmgDealt = ps.attDMG;
             bc.reportAction(dmgDealt);
+            ps.pwr --;
         }else{
 
             Debug.Log("Not enough power " + ps.pwr);

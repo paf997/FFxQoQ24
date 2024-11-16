@@ -24,7 +24,7 @@ public class MonsterStats : MonoBehaviour
     [SerializeField] TextMeshProUGUI attText;
     [SerializeField] int battlePos;
     [SerializeField] BattleController bc;
-
+    public int nAttacks = 1;
     [SerializeField] PlayerIcon playerFrame;
 
     void Start()
@@ -41,7 +41,7 @@ public class MonsterStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (hp <1) bc.reportDeath(battlePos);
     }
 
     public void updateStats(){
@@ -64,9 +64,7 @@ public class MonsterStats : MonoBehaviour
     public void adjustHP(int amount){
         //Debug.Log("Testing");
         //int amount = 5;
-
         if((amount - DFS) == 0) {amount = 0;}
-
 
         if(amount > 0){
             hp = ((hp-amount) < 1) ? 0: ( hp - amount);
@@ -83,9 +81,10 @@ public class MonsterStats : MonoBehaviour
     } 
 
     public void reportBattlePos(){
-        Debug.Log("report Battle Pos " + this.name);
+        //Debug.Log("report Battle Pos " + this.name);
         bc.findTarget(battlePos);
     }
+
     public void basicAttack(){
        // Debug.Log("Goblin Basic Attack. Goblin deals " + (baseDMG) + "DMG");
         actionMsg = ("Goblin Basic Attack. Goblin deals " + (baseDMG) + "DMG");
@@ -98,15 +97,15 @@ public class MonsterStats : MonoBehaviour
         //target.adjustHP(3*baseDMG);
     }
     public void basicDefense(){
-        //Debug.Log("Goblin Basic Defense. Goblin  generates" + (baseDFS) + "DFS");
+        Debug.Log("Goblin Basic Defense. Goblin  generates" + (baseDFS) + "DFS");
         actionMsg = ("Goblin Basic Defense. Goblin  generates" + (baseDFS) + "DFS");
         //gcs.reportAction(actionMsg, 1);
         /*DFS = (baseDFS);
         DFS = DFS + baseDFS; ?*/
-        DFS = baseDFS *2;
+        DFS = baseDFS;
     }
     public void poisonAttack(){
-        //Debug.Log("Goblin Poison Attack. Goblin deals " + "1 " + "Poison");
+        Debug.Log("Goblin Poison Attack. Goblin deals");
         actionMsg = ("Goblin Poison Attack. Goblin deals " + "1 " + "Poison");
         //gcs.reportAction(actionMsg, 1);
     }
@@ -115,7 +114,8 @@ public class MonsterStats : MonoBehaviour
         actionMsg =("Goblin Power Attack. Goblin deals " + (2*baseDMG) + "DMG");
         //gcs.reportAction(actionMsg, 1);
         attacks.Add((2*baseDMG));
-        //Debug.Log("Attacks: " + attacks.Count );
+        dmg = baseDMG +2;
+        Debug.Log("Power Attack: ");
     }
     public void resetStats(){
         DFS = 0;
@@ -128,6 +128,7 @@ public class MonsterStats : MonoBehaviour
     }*/
 
     public void action(){
+        Debug.Log("Action");
         int action = Random.Range(0,5);
             switch(action){
             case 0:
@@ -145,8 +146,9 @@ public class MonsterStats : MonoBehaviour
                 //poisonAttack();
                 break;
             case 3:
-                powerAttack();
                 basicDefense();
+                basicDefense();
+                powerAttack();
                 //poisonAttack();
                 break;
             case 4:

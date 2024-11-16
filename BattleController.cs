@@ -14,7 +14,7 @@ public class BattleController : MonoBehaviour
     [SerializeField] List <GameObject> initiative = new List<GameObject>();
     [SerializeField] GameObject [] battlePositions2 = new GameObject [4];
     SpriteRenderer enemySprite;
-     int nEnemies;
+    [SerializeField] int nEnemies;
     //[SerializeField] BattlePos [] battlePositions2;
     [SerializeField] TextMeshProUGUI turnText;
     [SerializeField] int round = 0;
@@ -24,6 +24,8 @@ public class BattleController : MonoBehaviour
     [SerializeField] int dmg;
     [SerializeField] int dfs;
     [SerializeField] GameObject battleContainer;
+    [SerializeField] PlayerStats player;
+    [SerializeField] List <GameObject> offenseActions = new List<GameObject>();
     
 
     void Start(){
@@ -65,6 +67,7 @@ public class BattleController : MonoBehaviour
     }
 
     public void setUpBattle(){
+        MonsterStats ms;
         if (!hasBattleStarted){
             hasBattleStarted = true;
             //Debug.Log("Monsters = " + nEnemies);
@@ -72,7 +75,7 @@ public class BattleController : MonoBehaviour
             for (int i = 0;i < nEnemies; i++){
                 
                 enemy = Random.Range(0,nEnemies);
-                MonsterStats ms = enemiesInArea[enemy].GetComponent<MonsterStats>();
+                ms = enemiesInArea[enemy].GetComponent<MonsterStats>();
                 ms.setBattlePos(i);
                 while (ms.isAvailableForBattle == false){
                     enemy = Random.Range(0,nEnemies);
@@ -89,6 +92,12 @@ public class BattleController : MonoBehaviour
                     enemy = Random.Range(0,enemiesInArea.Count);
                 }*/
             }
+        }else{
+            foreach (GameObject enemy in enemiesInArea){
+                ms = enemy.GetComponent<MonsterStats>();
+                ms.action();
+
+            }
         }
         turnsAndInitiative();
         //initiative.AddRange(players);
@@ -97,6 +106,25 @@ public class BattleController : MonoBehaviour
 
     public int getEnemiesN (){
         return nEnemies;
+    }
+
+    public void reportDeath(int pos){
+        Debug.Log(enemiesInArea[pos].name + " has Died");
+        enemiesInArea[pos].SetActive(false);
+    }
+
+    public void executeEnemyActions(){
+        Debug.Log("Execute Actions");
+        foreach(GameObject enemy in enemiesInArea){
+            if(enemy.activeSelf){
+                MonsterStats currentEnemy = enemy.GetComponent<MonsterStats>();
+                for (int i = 0; i < currentEnemy.nAttacks; i++){
+                    Debug.Log(enemy.name + " dmg = " + currentEnemy.dmg);
+                    player.adjustHP(currentEnemy.dmg, 0);
+                }
+                currentEnemy.nAttacks = 1;
+            }
+         }
     }
 
     private void hasBattleEnded(int enemies){
