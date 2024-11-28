@@ -7,6 +7,7 @@ using TMPro;
 public class MonsterStats : MonoBehaviour
 {
     public EnemyBase eb;
+    [SerializeField] ReportAction reportAction;
     public MonsterStats stats;
     public int baseDMG = 3;
     public int baseDFS = 2;
@@ -26,6 +27,8 @@ public class MonsterStats : MonoBehaviour
     [SerializeField] BattleController bc;
     public int nAttacks = 1;
     [SerializeField] PlayerIcon playerFrame;
+    public List <ReportAction> actionList = new List<ReportAction>();
+
 
     void Start()
     {
@@ -127,12 +130,21 @@ public class MonsterStats : MonoBehaviour
         action(1,1);
     }*/
 
-    public void action(){
+    public ReportAction action(){
         Debug.Log("Action");
-        int action = Random.Range(0,5);
+        int action = Random.Range(0,actionList.Count);
             switch(action){
-            case 0:
-                basicAttack();
+                case 0:
+                    reportAction = actionList[action];
+                    reportAction.setEnemyBase(eb);
+                    //reportAction.doAction();
+                    Debug.Log(reportAction.name);
+                    break;
+                case 1:
+                    Debug.Log(actionList[action].name);
+                    break;
+            /*case 0:
+                /*basicAttack();
                 basicAttack();
                 //Debug.Log("white");
                 break;
@@ -143,7 +155,7 @@ public class MonsterStats : MonoBehaviour
             case 2:
                 basicDefense();
                 basicDefense();
-                //poisonAttack();
+                poisonAttack();
                 break;
             case 3:
                 basicDefense();
@@ -155,13 +167,15 @@ public class MonsterStats : MonoBehaviour
                 powerAttack();
                 //basicDefense();
                 //basicAttack();
-                break;
+                break;*/
             default:
                 Debug.Log("Nothing Happens");
                 break;
             }
         updateStats();
+        return reportAction;
     }
+
 }
 
 

@@ -26,6 +26,7 @@ public class BattleController : MonoBehaviour
     [SerializeField] GameObject battleContainer;
     [SerializeField] PlayerStats player;
     [SerializeField] List <GameObject> offenseActions = new List<GameObject>();
+    public List <ScriptableObject> actionList = new List<ScriptableObject>();
     
 
     void Start(){
@@ -117,12 +118,15 @@ public class BattleController : MonoBehaviour
         Debug.Log("Execute Actions");
         foreach(GameObject enemy in enemiesInArea){
             if(enemy.activeSelf){
-                MonsterStats currentEnemy = enemy.GetComponent<MonsterStats>();
-                for (int i = 0; i < currentEnemy.nAttacks; i++){
+                //MonsterStats currentEnemy = enemy.GetComponent<MonsterStats>();
+                /*for (int i = 0; i < currentEnemy.nAttacks; i++){
                     Debug.Log(enemy.name + " dmg = " + currentEnemy.dmg);
                     player.adjustHP(currentEnemy.dmg, 0);
-                }
-                currentEnemy.nAttacks = 1;
+                }*/
+                //currentEnemy.nAttacks = 1;
+                ReportAction enemyAction = enemy.GetComponent<MonsterStats>().action();
+
+                enemyAction.postPlayerActions(player);
             }
          }
     }

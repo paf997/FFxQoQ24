@@ -67,12 +67,12 @@ public class PlayerStats : MonoBehaviour
                 Debug.Log( "Adjustment: " + adjustment + " - Def: " + def);}
             else{adjustment = (adjustment - def);
                 Debug.Log( "Adjustment: " + adjustment + " - Def: " + def);}*/
-            Debug.Log("Adjustment: " + adjustment);
-            Debug.Log( " 1st Adjustment: " + adjustment + " - Def: " + def);
+            Debug.Log("PlayerStats ");
+            //Debug.Log( " 1st Adjustment: " + adjustment + " - Def: " + def);
             int newAdjust = (adjustment < def) ? 0 : (adjustment-def);
             currentHP = (currentHP - newAdjust);
-            Debug.Log( "Adjustment: " + adjustment + " - Def: " + def);
-            Debug.Log(" after Adjustment: " + adjustment);
+            //Debug.Log( "Adjustment: " + adjustment + " - Def: " + def);
+            //Debug.Log(" after Adjustment: " + adjustment);
             if(currentHP <= 0){
                 currentHP = 0;
                 Debug.Log("Player has died");

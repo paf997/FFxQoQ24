@@ -10,7 +10,7 @@ public class EnemyBase : ScriptableObject
 
     [SerializeField] int startingHP;
     [SerializeField] int startingDmg;
-    int dmg;
+    public int dmg;
     [SerializeField] int startingMDmg;
     int mDmg;
     [SerializeField] int startingRDmg;
@@ -93,6 +93,10 @@ public class EnemyBase : ScriptableObject
             }
             endTurn();
         }
+    }
+
+    public int getBaseDmg(){
+        return dmg;
     }
 
     
