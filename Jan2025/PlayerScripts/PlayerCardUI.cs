@@ -65,34 +65,13 @@ public class PlayerCardUI : MonoBehaviour
             Debug.Log("Not Empty!");
         }
 
-        // Update token value text
-        /*if (tokenValueText != null)
+        
+        if (card.cost != null)
         {
-            tokenValueText.text = token.value.ToString();
-        }*/
+            costText.text = card.cost.ToString();
+        }
     }
 
-    /// <summary>
-    /// Converts a string representation of a color into a Unity Color.
-    /// Defaults to white if parsing fails.
-    /// </summary>
-    /// <param name="colorString">The color string (e.g., "red", "blue").</param>
-    /// <returns>A Unity Color.</returns>
-    /*private Color GetColorFromString(string colorString)
-    {
-        switch (colorString.ToLower())
-        {
-            case "red": return Color.red;
-            case "blue": return Color.blue;
-            case "green": return Color.green;
-            case "yellow": return Color.yellow;
-            default: return Color.white; // Default color if none match
-        }
-    }*/
-
-    /// <summary>
-    /// Manually refreshes the UI (e.g., if the token data changes).
-    /// </summary>
     public void RefreshUI()
     {
         UpdateCardUI();
