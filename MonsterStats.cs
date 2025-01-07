@@ -125,17 +125,28 @@ public class MonsterStats : MonoBehaviour
         dmg = 0;
     }
 
+    public void adjustDef(int def){
+        DFS = def;
+    }
+
+    public int getDef(){
+        return DFS;
+    }
+
     /*public void actionTempHelper(){
         Debug.Log("Action helper");
         action(1,1);
     }*/
 
     public ReportAction action(){
-        Debug.Log("Action");
+        Debug.Log("Action Monster Stats");
         int action = Random.Range(0,actionList.Count);
             switch(action){
                 case 0:
                     reportAction = actionList[action];
+                    if(reportAction.getDef() > 0){
+                        adjustDef(getDef());
+                    }
                     reportAction.setEnemyBase(eb);
                     //reportAction.doAction();
                     Debug.Log(reportAction.name);

@@ -64,13 +64,14 @@ public class StartButton : MonoBehaviour
     }
 
     public void initTokenBag(){
-        bagOfTokens = GameObject.FindGameObjectsWithTag("Token"); 
-        
+        bagOfTokens = GameObject.FindGameObjectsWithTag("Token");       
     }
 
     public void endTurn(){
             if(finishStartTurn){
                 battleControl.executeEnemyActions();
+                playerStats.poisonPlayer(-1);
+                playerStats.adjustDef(0);
                 whiteCnt = 0; 
                 blueCnt = 0;
                 redCnt = 0;
@@ -86,12 +87,9 @@ public class StartButton : MonoBehaviour
                     ts.isActiveToken(false);
                 }
                 createRandomChoices();
-                
                 turnStats.updateTurnStats(power, redCnt, blueCnt, whiteCnt, yellowCnt);
                 finishStartTurn = false;
-
         }
-
     }
 
     private void createRandomChoices(){

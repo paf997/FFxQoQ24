@@ -5,11 +5,13 @@ using UnityEngine;
 {
     public bool isAttMelee = false;
     
-    [SerializeField] bool isDef = false;
+    [SerializeField] int def;
     [SerializeField] int mAttacks = 1;
     [SerializeField] int attackerDMG;
     [SerializeField] EnemyBase activeEnemy;
-    [SerializeField] string invokeString = "doAction";
+    //[SerializeField] string invokeString = "doAction";
+    [SerializeField] int poison;
+
     public bool isPreActions = false;
     public bool isPostActions = false;
 
@@ -45,11 +47,27 @@ using UnityEngine;
    public void postPlayerActions(PlayerStats targetPlayer){
         //Invoke(invokeString, 0);
         //activeEnemy.getBaseDmg();
-        for (int m = 0; m < mAttacks; m++){
+        
+        if(isAttMelee)
+            for (int m = 0; m < mAttacks; m++){
             Debug.Log("Post player Stats " + m);
             targetPlayer.adjustHP(activeEnemy.getBaseDmg(), 0);
-        }   
-            isPostActions = false;
+        } 
+
+        if(poison > 0) { 
+            targetPlayer.poisonPlayer(poison);
+            }
+
+        isPostActions = false;    
+    }
+
+    public void setDefense(MonsterStats monsterStats){
+        if(def > 0){
             
+        }
+    }
+
+    public int getDef(){
+        return def;
     }
 }

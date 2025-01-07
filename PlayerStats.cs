@@ -22,6 +22,9 @@ public class PlayerStats : MonoBehaviour
     public int initDEF;
     public int bonuses = 0;
     public int pwr;
+
+    [SerializeField] int poison;
+
     [SerializeField] TextMeshProUGUI defIcon;
 
     [SerializeField] TextMeshProUGUI hpIcon;
@@ -50,10 +53,17 @@ public class PlayerStats : MonoBehaviour
     }
 
     public void adjustDef(int amount){
-        def = def+amount;
+        def = (def + amount);
+        if(poison > 0){ def = def - poison;}
+        if(def < 0) {def = 0;}
+        if(poison < 0) {poison = 0;}
+
         Debug.Log("Adjust Def: " + def);
-        if(def < 0) def =0;
         defIcon.text = def.ToString();
+    }
+
+    public void poisonPlayer(int poisonDuration){
+        poison = (poison + poisonDuration);
     }
 
     public int getDef(){
@@ -62,7 +72,6 @@ public class PlayerStats : MonoBehaviour
 
     public void adjustHP(int adjustment, int type){
         if(type == 0){
-
             /*if(adjustment - def < 0) {adjustment = 0; 
                 Debug.Log( "Adjustment: " + adjustment + " - Def: " + def);}
             else{adjustment = (adjustment - def);
@@ -91,7 +100,6 @@ public class PlayerStats : MonoBehaviour
 
     public void choseActions(int pwrCost, int manaCost){
         
-
     }
 
     public bool isDead(){
