@@ -6,6 +6,8 @@ public class TokenUI : MonoBehaviour
 {
     [Header("Token Data")]
     [SerializeField] private Token token;
+    
+    public int valueIndex;
 
     [Header("UI Elements")]
     /*[SerializeField] private Image backgroundImage;
