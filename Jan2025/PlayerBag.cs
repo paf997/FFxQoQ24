@@ -57,7 +57,7 @@ public class PlayerBag : MonoBehaviour
 
     }
 
-    public void UpdateDrawnTokenTotals(){
-        
+    public void UpdateDrawnTokenTotals(string color){
+        if (color == "red")
     }   
 }
