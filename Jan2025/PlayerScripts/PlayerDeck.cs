@@ -12,7 +12,7 @@ public class PlayerDeck : MonoBehaviour
     public int deckSize;
     public int drawNum = 1;
     public int startingCards = 2;
-    public ScriptableObject chosenCard;
+    [SerializeField] private PlayerCardSO chosenCard;
     
     public GameObject cardCanvas;
     private CardCanvas playerHand;
@@ -37,7 +37,8 @@ public class PlayerDeck : MonoBehaviour
         if(playerHand.handCnt < playerHand.handMax){
             Debug.Log("playerDeck" );
             ShuffleDeck();
-            playerHand.UpdateHandUI();
+            chosenCard = playerDeck[0];
+            playerHand.UpdateHandUI(chosenCard);
         } else{
             Debug.Log("Hand is Full");
         }  

@@ -15,10 +15,10 @@ public class CardCanvas : MonoBehaviour
      
     }
 
-    public void UpdateHandUI(){
+    public void UpdateHandUI(PlayerCardSO chosen){
             handOrder[handCnt].SetActive(true);
             card = handOrder[handCnt].GetComponent<PlayerCardUI>();
-            card.UpdateCardUI();
+            card.UpdateCardUI(chosen);
             handCnt++;
     }
 

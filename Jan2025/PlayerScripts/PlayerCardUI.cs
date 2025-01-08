@@ -39,13 +39,13 @@ public class PlayerCardUI : MonoBehaviour
     /// <summary>
     /// Updates the UI elements based on the assigned Token ScriptableObject.
     /// </summary>
-    public void UpdateCardUI()
+    public void UpdateCardUI(PlayerCardSO chosen)
     {
         Image img;
 
         Debug.Log("PlayerVardUI");
-        card = playerDeck.playerDeck[0];
-        playerDeck.removeCard();
+        card = chosen;
+       // playerDeck.removeCard();
 
         // Update background color
         if (card.cardBackgroundImg != null)
@@ -80,7 +80,7 @@ public class PlayerCardUI : MonoBehaviour
 
     public void RefreshUI()
     {
-        UpdateCardUI();
+        //UpdateCardUI();
     }
 
     public PlayerCardSO getPlayerCardStats(){
