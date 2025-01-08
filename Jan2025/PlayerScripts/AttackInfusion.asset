@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 808e16b99edec454ab7d816f8b65beab, type: 3}
-  m_Name: Defense+
+  m_Name: AttackInfusion
   m_EditorClassIdentifier: 
   cardBackgroundImg: {fileID: 0}
-  cardActionIcon: {fileID: 21300000, guid: 56591342f73384ff6853adf0965bd0b5, type: 3}
-  cardCostIcon: {fileID: 21300000, guid: 41b34994b31ad484d92e559ee0bada48, type: 3}
-  Name: Defense+
+  cardActionIcon: {fileID: 21300000, guid: e59b956252a59486d9b98d908e644086, type: 3}
+  cardCostIcon: {fileID: 21300000, guid: b2fbcab8d32014baa927f2dec7d34b90, type: 3}
+  Name: 
   cost: 1
-  duration: 2
+  duration: 0
   mAttAdjustment: 0
-  defAdjustment: 2
-  description: test V2
+  defAdjustment: 0
+  description: 'Test
+
+    Added 3 Temporary (1) red tokens and (1) white token'

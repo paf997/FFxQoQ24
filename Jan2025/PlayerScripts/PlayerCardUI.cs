@@ -13,33 +13,39 @@ public class PlayerCardUI : MonoBehaviour
     /*[SerializeField] private Image backgroundImage;
     [SerializeField] private Image foregroundImage;*/
     public TMP_Text costText;
-    public bool isAvailable = true;     // Whether the token is available for use
     public bool isDrawn;        // Whether the token has been drawn
     public bool isExtinguishable; // Whether the token can be extinguished
     public GameObject cardBackgroundImg;
     public GameObject cardIconImg;
     public GameObject cardColorImg;
+    private CardCanvas playerHand;
 
     private Sprite sprite;
+    public bool isEmpty;
+    public bool isAvailable;
+    public GameObject cardCanvas;
+    public GameObject playerDeckScript;
+    private PlayerDeck playerDeck;
+
     
 
     private void Start()
     {
-        UpdateCardUI();
+        //UpdateCardUI();
+        playerHand = cardCanvas.GetComponent<CardCanvas> ();
+        playerDeck = playerDeckScript.GetComponent<PlayerDeck> ();
     }
 
     /// <summary>
     /// Updates the UI elements based on the assigned Token ScriptableObject.
     /// </summary>
-    private void UpdateCardUI()
+    public void UpdateCardUI()
     {
         Image img;
 
-        if (card == null)
-        {
-            Debug.LogWarning("No Card assigned to TokenUI.");
-            return;
-        }
+        Debug.Log("PlayerVardUI");
+        card = playerDeck.playerDeck[0];
+        playerDeck.removeCard();
 
         // Update background color
         if (card.cardBackgroundImg != null)
