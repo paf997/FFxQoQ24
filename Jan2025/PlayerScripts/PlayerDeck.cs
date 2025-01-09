@@ -4,8 +4,6 @@ using UnityEngine;
 using System.Linq;
 using TMPro;
 
-
-
 public class PlayerDeck : MonoBehaviour
 {
 
@@ -16,12 +14,10 @@ public class PlayerDeck : MonoBehaviour
     public int drawNum = 1;
     public int startingCards = 2;
     [SerializeField] private PlayerCardSO chosenCard;
-    
     public GameObject cardCanvas;
     private CardCanvas playerHand;
     public TMP_Text discardTxt;
     public TMP_Text deckTxt;
-
 
     public void Start (){
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
@@ -45,11 +41,13 @@ public class PlayerDeck : MonoBehaviour
     
     public void drawButton (){
         if(playerHand.handCnt < playerHand.handMax){
-            Debug.Log("playerDeck" );
+            //Debug.Log("playerDeck");
             ShuffleDeck();
             chosenCard = playerDeck[0];
+            playerDeck.RemoveAt(0);
             playerHand.UpdateHandUI(chosenCard);
-            discardTxt.text = "0";
+            discardCnt++;
+            discardTxt.text = discardCnt.ToString();
             deckTxt.text = playerDeck.Count.ToString();
         } else{
             Debug.Log("Hand is Full");
