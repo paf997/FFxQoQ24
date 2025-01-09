@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using TMPro;
 
 
 
@@ -10,16 +11,25 @@ public class PlayerDeck : MonoBehaviour
 
     public List <PlayerCardSO> playerDeck = new List<PlayerCardSO>();
     public int deckSize;
+    public int deckCnt;
+    public int discardCnt = 0;
     public int drawNum = 1;
     public int startingCards = 2;
     [SerializeField] private PlayerCardSO chosenCard;
     
     public GameObject cardCanvas;
     private CardCanvas playerHand;
+    public TMP_Text discardTxt;
+    public TMP_Text deckTxt;
 
 
     public void Start (){
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
+        deckSize = playerDeck.Count;
+        discardCnt = 0;
+        deckCnt = deckSize - discardCnt;
+        discardTxt.text = discardCnt.ToString();
+        deckTxt.text = deckCnt.ToString();
     }
     
     public void ShuffleDeck()
@@ -39,6 +49,8 @@ public class PlayerDeck : MonoBehaviour
             ShuffleDeck();
             chosenCard = playerDeck[0];
             playerHand.UpdateHandUI(chosenCard);
+            discardTxt.text = "0";
+            deckTxt.text = playerDeck.Count.ToString();
         } else{
             Debug.Log("Hand is Full");
         }  
