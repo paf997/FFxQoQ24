@@ -85,7 +85,7 @@ public class PlayerBag : MonoBehaviour
             ClearDrawnToken();
             isPrimed = 0;
         }
-        tokenCanvas.UpdateTokenVals(whiteTotal, whiteDrawn, redTotal, redDrawn, blueTotal, blueDrawn);
+        tokenCanvas.UpdateTokenVals(whiteTotal, whiteDrawn, redTotal, redDrawn, blueTotal, blueDrawn, yellowTotal, yellowDrawn);
     }
 
     public void PrimeAction(){
