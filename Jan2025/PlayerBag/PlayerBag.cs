@@ -37,24 +37,35 @@ public class PlayerBag : MonoBehaviour
     public GameObject TC;
     TokenCanvas tokenCanvas;
     public int isPrimed = 0;
+    public GameObject playerDeck;
+    
+     [SerializeField] List <int> currentTokenValues = new List<int>() {};
 
     public void Start (){
         whiteCnt = whiteValue.Count;
         whiteTotal = whiteValue.Sum();
+        currentTokenValues.Add(whiteTotal);
+        
 
         redCnt = redValues.Count;
         redTotal = redValues.Sum();
+        currentTokenValues.Add(redTotal);
 
         blueCnt = blueValues.Count;
         blueTotal = blueValues.Sum();
+        currentTokenValues.Add(blueTotal);
 
         greenCnt = greenValues.Count;
         greenTotal = greenValues.Sum();
+        currentTokenValues.Add(greenTotal);
 
         yellowCnt = yellowValues.Count;
         yellowTotal = yellowValues.Sum();
+        currentTokenValues.Add(yellowTotal);
 
         tokenCanvas = TC.GetComponent<TokenCanvas>();
+
+        PlayerDeck playerDeckSC = playerDeck.GetComponent<PlayerDeck>();
     }
     
     public void ShuffleTokens()

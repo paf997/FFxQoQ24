@@ -54,6 +54,10 @@ public class PlayerDeck : MonoBehaviour
         }  
     }
 
+    public void availableCardsInHand(){
+        
+    }
+
     public void removeCard(){
         playerDeck.RemoveAt(0);
     }
