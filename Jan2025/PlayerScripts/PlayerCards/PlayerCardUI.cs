@@ -36,11 +36,11 @@ public class PlayerCardUI : MonoBehaviour
     private void Awake()
     {
         Outline [] outlines = cardOutline.GetComponents<Outline>();
-        Debug.Log("The # of outlines is " + outlines.Length);
+       // Debug.Log("The # of outlines is " + outlines.Length);
         cardAvailable = outlines[0];
-        Debug.Log("#1: " + outlines[0]);
+        //Debug.Log("#1: " + outlines[0]);
         cardUnavailable = outlines[1];
-        Debug.Log("#1: " + outlines[1]);
+        //Debug.Log("#1: " + outlines[1]);
     }
 
     private void Start()
@@ -58,7 +58,7 @@ public class PlayerCardUI : MonoBehaviour
     {
         Image img;
 
-        Debug.Log("PlayerCardUI");
+        //Debug.Log("PlayerCardUI");
         card = chosen;
        // playerDeck.removeCard();
 
@@ -83,7 +83,7 @@ public class PlayerCardUI : MonoBehaviour
         {
             img = cardColorImg.GetComponent<Image>();
             img.sprite = card.cardCostIcon;
-            Debug.Log("Not Empty!");
+            //Debug.Log("Not Empty!");
         }
 
         if (card.cost != null)

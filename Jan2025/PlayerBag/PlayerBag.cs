@@ -8,6 +8,7 @@ using System.Linq;
 public class PlayerBag : MonoBehaviour
 {
 
+    [Header("Token info")]
     [SerializeField]
     public List <GameObject> startingTokens = new List<GameObject>();
     public List <int> whiteValue = new List<int>() { 1,1,1,1,2,2,4 };
@@ -30,9 +31,21 @@ public class PlayerBag : MonoBehaviour
     public int yellowCnt;
     public int yellowDrawn = 0;
     public int yellowTotal;
-    public List <int> purpleValues = new List<int>() {  };
-    public int tokenMax = 30;
+    public List <int> orangeValues = new List<int>() { 1 };
+    public int orangeCnt;
+    public int orangeDrawn = 0;
+    public int orangeTotal;
+    public List <int> purpleValues = new List<int>() {  1};
+    public int purpleCnt;
+    public int purpleDrawn = 0;
+    public int purpleTotal;
+    public List <int> wildValues = new List<int>() {  };
+    public int wildCnt;
+    public int wildDrawn = 0;
+    public int wildTotal;
+    public int tokenMax = 20;
     public int drawCnt = 5;
+    [Header("Non token info")]
     public TokenUI drawnToken;
     public GameObject TC;
     TokenCanvas tokenCanvas;
@@ -42,27 +55,7 @@ public class PlayerBag : MonoBehaviour
      [SerializeField] List <int> currentTokenValues = new List<int>() {};
 
     public void Start (){
-
-        whiteCnt = whiteValue.Count;
-        whiteTotal = whiteValue.Sum();
-        currentTokenValues.Add(whiteTotal);
-        
-        redCnt = redValues.Count;
-        redTotal = redValues.Sum();
-        currentTokenValues.Add(redTotal);
-
-        blueCnt = blueValues.Count;
-        blueTotal = blueValues.Sum();
-        currentTokenValues.Add(blueTotal);
-
-        greenCnt = greenValues.Count;
-        greenTotal = greenValues.Sum();
-        currentTokenValues.Add(greenTotal);
-
-        yellowCnt = yellowValues.Count;
-        yellowTotal = yellowValues.Sum();
-        currentTokenValues.Add(yellowTotal);
-
+        initializeTokensInfo();
         tokenCanvas = TC.GetComponent<TokenCanvas>();
     }
     
@@ -94,11 +87,17 @@ public class PlayerBag : MonoBehaviour
             ClearDrawnToken();
             isPrimed = 0;
         }
-        tokenCanvas.UpdateTokenVals(whiteTotal, whiteDrawn, redTotal, redDrawn, blueTotal, blueDrawn, yellowTotal, yellowDrawn);
+        tokenCanvas.UpdateTokenVals(whiteTotal, whiteDrawn, redTotal, redDrawn, blueTotal, blueDrawn, yellowTotal, yellowDrawn,
+        orangeTotal, orangeDrawn,greenTotal, greenDrawn, purpleTotal, purpleDrawn, wildTotal, wildDrawn);
         CardCanvas CardCavasSC = cardCanvas.GetComponent<CardCanvas>();
         CardCavasSC.CurrentTokenValues[0] = whiteDrawn;
         CardCavasSC.CurrentTokenValues[1] = redDrawn;
         CardCavasSC.CurrentTokenValues[2] = blueDrawn;
+        CardCavasSC.CurrentTokenValues[3] = yellowDrawn;
+        CardCavasSC.CurrentTokenValues[4] = orangeDrawn;
+        CardCavasSC.CurrentTokenValues[5] = purpleDrawn;
+        CardCavasSC.CurrentTokenValues[6] = greenDrawn;
+        CardCavasSC.CurrentTokenValues[7] = wildDrawn;
     
     }
 
@@ -140,7 +139,54 @@ public class PlayerBag : MonoBehaviour
             redDrawn = redDrawn + val;
         }else if (toke.color.ToLower() == "blue"){
             blueDrawn = blueDrawn + val;
+        }else if (toke.color.ToLower() == "yellow"){
+            yellowDrawn = yellowDrawn + val;
+        }else if (toke.color.ToLower() == "green"){
+            greenDrawn = greenDrawn + val;
+        }else if (toke.color.ToLower() == "purple"){
+            purpleDrawn = purpleDrawn + val;
+        }else if (toke.color.ToLower() == "orange"){
+            orangeDrawn = orangeDrawn + val;
+        }else if (toke.color.ToLower() == "wild"){
+            wildDrawn = wildDrawn + val;
         }
     }
- 
+
+    void initializeTokensInfo(){
+                whiteCnt = whiteValue.Count;
+        whiteTotal = whiteValue.Sum();
+        currentTokenValues.Add(whiteTotal);
+        
+        redCnt = redValues.Count;
+        redTotal = redValues.Sum();
+        currentTokenValues.Add(redTotal);
+
+        blueCnt = blueValues.Count;
+        blueTotal = blueValues.Sum();
+        currentTokenValues.Add(blueTotal);
+
+        greenCnt = greenValues.Count;
+        greenTotal = greenValues.Sum();
+        currentTokenValues.Add(greenTotal);
+
+        yellowCnt = yellowValues.Count;
+        yellowTotal = yellowValues.Sum();
+        currentTokenValues.Add(yellowTotal);
+
+        orangeCnt = orangeValues.Count;
+        orangeTotal = orangeValues.Sum();
+        currentTokenValues.Add(orangeTotal);
+
+        greenCnt = greenValues.Count;
+        greenTotal = greenValues.Sum();
+        currentTokenValues.Add(greenTotal);
+
+        purpleCnt = purpleValues.Count;
+        purpleTotal = purpleValues.Sum();
+        currentTokenValues.Add(purpleTotal);
+
+        wildCnt = wildValues.Count;
+        wildTotal = wildValues.Sum();
+        currentTokenValues.Add(wildTotal);
+    }
 }

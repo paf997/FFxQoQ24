@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 808e16b99edec454ab7d816f8b65beab, type: 3}
-  m_Name: ArmourBreak
+  m_Name: BasicAttackAction
   m_EditorClassIdentifier: 
   cardBackgroundImg: {fileID: 0}
   cardActionIcon: {fileID: 21300000, guid: e59b956252a59486d9b98d908e644086, type: 3}
-  cardCostIcon: {fileID: 21300000, guid: b2fbcab8d32014baa927f2dec7d34b90, type: 3}
-  Name: Armour Break
-  cost: 3
-  duration: 3
+  cardCostIcon: {fileID: 21300000, guid: b7c30a68a11eb4309876b9e9b0bfea28, type: 3}
+  Name: BasicAttack
+  cost: 1
+  colorCosts: 1
+  duration: 0
   mAttAdjustment: 0
   defAdjustment: 0
-  description: 'Test
+  description: 'Cost a sword to deal weapon dmg.
 
-    Bypass Part of Enemy Defense'
+    Spend 2 red for + 1 or 3 red
+    for +2 dmg'

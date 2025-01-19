@@ -17,6 +17,7 @@ MonoBehaviour:
   cardCostIcon: {fileID: 21300000, guid: 41b34994b31ad484d92e559ee0bada48, type: 3}
   Name: Defense+
   cost: 1
+  colorCosts: 2
   duration: 2
   mAttAdjustment: 0
   defAdjustment: 2
