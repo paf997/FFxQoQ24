@@ -37,16 +37,16 @@ public class PlayerBag : MonoBehaviour
     public GameObject TC;
     TokenCanvas tokenCanvas;
     public int isPrimed = 0;
-    public GameObject playerDeck;
+    public GameObject cardCanvas;
     
      [SerializeField] List <int> currentTokenValues = new List<int>() {};
 
     public void Start (){
+
         whiteCnt = whiteValue.Count;
         whiteTotal = whiteValue.Sum();
         currentTokenValues.Add(whiteTotal);
         
-
         redCnt = redValues.Count;
         redTotal = redValues.Sum();
         currentTokenValues.Add(redTotal);
@@ -64,8 +64,6 @@ public class PlayerBag : MonoBehaviour
         currentTokenValues.Add(yellowTotal);
 
         tokenCanvas = TC.GetComponent<TokenCanvas>();
-
-        PlayerDeck playerDeckSC = playerDeck.GetComponent<PlayerDeck>();
     }
     
     public void ShuffleTokens()
@@ -97,6 +95,11 @@ public class PlayerBag : MonoBehaviour
             isPrimed = 0;
         }
         tokenCanvas.UpdateTokenVals(whiteTotal, whiteDrawn, redTotal, redDrawn, blueTotal, blueDrawn, yellowTotal, yellowDrawn);
+        CardCanvas CardCavasSC = cardCanvas.GetComponent<CardCanvas>();
+        CardCavasSC.CurrentTokenValues[0] = whiteDrawn;
+        CardCavasSC.CurrentTokenValues[1] = redDrawn;
+        CardCavasSC.CurrentTokenValues[2] = blueDrawn;
+    
     }
 
     public void PrimeAction(){
@@ -138,7 +141,6 @@ public class PlayerBag : MonoBehaviour
         }else if (toke.color.ToLower() == "blue"){
             blueDrawn = blueDrawn + val;
         }
-        
     }
  
 }

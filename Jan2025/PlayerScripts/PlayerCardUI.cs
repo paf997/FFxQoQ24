@@ -25,25 +25,40 @@ public class PlayerCardUI : MonoBehaviour
     public bool isAvailable;
     public GameObject cardCanvas;
     public GameObject playerDeckScript;
-    private PlayerDeck playerDeck;
+    private PlayerDeck playerDeck;  
+    public GameObject cardOutline;
+    public Outline cardAvailable;
+    public Outline cardUnavailable; 
 
-    
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    private void Awake()
+    {
+        Outline [] outlines = cardOutline.GetComponents<Outline>();
+        Debug.Log("The # of outlines is " + outlines.Length);
+        cardAvailable = outlines[0];
+        Debug.Log("#1: " + outlines[0]);
+        cardUnavailable = outlines[1];
+        Debug.Log("#1: " + outlines[1]);
+    }
 
     private void Start()
     {
         //UpdateCardUI();
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
-        playerDeck = playerDeckScript.GetComponent<PlayerDeck> ();
+        playerDeck = playerDeckScript.GetComponent<PlayerDeck> (); 
+
     }
 
     /// <summary>
     /// Updates the UI elements based on the assigned Token ScriptableObject.
     /// </summary>
-    public void UpdateCardUI(PlayerCardSO chosen)
+    public PlayerCardSO UpdateCardUI(PlayerCardSO chosen)
     {
         Image img;
 
-        Debug.Log("PlayerVardUI");
+        Debug.Log("PlayerCardUI");
         card = chosen;
        // playerDeck.removeCard();
 
@@ -58,7 +73,7 @@ public class PlayerCardUI : MonoBehaviour
         {
             img = cardIconImg.GetComponent<Image>();
             img.sprite = card.cardActionIcon;
-            Debug.Log("Not Empty!");
+            //Debug.Log("Not Empty!");
             
         }else{
             Debug.Log("Empty");
@@ -71,11 +86,16 @@ public class PlayerCardUI : MonoBehaviour
             Debug.Log("Not Empty!");
         }
 
-        
         if (card.cost != null)
         {
             costText.text = card.cost.ToString();
         }
+
+        return card;
+    }
+
+    public void calcPlayableCards(){
+        
     }
 
     public void RefreshUI()
@@ -86,4 +106,5 @@ public class PlayerCardUI : MonoBehaviour
     public PlayerCardSO getPlayerCardStats(){
         return card;
     }
+
 }

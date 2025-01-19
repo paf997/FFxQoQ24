@@ -19,13 +19,14 @@ public class PlayerDeck : MonoBehaviour
     public TMP_Text discardTxt;
     public TMP_Text deckTxt;
 
+
     public void Start (){
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
         deckSize = playerDeck.Count;
         discardCnt = 0;
         deckCnt = deckSize - discardCnt;
         discardTxt.text = discardCnt.ToString();
-        deckTxt.text = deckCnt.ToString();
+        deckTxt.text = deckCnt.ToString(); 
     }
     
     public void ShuffleDeck()
@@ -46,6 +47,7 @@ public class PlayerDeck : MonoBehaviour
             chosenCard = playerDeck[0];
             playerDeck.RemoveAt(0);
             playerHand.UpdateHandUI(chosenCard);
+            //playerHand.UpdatePlayableCards(chosenCard.cost);
             discardCnt++;
             discardTxt.text = discardCnt.ToString();
             deckTxt.text = playerDeck.Count.ToString();
@@ -55,7 +57,9 @@ public class PlayerDeck : MonoBehaviour
     }
 
     public void availableCardsInHand(){
-        
+        for (int i = 0; i < playerHand.handCnt; i++){
+           
+        }
     }
 
     public void removeCard(){
