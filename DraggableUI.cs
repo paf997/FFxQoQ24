@@ -6,13 +6,18 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     private Transform Transform;
     private CanvasGroup canvasGroup;
     private Mask tokenMask;
+    public bool isDiscarded = false; 
 
-    [SerializeField] RectTransform playArea;
+    [SerializeField] GameObject cardCanvasGO;
+    private CardCanvas playerHand;
+
+    //[SerializeField] RectTransform playArea;
     private void Awake()
     {
         Transform = GetComponent<Transform>();
         canvasGroup = GetComponent<CanvasGroup>();
         tokenMask = GetComponentInParent<Mask>();  // Assuming the Mask is on the parent of the image
+        playerHand = cardCanvasGO.GetComponent<CardCanvas>();
         //int playAreaX1 = playArea.position.x;
         //int playAreaX2 = playArea.rect;
         //Debug.Log("X2 ->>>" + playAreaX2);
@@ -29,8 +34,6 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         {
             tokenMask.enabled = false;  // Disable mask so the image is not clipped during drag
         }
-
-         Debug.Log(" Event data  " + eventData);
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -51,13 +54,33 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
             tokenMask.enabled = true;  // Re-enable mask to apply the masking effect again
         }
 
+        if (isPlayerCard(eventData)){
+            dropLocation();
+        }  
+    }
+
+    private bool isPlayerCard(PointerEventData eventData ){
+        if(eventData.pointerEnter.transform.parent != null){
+            //Debug.Log("Is a player card");
+            return true;
+        }else{
+            //Debug.Log("Not a player card " + eventData.pointerEnter.transform.parent);
+            return false;
+        }
+    }
+
+    void dropLocation(){
         if (Transform.position.x < 220 && Transform.position.x > 30 && Transform.position.y > -10 && Transform.position.y < 150 ){
-            Debug.Log("play Area");
+            //Debug.Log("play Area");
+            
         } else if (Transform.position.x < 460 && Transform.position.x > 272 && Transform.position.y > -10 && Transform.position.y < 150 ){
-            Debug.Log("discard Area");
-        } else{
-            Debug.Log("Not play or discard Area");
-        }   
+            //Debug.Log("discard Area");
+            isDiscarded = true;
+            playerHand.discardCardAtPos();
+            
+        } else {
+            //Debug.Log("Not play or discard Area");
+        } 
     }
 
     /*private void OnCollisionEnter(Collision other)

@@ -6,8 +6,10 @@ public class CardCanvas : MonoBehaviour
 {
     public List <GameObject> handOrder = new List<GameObject>();
     public List <PlayerCardSO> CardsInHand = new List<PlayerCardSO>();
+    public List <PlayerCardSO> CardsInDiscardPile = new List<PlayerCardSO>();
     public int handMax = 4;
     public int handCnt;
+    public int discardCnt = 0;
 
     private PlayerCardUI card;
     private GameObject PlayerCardUIScript;
@@ -20,11 +22,11 @@ public class CardCanvas : MonoBehaviour
     }
 
     public void UpdateHandUI(PlayerCardSO chosen){
-            handOrder[handCnt].SetActive(true);
+            activatePlayerHandUI(handCnt);
             card = handOrder[handCnt].GetComponent<PlayerCardUI>();
             PlayerCardSO completeCard = card.UpdateCardUI(chosen);
             CardsInHand.Add(completeCard);
-            handCnt++;
+            updateCardCounts();
             UpdatePlayableCards();
     }
 
@@ -55,17 +57,41 @@ public class CardCanvas : MonoBehaviour
     }
 
     //todo
-    public void discardCard(){
-        
+    public void discardCardAtPos(){
+        for (int i = 0; i < handOrder.Count; i++){
+            Debug.Log(" i is " + i + " " + handOrder[i].name);
+            DraggableUI discardedCard = handOrder[i].GetComponent<DraggableUI>();
+            if (handOrder[i].active  &&  discardedCard.isDiscarded){
+                Debug.Log("Discard cards at pos" + i  + " " + discardedCard);
+                CardsInDiscardPile.Add(CardsInHand[i]);
+                CardsInHand.RemoveAt(i);
+            }
+            updateCardCounts();
+        }
+        //CardsInHand.Remove(cardPos);
+        //Debug.Log(" DiscardCardT Pos" + cardPos);
     }
     
-    //todo
     public void discardAllCards(){
-        
+        for (int i = 0; i < CardsInHand.Count; i++){
+            discardCardAtPos();
+        }
+    }
+
+    void updateCardCounts(){
+        handCnt = CardsInHand.Count;
+        discardCnt = CardsInDiscardPile.Count;
     }
 
     private bool isHandFull(){
         return (CardsInHand.Count < handMax);
+    }
+
+    private void deactivatePlayerHandUI(int cardPos){
+        handOrder[cardPos].SetActive(false);
+    }
+    private void activatePlayerHandUI(int cardPos){
+        handOrder[cardPos].SetActive(true);
     }
 
 }
