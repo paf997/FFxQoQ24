@@ -56,7 +56,7 @@ public class CardCanvas : MonoBehaviour
 
     //todo
     public void discardCard(){
-        CardsInHand.Clear();
+        
     }
     
     //todo
