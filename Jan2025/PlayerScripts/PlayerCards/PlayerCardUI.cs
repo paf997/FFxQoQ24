@@ -35,11 +35,11 @@ public class PlayerCardUI : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        Outline [] outlines = cardOutline.GetComponents<Outline>();
+        //Outline [] outlines = cardOutline.GetComponents<Outline>();
        // Debug.Log("The # of outlines is " + outlines.Length);
-        cardAvailable = outlines[0];
+        //cardAvailable = outlines[0];
         //Debug.Log("#1: " + outlines[0]);
-        cardUnavailable = outlines[1];
+        //cardUnavailable = outlines[1];
         //Debug.Log("#1: " + outlines[1]);
     }
 
@@ -48,7 +48,6 @@ public class PlayerCardUI : MonoBehaviour
         //UpdateCardUI();
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
         playerDeck = playerDeckScript.GetComponent<PlayerDeck> (); 
-
     }
 
     /// <summary>
@@ -57,16 +56,12 @@ public class PlayerCardUI : MonoBehaviour
     public PlayerCardSO UpdateCardUI(PlayerCardSO chosen)
     {
         Image img;
-
         //Debug.Log("PlayerCardUI");
         card = chosen;
-       // playerDeck.removeCard();
-
+        // playerDeck.removeCard();
         // Update background color
         if (card.cardBackgroundImg != null)
-        {
-    
-        }
+        {}
 
         // Update foreground image (optional, based on token type)
         if (card.cardActionIcon != null)
@@ -74,11 +69,9 @@ public class PlayerCardUI : MonoBehaviour
             img = cardIconImg.GetComponent<Image>();
             img.sprite = card.cardActionIcon;
             //Debug.Log("Not Empty!");
-            
         }else{
             Debug.Log("Empty");
         }
-
         if (card.cardCostIcon != null)
         {
             img = cardColorImg.GetComponent<Image>();

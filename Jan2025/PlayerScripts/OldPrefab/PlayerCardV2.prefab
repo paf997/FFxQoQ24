@@ -190,9 +190,13 @@ PrefabInstance:
       propertyPath: costText
       value: 
       objectReference: {fileID: 3220861204984538946}
+    - target: {fileID: 4115079823297692450, guid: d5314ee460b6a476eb0fc1217c429adb, type: 3}
+      propertyPath: cardOutline
+      value: 
+      objectReference: {fileID: 7987567034061528206}
     - target: {fileID: 5845896692325027428, guid: d5314ee460b6a476eb0fc1217c429adb, type: 3}
       propertyPath: m_Name
-      value: Defense+ 1
+      value: PlayerCardV2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -200,10 +204,38 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1668383614956251855, guid: d5314ee460b6a476eb0fc1217c429adb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3654641503295998366}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5845896692325027428, guid: d5314ee460b6a476eb0fc1217c429adb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8719429076785365058}
   m_SourcePrefab: {fileID: 100100000, guid: d5314ee460b6a476eb0fc1217c429adb, type: 3}
 --- !u!4 &2787116550939031009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1668383614956251855, guid: d5314ee460b6a476eb0fc1217c429adb, type: 3}
+  m_PrefabInstance: {fileID: 3569834646857948974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6965473932442046794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5845896692325027428, guid: d5314ee460b6a476eb0fc1217c429adb, type: 3}
+  m_PrefabInstance: {fileID: 3569834646857948974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8719429076785365058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965473932442046794}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.09803922, g: 0.9647059, b: 0.06666665, a: 0.9764706}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!1 &7987567034061528206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6868851823927755680, guid: d5314ee460b6a476eb0fc1217c429adb, type: 3}
   m_PrefabInstance: {fileID: 3569834646857948974}
   m_PrefabAsset: {fileID: 0}

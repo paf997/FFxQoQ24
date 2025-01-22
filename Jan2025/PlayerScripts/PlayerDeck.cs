@@ -8,16 +8,20 @@ public class PlayerDeck : MonoBehaviour
 {
 
     public List <PlayerCardSO> playerDeck = new List<PlayerCardSO>();
-    public int deckSize;
+    public List <GameObject> playerDeck2 = new List<GameObject>();
+    public int deckSize = 1;
     public int deckCnt;
     public int discardCnt = 0;
     public int drawNum = 1;
     public int startingCards = 2;
     [SerializeField] private PlayerCardSO chosenCard;
+    [SerializeField] private GameObject chosenCard2;
     public GameObject cardCanvas;
     private CardCanvas playerHand;
     public TMP_Text discardTxt;
     public TMP_Text deckTxt;
+    public  Transform handIndex; 
+    public GameObject playerCardPreFab;
 
 
     public void Start (){
@@ -27,6 +31,8 @@ public class PlayerDeck : MonoBehaviour
         deckCnt = deckSize - discardCnt;
         discardTxt.text = discardCnt.ToString();
         deckTxt.text = deckCnt.ToString(); 
+        ShuffleDeck();
+        instatiateDeck();
     }
     
     public void ShuffleDeck()
@@ -51,6 +57,31 @@ public class PlayerDeck : MonoBehaviour
             discardCnt++;
             discardTxt.text = discardCnt.ToString();
             deckTxt.text = playerDeck.Count.ToString();
+        } else{
+            Debug.Log("Hand is Full");
+        }  
+    }
+
+    void instatiateDeck(){
+        Debug.Log("Instantiate");
+        GameObject newCard;
+        for (int i = 0; i < deckSize; i++){
+            newCard = Instantiate (playerCardPreFab, handIndex.position, Quaternion.identity, handIndex);
+            playerDeck2.Add(newCard);
+            PlayerCardUI card = newCard.GetComponent<PlayerCardUI>();
+            card.UpdateCardUI(playerDeck[i]);
+        }
+    }
+
+    public void drawCards (int nCards = 1){
+        if(playerHand.handCnt < playerHand.handMax){
+            //Debug.Log("playerDeck");
+            
+            chosenCard2 = playerDeck2[0];
+            playerDeck2.RemoveAt(0);
+            //playerHand.UpdateHandUI(chosenCard);
+            //playerHand.UpdatePlayableCards(chosenCard.cost);
+            deckTxt.text = playerDeck2.Count.ToString();
         } else{
             Debug.Log("Hand is Full");
         }  
