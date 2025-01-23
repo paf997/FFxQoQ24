@@ -8,7 +8,7 @@ public class CardCanvas : MonoBehaviour
     public List <PlayerCardSO> CardsInHand = new List<PlayerCardSO>();
     public List <PlayerCardSO> CardsInDiscardPile = new List<PlayerCardSO>();
     public int handMax = 4;
-    public int handCnt;
+    public int handCnt = 0;
     public int discardCnt = 0;
 
     private PlayerCardUI card;
@@ -18,7 +18,7 @@ public class CardCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        handCnt = CardsInHand.Count;
+        //handCnt = CardsInHand.Count;
 
     }
 

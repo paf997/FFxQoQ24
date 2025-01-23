@@ -86,9 +86,10 @@ public class PlayerDeck : MonoBehaviour
             if(!playerHand.isHandFull() && !isDeckEmpty()){
                 chosenCard2 = playerDeck2[1];
                 playerDeck2.RemoveAt(1);
-                int handindex = playerHand.handOrder.Count;
+                int handindex = playerHand.handCnt;
                 Debug.Log("moving to hand position " + handindex );
                 playerHand.handOrder[handindex].SetActive(true);
+                playerHand.handCnt++;
                 Transform cardPlacement = chosenCard2.GetComponent<Transform>();
                 //Debug.Log("Trans " + cardPlacement + " : " cardIn );
                 cardPlacement.position = playerHand.handOrder[handindex].transform.position;
