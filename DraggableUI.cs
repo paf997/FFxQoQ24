@@ -38,8 +38,8 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public void OnDrag(PointerEventData eventData)
     {
         Transform.position = eventData.position;  // Move the token with the drag
-        //Debug.Log(" x: " + Transform.position.x);
-        //Debug.Log(" y: " + Transform.position.y);
+       // Debug.Log(" x: " + Transform.position.x);
+       // Debug.Log(" y: " + Transform.position.y);
     }
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -70,13 +70,19 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     }
 
     void dropLocation(){
-        if (Transform.position.x < 220 && Transform.position.x > 30 && Transform.position.y > -10 && Transform.position.y < 150 ){
+        int handIndex = GetComponent<PlayerCardUI>().handIndex;
+
+        if (Transform.position.x < 250 && Transform.position.x > 30 && Transform.position.y > 20 && Transform.position.y < 215 ){
             //Debug.Log("play Area");
             
-        } else if (Transform.position.x < 460 && Transform.position.x > 272 && Transform.position.y > -10 && Transform.position.y < 150 ){
+        } else if (Transform.position.x < 515 && Transform.position.x > 290 && Transform.position.y > 20 && Transform.position.y < 215 ){
             //Debug.Log("discard Area");
             isDiscarded = true;
-            playerHand.discardCardAtPos();
+            if (handIndex > 0 &&  handIndex <= playerHand.handMax){
+                playerHand.discardCardAtPos(handIndex -1);
+            } else {
+                Debug.Log("out of range");
+            }
             
         } else {
             //Debug.Log("Not play or discard Area");

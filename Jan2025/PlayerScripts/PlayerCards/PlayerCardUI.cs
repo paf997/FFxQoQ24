@@ -7,7 +7,7 @@ public class PlayerCardUI : MonoBehaviour
     [Header("Card Data")]
     [SerializeField] private PlayerCardSO card;
     
-    public int valueIndex;
+    public int handIndex;
 
     [Header("UI Elements")]
     /*[SerializeField] private Image backgroundImage;

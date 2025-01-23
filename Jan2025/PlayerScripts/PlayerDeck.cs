@@ -82,19 +82,22 @@ public class PlayerDeck : MonoBehaviour
     public void drawCards (int nCards = 1){
         Debug.Log("playerDeck: DrawCards ");
         for (int i = 0;i < nCards;i++){
-             Debug.Log("i: " + i + "Is hand full?: " + playerHand.isHandFull() + isDeckEmpty() );
+             //Debug.Log("i: " + i + "Is hand full?: " + playerHand.isHandFull() + isDeckEmpty() );
             if(!playerHand.isHandFull() && !isDeckEmpty()){
                 chosenCard2 = playerDeck2[1];
                 playerDeck2.RemoveAt(1);
-                int handindex = playerHand.handCnt;
-                Debug.Log("moving to hand position " + handindex );
-                playerHand.handOrder[handindex].SetActive(true);
+                int handindex = playerHand.handCnt + 1;
+                //Debug.Log("moving to hand position " + handindex );
+                //playerHand.handOrder[handindex].SetActive(true);
                 playerHand.handCnt++;
                 Transform cardPlacement = chosenCard2.GetComponent<Transform>();
                 //Debug.Log("Trans " + cardPlacement + " : " cardIn );
                 cardPlacement.position = playerHand.handOrder[handindex].transform.position;
+                PlayerCardUI card = chosenCard2.GetComponent<PlayerCardUI>();
                 
                 chosenCard2.SetActive(true);
+                playerHand.CardsInHand2.Add(chosenCard2);
+                card.handIndex = playerHand.CardsInHand2.Count;
                 //playerHand.UpdateHandUI(chosenCard);
                 //playerHand.UpdatePlayableCards(chosenCard.cost);
                 deckTxt.text = playerDeck2.Count.ToString();
@@ -105,7 +108,7 @@ public class PlayerDeck : MonoBehaviour
     }
 
     public bool isDeckEmpty(){
-        Debug.Log("DeckSIze " + deckSize.ToString());
+        //Debug.Log("DeckSIze " + deckSize.ToString());
         return (deckSize < 1);
     }
 

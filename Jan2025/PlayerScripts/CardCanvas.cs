@@ -6,7 +6,8 @@ public class CardCanvas : MonoBehaviour
 {
     public List <GameObject> handOrder = new List<GameObject>();
     public List <PlayerCardSO> CardsInHand = new List<PlayerCardSO>();
-    public List <PlayerCardSO> CardsInDiscardPile = new List<PlayerCardSO>();
+    public List <GameObject> CardsInHand2 = new List<GameObject>();
+    public List <GameObject> CardsInDiscardPile = new List<GameObject>();
     public int handMax = 4;
     public int handCnt = 0;
     public int discardCnt = 0;
@@ -58,24 +59,33 @@ public class CardCanvas : MonoBehaviour
     }
 
     //todo
-    public void discardCardAtPos(){
-        for (int i = 0; i < handOrder.Count; i++){
-            Debug.Log(" i is " + i + " " + handOrder[i].name);
+    public void discardCardAtPos(int index){
+        GameObject discardedCard = CardsInHand2[index];
+        Debug.Log("Discarded" + discardedCard.name);
+        CardsInDiscardPile.Add(discardedCard);
+        card = discardedCard.GetComponent<PlayerCardUI> ();
+        Debug.Log("Card index" + card.handIndex);
+        card.handIndex = 0;
+        discardedCard.SetActive(false);
+        CardsInHand2.RemoveAt(index);
+
+       /* for (int i = 0; i < handOrder.Count; i++){
+            //Debug.Log(" i is " + i + " " + handOrder[i].name);
             DraggableUI discardedCard = handOrder[i].GetComponent<DraggableUI>();
             if (handOrder[i].active  &&  discardedCard.isDiscarded){
-                Debug.Log("Discard cards at pos" + i  + " " + discardedCard);
+                //Debug.Log("Discard cards at pos" + i  + " " + discardedCard);
                 CardsInDiscardPile.Add(CardsInHand[i]);
                 CardsInHand.RemoveAt(i);
             }
             updateCardCounts();
-        }
+        }*/
         //CardsInHand.Remove(cardPos);
         //Debug.Log(" DiscardCardT Pos" + cardPos);
     }
     
     public void discardAllCards(){
         for (int i = 0; i < CardsInHand.Count; i++){
-            discardCardAtPos();
+            discardCardAtPos(i);
         }
     }
 
@@ -85,7 +95,7 @@ public class CardCanvas : MonoBehaviour
     }
 
     public bool isHandFull(){
-         Debug.Log("Cards in HAnd Count " +  CardsInHand.Count);
+         //Debug.Log("Cards in HAnd Count " +  CardsInHand.Count);
         return (CardsInHand.Count > handMax);
     }
 
