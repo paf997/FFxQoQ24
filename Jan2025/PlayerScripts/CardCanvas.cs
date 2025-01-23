@@ -19,6 +19,7 @@ public class CardCanvas : MonoBehaviour
     void Start()
     {
         handCnt = CardsInHand.Count;
+
     }
 
     public void UpdateHandUI(PlayerCardSO chosen){
@@ -83,8 +84,9 @@ public class CardCanvas : MonoBehaviour
         discardCnt = CardsInDiscardPile.Count;
     }
 
-    private bool isHandFull(){
-        return (CardsInHand.Count < handMax);
+    public bool isHandFull(){
+         Debug.Log("Cards in HAnd Count " +  CardsInHand.Count);
+        return (CardsInHand.Count > handMax);
     }
 
     private void deactivatePlayerHandUI(int cardPos){

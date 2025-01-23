@@ -20,24 +20,27 @@ public class PlayerDeck : MonoBehaviour
     private CardCanvas playerHand;
     public TMP_Text discardTxt;
     public TMP_Text deckTxt;
-    public  Transform handIndex; 
-    public GameObject playerCardPreFab;
+    public Transform handIndex; 
+    public Transform currentHandIndex;
+    [SerializeField] int handIndexSpacing = 2;
 
+    public GameObject playerCardPreFab;
 
     public void Start (){
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
-        deckSize = playerDeck.Count;
+        deckSize = playerDeck2.Count;
         discardCnt = 0;
         deckCnt = deckSize - discardCnt;
         discardTxt.text = discardCnt.ToString();
         deckTxt.text = deckCnt.ToString(); 
         ShuffleDeck();
         instatiateDeck();
+        drawCards(4);
     }
     
     public void ShuffleDeck()
     {
-        for (int i = 0; i < playerDeck.Count; i++)
+        for (int i = 0; i < 2; i++)
         {
             int randomIndex = Random.Range(0, playerDeck.Count);
             PlayerCardSO temp = playerDeck[i];
@@ -65,26 +68,44 @@ public class PlayerDeck : MonoBehaviour
     void instatiateDeck(){
         Debug.Log("Instantiate");
         GameObject newCard;
-        for (int i = 0; i < deckSize; i++){
-            newCard = Instantiate (playerCardPreFab, handIndex.position, Quaternion.identity, handIndex);
+        for (int i = 0; i < 5/*deckSize*/; i++){
+            currentHandIndex = playerHand.handOrder[0].transform;//change back to i later for hand 
+            newCard = Instantiate (playerCardPreFab, currentHandIndex.position, Quaternion.identity, currentHandIndex);
+            //newCard.SetActive(false);
             playerDeck2.Add(newCard);
             PlayerCardUI card = newCard.GetComponent<PlayerCardUI>();
             card.UpdateCardUI(playerDeck[i]);
+            deckSize = playerDeck2.Count;
         }
     }
 
     public void drawCards (int nCards = 1){
-        if(playerHand.handCnt < playerHand.handMax){
-            //Debug.Log("playerDeck");
-            
-            chosenCard2 = playerDeck2[0];
-            playerDeck2.RemoveAt(0);
-            //playerHand.UpdateHandUI(chosenCard);
-            //playerHand.UpdatePlayableCards(chosenCard.cost);
-            deckTxt.text = playerDeck2.Count.ToString();
-        } else{
-            Debug.Log("Hand is Full");
-        }  
+        Debug.Log("playerDeck: DrawCards ");
+        for (int i = 0;i < nCards;i++){
+             Debug.Log("i: " + i + "Is hand full?: " + playerHand.isHandFull() + isDeckEmpty() );
+            if(!playerHand.isHandFull() && !isDeckEmpty()){
+                chosenCard2 = playerDeck2[1];
+                playerDeck2.RemoveAt(1);
+                int handindex = playerHand.handOrder.Count;
+                Debug.Log("moving to hand position " + handindex );
+                playerHand.handOrder[handindex].SetActive(true);
+                Transform cardPlacement = chosenCard2.GetComponent<Transform>();
+                //Debug.Log("Trans " + cardPlacement + " : " cardIn );
+                cardPlacement.position = playerHand.handOrder[handindex].transform.position;
+                
+                chosenCard2.SetActive(true);
+                //playerHand.UpdateHandUI(chosenCard);
+                //playerHand.UpdatePlayableCards(chosenCard.cost);
+                deckTxt.text = playerDeck2.Count.ToString();
+            } else{
+                Debug.Log("Hand is Full");
+            } 
+        } 
+    }
+
+    public bool isDeckEmpty(){
+        Debug.Log("DeckSIze " + deckSize.ToString());
+        return (deckSize < 1);
     }
 
     public void availableCardsInHand(){
