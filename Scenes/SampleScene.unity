@@ -16781,6 +16781,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2004472982}
   cardCanvas: {fileID: 2089187175}
+  tokenCanvasGO: {fileID: 0}
+  playerBagGO: {fileID: 0}
   target: {fileID: 0}
 --- !u!1 &2022935935 stripped
 GameObject:

@@ -8,6 +8,10 @@ public class PlayArea : MonoBehaviour
     [Header("Player Info")]       
     [SerializeField] PlayerInfo player;
     [SerializeField] CardCanvas cardCanvas;
+    [SerializeField] GameObject tokenCanvasGO;
+    TokenCanvas tokenCanvas;
+    [SerializeField] GameObject playerBagGO;
+    PlayerBag playerBag;
     CardCanvas playerHand;
     
     [Header("Enemy Info")]
@@ -15,6 +19,9 @@ public class PlayArea : MonoBehaviour
     void Start()
     {
         playerHand = cardCanvas.GetComponent<CardCanvas>();
+        playerBag = playerBagGO.GetComponent<PlayerBag>();
+        tokenCanvas = tokenCanvasGO.GetComponent<TokenCanvas>();
+        
     }
 
     void getPlayedCardInfo(GameObject playedCard){
