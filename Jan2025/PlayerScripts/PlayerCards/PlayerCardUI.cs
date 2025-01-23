@@ -29,6 +29,20 @@ public class PlayerCardUI : MonoBehaviour
     public GameObject cardOutline;
     public Outline cardAvailable;
     public Outline cardUnavailable; 
+    [SerializeField] Color available = new Color (.40f, .290f, 1.0f, .70f);
+    [SerializeField] Color unavailable = new Color (.3f, .050f, .80f, .80f);
+    [SerializeField] Color selected = new Color (.2000f, .60f, 1.0f, .10f);
+    [SerializeField] Color [] availbilityColors = new Color[3];
+    public int borderColorCode;
+
+    public int cost;
+    public int color;
+
+    public int block;
+    public int att;
+    public int poison;
+
+    //public Color [] cardAvailabilityColors = new Color{  };
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -47,7 +61,34 @@ public class PlayerCardUI : MonoBehaviour
     {
         //UpdateCardUI();
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
-        playerDeck = playerDeckScript.GetComponent<PlayerDeck> (); 
+        playerDeck = playerDeckScript.GetComponent<PlayerDeck>(); 
+
+        //Debug.Log("Type of ob = " + cardAvailable.effectColor);
+        //cardAvailable.effectColor = new Color(.2000f, .050f, 1.0f, .80f);
+    }
+
+    private void uploadAvailabilityColors(){
+        availbilityColors[0] = available;
+        availbilityColors[1] = unavailable;
+        availbilityColors[2] = selected;
+    }
+
+    public void updateCardAvailabilityUI(int colorNum){
+
+        cardAvailable.enabled = true;
+        borderColorCode = colorNum;
+
+        if (borderColorCode == 0){
+            cardAvailable.effectColor = available;
+        }else if(borderColorCode == 1){
+            cardAvailable.effectColor = unavailable;
+        }else if(borderColorCode == 2){
+            Debug.Log("selected");
+            cardAvailable.effectColor = selected;
+        }else{
+            Debug.Log("None " + borderColorCode);
+            cardAvailable.enabled = false;
+        }
     }
 
     /// <summary>
@@ -82,6 +123,7 @@ public class PlayerCardUI : MonoBehaviour
         if (card.cost != null)
         {
             costText.text = card.cost.ToString();
+            cost = card.cost;
         }
 
         return card;

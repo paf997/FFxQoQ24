@@ -10,6 +10,8 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
     [SerializeField] GameObject cardCanvasGO;
     private CardCanvas playerHand;
+    [SerializeField] PlayerCardUI playerCard;
+    private int colorBorderCode;
 
     //[SerializeField] RectTransform playArea;
     private void Awake()
@@ -34,6 +36,10 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         {
             tokenMask.enabled = false;  // Disable mask so the image is not clipped during drag
         }
+
+        colorBorderCode = playerCard.borderColorCode;
+       playerCard.updateCardAvailabilityUI(2);
+
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -55,8 +61,10 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         }
 
         if (isPlayerCard(eventData)){
+            playerCard.updateCardAvailabilityUI(colorBorderCode);
             dropLocation();
         }  
+
     }
 
     private bool isPlayerCard(PointerEventData eventData ){
@@ -88,6 +96,7 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
             //Debug.Log("Not play or discard Area");
         } 
     }
+
 
     /*private void OnCollisionEnter(Collision other)
     {

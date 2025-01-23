@@ -36,6 +36,7 @@ public class PlayerDeck : MonoBehaviour
         ShuffleDeck();
         instatiateDeck();
         drawCards(4);
+        
     }
     
     public void ShuffleDeck()
@@ -104,6 +105,8 @@ public class PlayerDeck : MonoBehaviour
             } else{
                 Debug.Log("Hand is Full");
             } 
+
+            playerHand.UpdatePlayableCards();
         } 
     }
 
