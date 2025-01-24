@@ -11,6 +11,8 @@ public class CardCanvas : MonoBehaviour
     public int handMax = 4;
     public int handCnt = 0;
     public int discardCnt = 0;
+    [SerializeField] GameObject PlayAreaGO;
+    PlayArea playArea;
 
     private PlayerCardUI card;
     private GameObject PlayerCardUIScript;
@@ -20,6 +22,7 @@ public class CardCanvas : MonoBehaviour
     void Start()
     {
         //handCnt = CardsInHand.Count;
+        playArea = PlayAreaGO.GetComponent<PlayArea>();
 
     }
 
@@ -85,6 +88,10 @@ public class CardCanvas : MonoBehaviour
         }*/
         //CardsInHand.Remove(cardPos);
         //Debug.Log(" DiscardCardT Pos" + cardPos);
+    }
+
+    public void putCardInPlayArea(int cardIndex){
+        playArea.playedCards.Add(CardsInHand2[cardIndex]);
     }
     
     public void discardAllCards(){

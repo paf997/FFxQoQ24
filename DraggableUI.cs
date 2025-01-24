@@ -12,6 +12,7 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     private CardCanvas playerHand;
     [SerializeField] PlayerCardUI playerCard;
     private int colorBorderCode;
+    [SerializeField] int handIndex;
 
     //[SerializeField] RectTransform playArea;
     private void Awake()
@@ -20,6 +21,7 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         canvasGroup = GetComponent<CanvasGroup>();
         tokenMask = GetComponentInParent<Mask>();  // Assuming the Mask is on the parent of the image
         playerHand = cardCanvasGO.GetComponent<CardCanvas>();
+        handIndex = GetComponent<PlayerCardUI>().handIndex;
         //int playAreaX1 = playArea.position.x;
         //int playAreaX2 = playArea.rect;
         //Debug.Log("X2 ->>>" + playAreaX2);
@@ -78,10 +80,11 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     }
 
     void dropLocation(){
-        int handIndex = GetComponent<PlayerCardUI>().handIndex;
 
         if (Transform.position.x < 250 && Transform.position.x > 30 && Transform.position.y > 20 && Transform.position.y < 215 ){
-            //Debug.Log("play Area");
+            Debug.Log("play Area");
+            playerHand.putCardInPlayArea(handIndex-1);
+            playerHand.discardCardAtPos(handIndex -1);
             
         } else if (Transform.position.x < 515 && Transform.position.x > 290 && Transform.position.y > 20 && Transform.position.y < 215 ){
             //Debug.Log("discard Area");

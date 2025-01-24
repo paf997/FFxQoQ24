@@ -19,6 +19,7 @@ public class PlayerCardUI : MonoBehaviour
     public GameObject cardIconImg;
     public GameObject cardColorImg;
     private CardCanvas playerHand;
+    public int nAbilities = 1;
 
     private Sprite sprite;
     public bool isEmpty;
@@ -29,6 +30,8 @@ public class PlayerCardUI : MonoBehaviour
     public GameObject cardOutline;
     public Outline cardAvailable;
     public Outline cardUnavailable; 
+    [SerializeField] GameObject PlayAreaGO ;
+    PlayArea executeAction;
     [SerializeField] Color available = new Color (.40f, .290f, 1.0f, .70f);
     [SerializeField] Color unavailable = new Color (.3f, .050f, .80f, .80f);
     [SerializeField] Color selected = new Color (.2000f, .60f, 1.0f, .10f);
@@ -41,6 +44,10 @@ public class PlayerCardUI : MonoBehaviour
     public int block;
     public int att;
     public int poison;
+    public int pierce;
+    public int heal;
+    [SerializeField] int abilityUses;
+    [SerializeField] int abilityUseRounds;
 
     //public Color [] cardAvailabilityColors = new Color{  };
 
@@ -62,6 +69,8 @@ public class PlayerCardUI : MonoBehaviour
         //UpdateCardUI();
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
         playerDeck = playerDeckScript.GetComponent<PlayerDeck>(); 
+        executeAction = PlayAreaGO.GetComponent<PlayArea>();
+        
 
         //Debug.Log("Type of ob = " + cardAvailable.effectColor);
         //cardAvailable.effectColor = new Color(.2000f, .050f, 1.0f, .80f);
@@ -90,6 +99,29 @@ public class PlayerCardUI : MonoBehaviour
             cardAvailable.enabled = false;
         }
     }
+
+    public void executeCardAbilities(){
+        if(att > 0){}
+        if(block > 0){
+            executeAction.adjustDef(0, block);
+        }
+        if(poison > 0){}
+        if(heal > 0){}
+        if(heal > 0){}
+    }
+    public void cardAbility0(){
+
+    }
+
+    public void cardAbility1(){
+
+    }
+
+    public void cardAbility2(){
+
+    }
+
+
 
     /// <summary>
     /// Updates the UI elements based on the assigned Token ScriptableObject.

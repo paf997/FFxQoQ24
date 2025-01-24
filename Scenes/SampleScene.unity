@@ -1413,6 +1413,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1491598816}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &196217008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 196217009}
+  m_Layer: 0
+  m_Name: BattleCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &196217009
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196217008}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.60765386}
+  m_LocalScale: {x: 0.6300508, y: 1.1004264, z: 1.0354}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 225834730}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -305.3045, y: -159.46942}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &209454966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1632,6 +1667,7 @@ RectTransform:
   m_Children:
   - {fileID: 1869737316}
   - {fileID: 2089187168}
+  - {fileID: 196217009}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6691,6 +6727,7 @@ RectTransform:
   - {fileID: 544541395}
   - {fileID: 3020090241095733427}
   - {fileID: 401390880}
+  - {fileID: 814775147}
   m_Father: {fileID: 1136592157}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7418,6 +7455,106 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &814775146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814775147}
+  - component: {fileID: 814775150}
+  - component: {fileID: 814775149}
+  - component: {fileID: 814775148}
+  m_Layer: 0
+  m_Name: EnemyV2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &814775147
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814775146}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 752880736}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -322.99988, y: -210.99998}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &814775148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814775146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646e93f1bab864c079ae79444da3bd08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 0
+  color: 0
+  block: 0
+  att: 0
+  poison: 0
+  pierce: 0
+  heal: 0
+  health: 8
+  maxHealth: 8
+  dmgMelee: 2
+  defMelee: 2
+  enemySprite: {fileID: 21300000, guid: cd2d6fa9406f5440cb93be328e99bbae, type: 3}
+--- !u!114 &814775149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814775146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.990566, g: 0.98589355, b: 0.98589355, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cd2d6fa9406f5440cb93be328e99bbae, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &814775150
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814775146}
+  m_CullTransparentMesh: 1
 --- !u!1 &823440291
 GameObject:
   m_ObjectHideFlags: 0
@@ -14195,6 +14332,7 @@ MonoBehaviour:
   isDiscarded: 0
   cardCanvasGO: {fileID: 0}
   playerCard: {fileID: 0}
+  handIndex: 0
 --- !u!224 &1757368583 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2594347571246203412, guid: a67fa0385f1794f40b48f42045b69a20, type: 3}
@@ -14966,6 +15104,7 @@ MonoBehaviour:
   isDiscarded: 0
   cardCanvasGO: {fileID: 0}
   playerCard: {fileID: 0}
+  handIndex: 0
 --- !u!1 &1848146845
 GameObject:
   m_ObjectHideFlags: 0
@@ -15238,6 +15377,7 @@ MonoBehaviour:
   isDiscarded: 0
   cardCanvasGO: {fileID: 0}
   playerCard: {fileID: 0}
+  handIndex: 0
 --- !u!1 &1860721649
 GameObject:
   m_ObjectHideFlags: 0
@@ -16678,7 +16818,6 @@ GameObject:
   - component: {fileID: 2004472979}
   - component: {fileID: 2004472983}
   - component: {fileID: 2004472982}
-  - component: {fileID: 2004472981}
   m_Layer: 0
   m_Name: PlayArea
   m_TagString: Untagged
@@ -16743,18 +16882,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004472977}
   m_CullTransparentMesh: 1
---- !u!114 &2004472981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004472977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 646e93f1bab864c079ae79444da3bd08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2004472982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16767,6 +16894,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80bcf06268fb41c3a2678842003ec22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  defMelee: 0
+  maxHealth: 0
+  cost: 0
+  color: 0
+  block: 0
+  att: 0
+  poison: 0
+  pierce: 0
 --- !u!114 &2004472983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16780,10 +16916,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2004472982}
+  defMelee: 0
   cardCanvas: {fileID: 2089187175}
-  tokenCanvasGO: {fileID: 0}
-  playerBagGO: {fileID: 0}
-  target: {fileID: 0}
+  tokenCanvasGO: {fileID: 1869737315}
+  playerBagGO: {fileID: 1276602428}
+  cost: 0
+  color: 0
+  block: 0
+  att: 0
+  poison: 0
+  pierce: 0
+  playedCards: []
+  enemyTarget: {fileID: 0}
 --- !u!1 &2022935935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6965473932442046794, guid: 78026b99032734abd92391b362e412bc, type: 3}
@@ -17281,6 +17425,7 @@ MonoBehaviour:
   handMax: 4
   handCnt: 0
   discardCnt: 0
+  PlayAreaGO: {fileID: 0}
   CurrentTokenValues: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &2093720656
 GameObject:
@@ -17710,6 +17855,7 @@ MonoBehaviour:
   isDiscarded: 0
   cardCanvasGO: {fileID: 2089187167}
   playerCard: {fileID: 3020090241095733428}
+  handIndex: 0
 --- !u!1001 &4429419196492066701
 PrefabInstance:
   m_ObjectHideFlags: 0
