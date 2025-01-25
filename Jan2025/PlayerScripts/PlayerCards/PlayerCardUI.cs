@@ -6,6 +6,7 @@ public class PlayerCardUI : MonoBehaviour
 {
     [Header("Card Data")]
     [SerializeField] private PlayerCardSO card;
+    public PlayerCardSO cardData;
     
     public int handIndex;
 
@@ -126,11 +127,13 @@ public class PlayerCardUI : MonoBehaviour
     /// <summary>
     /// Updates the UI elements based on the assigned Token ScriptableObject.
     /// </summary>
-    public PlayerCardSO UpdateCardUI(PlayerCardSO chosen)
+    public PlayerCardSO UpdateCardUI()
     {
+        card = cardData;
+
         Image img;
         //Debug.Log("PlayerCardUI");
-        card = chosen;
+
         // playerDeck.removeCard();
         // Update background color
         if (card.cardBackgroundImg != null)

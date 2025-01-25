@@ -21,7 +21,7 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         canvasGroup = GetComponent<CanvasGroup>();
         tokenMask = GetComponentInParent<Mask>();  // Assuming the Mask is on the parent of the image
         playerHand = cardCanvasGO.GetComponent<CardCanvas>();
-        handIndex = GetComponent<PlayerCardUI>().handIndex;
+        
         //int playAreaX1 = playArea.position.x;
         //int playAreaX2 = playArea.rect;
         //Debug.Log("X2 ->>>" + playAreaX2);
@@ -46,7 +46,7 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public void OnDrag(PointerEventData eventData)
     {
         Transform.position = eventData.position;  // Move the token with the drag
-       // Debug.Log(" x: " + Transform.position.x);
+        //Debug.Log(" x: " + Transform.position.x);
        // Debug.Log(" y: " + Transform.position.y);
     }
     public void OnEndDrag(PointerEventData eventData)
@@ -80,21 +80,20 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     }
 
     void dropLocation(){
-
+        handIndex = GetComponent<PlayerCardUI>().handIndex;
+        Debug.Log("Draggable handIndex" + handIndex);
         if (Transform.position.x < 250 && Transform.position.x > 30 && Transform.position.y > 20 && Transform.position.y < 215 ){
             Debug.Log("play Area");
-            playerHand.putCardInPlayArea(handIndex-1);
-            playerHand.discardCardAtPos(handIndex -1);
+            playerHand.putCardInPlayArea(handIndex);
             
         } else if (Transform.position.x < 515 && Transform.position.x > 290 && Transform.position.y > 20 && Transform.position.y < 215 ){
             //Debug.Log("discard Area");
             isDiscarded = true;
             if (handIndex > 0 &&  handIndex <= playerHand.handMax){
-                playerHand.discardCardAtPos(handIndex -1);
+                playerHand.discardCardAtPos(handIndex);
             } else {
                 Debug.Log("out of range");
             }
-            
         } else {
             //Debug.Log("Not play or discard Area");
         } 

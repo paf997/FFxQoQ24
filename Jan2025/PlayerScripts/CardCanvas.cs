@@ -29,11 +29,20 @@ public class CardCanvas : MonoBehaviour
     public void UpdateHandUI(PlayerCardSO chosen){
             activatePlayerHandUI(handCnt);
             card = handOrder[handCnt].GetComponent<PlayerCardUI>();
-            PlayerCardSO completeCard = card.UpdateCardUI(chosen);
+            PlayerCardSO completeCard = card.UpdateCardUI();
             CardsInHand.Add(completeCard);
             updateCardCounts();
             UpdatePlayableCards();
     }
+
+        public void UpdateHandUI2(GameObject chosen2){
+            activatePlayerHandUI(handCnt);
+            card = handOrder[handCnt].GetComponent<PlayerCardUI>();
+            PlayerCardSO completeCard = card.UpdateCardUI();
+            CardsInHand.Add(completeCard);
+            updateCardCounts();
+            UpdatePlayableCards();
+        }
 
     public void UpdatePlayableCards(/*int white = 0 , int red = 0; int blue = 0, int green = 0, int yellow = 0, int purple = 0*/){
         int cost = 0;
@@ -65,9 +74,18 @@ public class CardCanvas : MonoBehaviour
         return (cost <= color);
     }
 
-    //todo
+    public void updateHandIndices(int index){
+        for (int i = index; i < CardsInHand2.Count; i++) {
+            GameObject cardGO = CardsInHand2[i];
+            card = cardGO.GetComponent<PlayerCardUI>();
+            Debug.Log("Update Indcies before " + card.handIndex);
+            card.handIndex = i;
+            UpdateHandUI2(cardGO);
+            Debug.Log("Update Indcies after " + card.handIndex);
+        }
+    }
     public void discardCardAtPos(int index){
-        GameObject discardedCard = CardsInHand2[index];
+        GameObject discardedCard = CardsInHand2[index] ;
         Debug.Log("Discarded" + discardedCard.name);
         CardsInDiscardPile.Add(discardedCard);
         card = discardedCard.GetComponent<PlayerCardUI> ();
@@ -75,6 +93,8 @@ public class CardCanvas : MonoBehaviour
         card.handIndex = 0;
         discardedCard.SetActive(false);
         CardsInHand2.RemoveAt(index);
+        updateHandIndices(index);
+        updateCardCounts();
 
        /* for (int i = 0; i < handOrder.Count; i++){
             //Debug.Log(" i is " + i + " " + handOrder[i].name);
@@ -91,17 +111,29 @@ public class CardCanvas : MonoBehaviour
     }
 
     public void putCardInPlayArea(int cardIndex){
-        playArea.playedCards.Add(CardsInHand2[cardIndex]);
+        Debug.Log("Put in play are ---- CardIndex" + cardIndex);
+        GameObject tempCard = CardsInHand2[cardIndex];
+        
+        playArea.playedCards.Add(tempCard);
+        discardCardAtPos(cardIndex);
+        playArea.getPlayedCardInfo(tempCard);
     }
     
     public void discardAllCards(){
-        for (int i = 0; i < CardsInHand.Count; i++){
+        for (int i = 1; i < CardsInHand.Count; i++){
             discardCardAtPos(i);
         }
     }
 
+    public void addCardToHandPos(GameObject cardToAdd){
+        card = cardToAdd.GetComponent<PlayerCardUI> ();
+        CardsInHand2.Add(cardToAdd);
+        card.handIndex = CardsInHand2.Count -1;
+        Debug.Log("CardCanvas/PlayerCard: " + card.handIndex );
+    }
+
     void updateCardCounts(){
-        handCnt = CardsInHand.Count;
+        handCnt = CardsInHand2.Count;
         discardCnt = CardsInDiscardPile.Count;
     }
 

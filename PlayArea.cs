@@ -21,6 +21,7 @@ public class PlayArea : MonoBehaviour
     [SerializeField] int pierce;
     PlayerBag playerBag;
     CardCanvas playerHand;
+    GameObject Card;
 
     public List <GameObject> playedCards = new List<GameObject>();
     
@@ -35,9 +36,11 @@ public class PlayArea : MonoBehaviour
         target = enemyTarget.GetComponent<EnemyInfo>();
     }
 
-    void getPlayedCardInfo(GameObject playedCard){
+    public void getPlayedCardInfo(GameObject playedCard){
+        
         PlayerCardUI cardStats = playedCard.GetComponent<PlayerCardUI>();
         cardStats.executeCardAbilities();
+
     }
 
     public void adjustDef(int type = 0, int adjustment = 0){

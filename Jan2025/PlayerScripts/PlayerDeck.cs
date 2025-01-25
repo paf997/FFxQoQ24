@@ -8,6 +8,7 @@ public class PlayerDeck : MonoBehaviour
 {
 
     public List <PlayerCardSO> playerDeck = new List<PlayerCardSO>();
+
     public List <GameObject> playerDeck2 = new List<GameObject>();
     public int deckSize = 1;
     public int deckCnt;
@@ -35,7 +36,7 @@ public class PlayerDeck : MonoBehaviour
         deckTxt.text = deckCnt.ToString(); 
         ShuffleDeck();
         instatiateDeck();
-        drawCards(4);
+        drawCards(5);
         
     }
     
@@ -73,9 +74,11 @@ public class PlayerDeck : MonoBehaviour
             currentHandIndex = playerHand.handOrder[0].transform;//change back to i later for hand 
             newCard = Instantiate (playerCardPreFab, currentHandIndex.position, Quaternion.identity, currentHandIndex);
             //newCard.SetActive(false);
-            playerDeck2.Add(newCard);
+            Debug.Log("Card created: " + newCard.name.ToString());
             PlayerCardUI card = newCard.GetComponent<PlayerCardUI>();
-            card.UpdateCardUI(playerDeck[i]);
+            card.cardData = playerDeck[i];
+            playerDeck2.Add(newCard);
+            card.UpdateCardUI();
             deckSize = playerDeck2.Count;
         }
     }
@@ -83,22 +86,25 @@ public class PlayerDeck : MonoBehaviour
     public void drawCards (int nCards = 1){
         Debug.Log("playerDeck: DrawCards ");
         for (int i = 0;i < nCards;i++){
-             //Debug.Log("i: " + i + "Is hand full?: " + playerHand.isHandFull() + isDeckEmpty() );
+             Debug.Log("i: " + i + "Is hand full?: " + playerHand.isHandFull() + isDeckEmpty() );
             if(!playerHand.isHandFull() && !isDeckEmpty()){
-                chosenCard2 = playerDeck2[1];
-                playerDeck2.RemoveAt(1);
-                int handindex = playerHand.handCnt + 1;
-                //Debug.Log("moving to hand position " + handindex );
+                chosenCard2 = playerDeck2[0];
+                playerDeck2.RemoveAt(0);
+                int handindex = playerHand.handCnt;
+                Debug.Log("moving to hand position " + handindex );
                 //playerHand.handOrder[handindex].SetActive(true);
                 playerHand.handCnt++;
                 Transform cardPlacement = chosenCard2.GetComponent<Transform>();
                 //Debug.Log("Trans " + cardPlacement + " : " cardIn );
-                cardPlacement.position = playerHand.handOrder[handindex].transform.position;
+                cardPlacement.position = playerHand.handOrder[playerHand.handCnt].transform.position;
                 PlayerCardUI card = chosenCard2.GetComponent<PlayerCardUI>();
                 
                 chosenCard2.SetActive(true);
-                playerHand.CardsInHand2.Add(chosenCard2);
                 card.handIndex = playerHand.CardsInHand2.Count;
+                Debug.Log("Adding card now in deck script " + card.handIndex);
+                playerHand.addCardToHandPos(chosenCard2);
+
+                Debug.Log(" Card index " + card.handIndex + "playerHandCard count " + playerHand.CardsInHand2.Count );
                 //playerHand.UpdateHandUI(chosenCard);
                 //playerHand.UpdatePlayableCards(chosenCard.cost);
                 deckTxt.text = playerDeck2.Count.ToString();
