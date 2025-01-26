@@ -15,13 +15,15 @@ public class PlayerInfo : MonoBehaviour{
     [SerializeField] int poison;
     [SerializeField] int pierce;
 
-    public TMP_Text text;
+
     [SerializeField] string [] statUIStrings = new string [3] { "Def: ", "Att: ", "Poison: ",};
-    public TextMeshProUGUI text2; 
+    public TextMeshProUGUI  text; 
+  
     // Start is called before the first frame update
     void Start()
     {
-
+   
+       // text.text = " 0 , 0- , 0";
     }
     public bool isDead(){
         return (health < 1);
@@ -62,7 +64,7 @@ public class PlayerInfo : MonoBehaviour{
         text.text = stringUICat;
         stringUICat = "";
         }else{
-            Debug.Log("Null");
+            Debug.Log("Null" + text);
         }
 
     }

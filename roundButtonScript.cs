@@ -6,7 +6,7 @@ using TMPro;
 public class roundButtonScript : MonoBehaviour
 {
 
-    public TMP_Text roundButtonTxt;
+    public TextMeshProUGUI roundButtonTxt;
     public int round = 0; 
 
     // Start is called before the first frame update

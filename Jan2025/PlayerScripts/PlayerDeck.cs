@@ -19,8 +19,8 @@ public class PlayerDeck : MonoBehaviour
     [SerializeField] private GameObject chosenCard2;
     public GameObject cardCanvas;
     private CardCanvas playerHand;
-    public TMP_Text discardTxt;
-    public TMP_Text deckTxt;
+    public TextMeshProUGUI discardTxt;
+    public TextMeshProUGUI deckTxt;
     public Transform handIndex; 
     public Transform currentHandIndex;
     [SerializeField] int handIndexSpacing = 2;
