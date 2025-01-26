@@ -73,19 +73,19 @@ public class CardCanvas : MonoBehaviour
         for (int i = index; i < CardsInHand2.Count; i++) {
             GameObject cardGO = CardsInHand2[i];
             card = cardGO.GetComponent<PlayerCardUI>();
-            Debug.Log("Update Indcies before " + card.handIndex);
+            //Debug.Log("Update Indcies before " + card.handIndex);
             card.handIndex = i;
-            Debug.Log("Update Indcies after " + card.handIndex);
-            Debug.Log(" handOrder i and i+1 " + handOrder[i].transform.position + " : " + handOrder[i +1].transform.position);
+            //Debug.Log("Update Indcies after " + card.handIndex);
+            //Debug.Log(" handOrder i and i+1 " + handOrder[i].transform.position + " : " + handOrder[i +1].transform.position);
             cardGO.transform.position = handOrder[i+1].transform.position;
         }
     }
     public void discardCardAtPos(int index){
         GameObject discardedCard = CardsInHand2[index] ;
-        Debug.Log("Discarded" + discardedCard.name);
+        //Debug.Log("Discarded" + discardedCard.name);
         CardsInDiscardPile.Add(discardedCard);
         card = discardedCard.GetComponent<PlayerCardUI> ();
-        Debug.Log("Card index discarded" + card.handIndex);
+        //Debug.Log("Card index discarded" + card.handIndex);
         discardedCard.SetActive(false);
         CardsInHand2.RemoveAt(index);
         updateHandIndices(index);

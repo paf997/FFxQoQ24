@@ -71,6 +71,7 @@ public class PlayerCardUI : MonoBehaviour
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
         playerDeck = playerDeckScript.GetComponent<PlayerDeck>(); 
         executeAction = PlayAreaGO.GetComponent<PlayArea>();
+       
         
 
         //Debug.Log("Type of ob = " + cardAvailable.effectColor);
@@ -102,9 +103,11 @@ public class PlayerCardUI : MonoBehaviour
     }
 
     public void executeCardAbilities(){
+        Debug.Log("Execute Card abilities");
         if(att > 0){}
-        if(block > 0){
-            executeAction.adjustDef(0, block);
+        if(cardData.defAdjustment > 0){
+            Debug.Log("Execute -- adjDef");
+            executeAction.adjustDef(0, cardData.defAdjustment);
         }
         if(poison > 0){}
         if(heal > 0){}

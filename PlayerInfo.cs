@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerInfo : MonoBehaviour{
     [SerializeField] int health;
@@ -13,10 +14,14 @@ public class PlayerInfo : MonoBehaviour{
     [SerializeField]  int att;
     [SerializeField] int poison;
     [SerializeField] int pierce;
+
+    public TMP_Text text;
+    [SerializeField] string [] statUIStrings = new string [3] { "Def: ", "Att: ", "Poison: ",};
+    public TextMeshProUGUI text2; 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
     public bool isDead(){
         return (health < 1);
@@ -42,6 +47,24 @@ public class PlayerInfo : MonoBehaviour{
         if(type == 0){
             defMelee = defMelee + adjustment;
         }
+        int [] tempStats = new int[3]{defMelee,0,0};
+        updateStatUI(tempStats);
+    }
+
+    void updateStatUI(int [] stats){
+       string stringUICat = "";
+        for (int i = 0; i < stats.Length; i++){
+            stringUICat = (stringUICat + statUIStrings[i] + stats[i].ToString() + " ");
+            Debug.Log(" String CAt: " + stringUICat);
+        }
+
+        if(text!= null){
+        text.text = stringUICat;
+        stringUICat = "";
+        }else{
+            Debug.Log("Null");
+        }
+
     }
 
     

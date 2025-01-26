@@ -10,7 +10,9 @@ public class PlayArea : MonoBehaviour
     [SerializeField] int defMelee;
     [SerializeField] CardCanvas cardCanvas;
     [SerializeField] GameObject tokenCanvasGO;
+    BattleCanvas battleCanvas;
     TokenCanvas tokenCanvas;
+    [SerializeField] GameObject BattleCanvasGO;
     [SerializeField] GameObject playerBagGO;
     [SerializeField] int cost;
     [SerializeField]  int color;
@@ -23,6 +25,9 @@ public class PlayArea : MonoBehaviour
     CardCanvas playerHand;
     GameObject Card;
 
+    int [] statValues = new int [3]{0,0,0};
+    int [] targetStatValues = new int [3]{0,0,0};
+
     public List <GameObject> playedCards = new List<GameObject>();
     
     [Header("Enemy Info")]
@@ -34,23 +39,24 @@ public class PlayArea : MonoBehaviour
         playerBag = playerBagGO.GetComponent<PlayerBag>();
         tokenCanvas = tokenCanvasGO.GetComponent<TokenCanvas>();
         target = enemyTarget.GetComponent<EnemyInfo>();
+        battleCanvas = BattleCanvasGO.GetComponent<BattleCanvas>();
     }
 
     public void getPlayedCardInfo(GameObject playedCard){
-        
+        Debug.Log("Get Card Info");
         PlayerCardUI cardStats = playedCard.GetComponent<PlayerCardUI>();
         cardStats.executeCardAbilities();
 
     }
 
     public void adjustDef(int type = 0, int adjustment = 0){
+        Debug.Log("play area increase defense");
         player.adjustDef(0, adjustment);
-        //Debug.Log("play are increase defense")
+        
     }
     public void AdjustTargetDef(int type = 0, int adjustment = 0){
         target.adjustDef(0, adjustment);
+
         //Debug.Log("play are increase defense")
     }
-
-
 }

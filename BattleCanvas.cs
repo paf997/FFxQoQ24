@@ -13,8 +13,8 @@ public class BattleCanvas : MonoBehaviour //UI
     
     void Start()
     {
-        textUIPlayer = GetComponent<TMP_Text>();
-        textUIMonster = GetComponent<TMP_Text>();
+        //textUIPlayer = GetComponent<TMP_Text>();
+        //textUIMonster = GetComponent<TMP_Text>();
 
     }
 
@@ -22,13 +22,14 @@ public class BattleCanvas : MonoBehaviour //UI
        string stringUICat = "";
         for (int i = 0; i < values.Length; i++){
             stringUICat = (stringUICat + statUIStrings[i] + values[i].ToString() + " ");
+            Debug.Log(" String CAt: " + stringUICat);
         }
         textUIPlayer.text = stringUICat;
         stringUICat = "";
         for (int i = 0; i < targetValues.Length; i++){
             stringUICat = (stringUICat + statUIStrings[i] + targetValues[i].ToString() + " ");
         }
-        textUIMonster.text = stringUICat;
+        //textUIMonster.text = stringUICat;
         stringUICat = "";
     }
 
