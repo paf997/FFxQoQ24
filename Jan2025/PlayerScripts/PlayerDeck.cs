@@ -74,7 +74,7 @@ public class PlayerDeck : MonoBehaviour
             currentHandIndex = playerHand.handOrder[0].transform;//change back to i later for hand 
             newCard = Instantiate (playerCardPreFab, currentHandIndex.position, Quaternion.identity, currentHandIndex);
             //newCard.SetActive(false);
-            Debug.Log("Card created: " + newCard.name.ToString());
+            //Debug.Log("Card created: " + newCard.name.ToString());
             PlayerCardUI card = newCard.GetComponent<PlayerCardUI>();
             card.cardData = playerDeck[i];
             playerDeck2.Add(newCard);
@@ -86,12 +86,12 @@ public class PlayerDeck : MonoBehaviour
     public void drawCards (int nCards = 1){
         Debug.Log("playerDeck: DrawCards ");
         for (int i = 0;i < nCards;i++){
-             Debug.Log("i: " + i + "Is hand full?: " + playerHand.isHandFull() + isDeckEmpty() );
+             //Debug.Log("i: " + i + "Is hand full?: " + playerHand.isHandFull() + isDeckEmpty() );
             if(!playerHand.isHandFull() && !isDeckEmpty()){
                 chosenCard2 = playerDeck2[0];
                 playerDeck2.RemoveAt(0);
                 int handindex = playerHand.handCnt;
-                Debug.Log("moving to hand position " + handindex );
+                //Debug.Log("moving to hand position " + handindex );
                 //playerHand.handOrder[handindex].SetActive(true);
                 playerHand.handCnt++;
                 Transform cardPlacement = chosenCard2.GetComponent<Transform>();
@@ -101,10 +101,10 @@ public class PlayerDeck : MonoBehaviour
                 
                 chosenCard2.SetActive(true);
                 card.handIndex = playerHand.CardsInHand2.Count;
-                Debug.Log("Adding card now in deck script " + card.handIndex);
+               // Debug.Log("Adding card now in deck script " + card.handIndex);
                 playerHand.addCardToHandPos(chosenCard2);
 
-                Debug.Log(" Card index " + card.handIndex + "playerHandCard count " + playerHand.CardsInHand2.Count );
+               // Debug.Log(" Card index " + card.handIndex + "playerHandCard count " + playerHand.CardsInHand2.Count );
                 //playerHand.UpdateHandUI(chosenCard);
                 //playerHand.UpdatePlayableCards(chosenCard.cost);
                 deckTxt.text = playerDeck2.Count.ToString();

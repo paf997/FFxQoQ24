@@ -4,8 +4,9 @@ using UnityEngine;
 using TMPro;
 
 public class PlayerInfo : MonoBehaviour{
-    [SerializeField] int health;
+    [SerializeField] int health = 5;
     [SerializeField] int defMelee;
+    [SerializeField] int def = 2;
     [SerializeField] int maxHealth;
     [SerializeField] int cost;
     [SerializeField]  int color;
@@ -14,6 +15,9 @@ public class PlayerInfo : MonoBehaviour{
     [SerializeField]  int att;
     [SerializeField] int poison;
     [SerializeField] int pierce;
+    //public enum StatTypes  {att, attRange, attMagic, def}
+    //public List <StatTypes> typeList = new List<StatTypes>(){};
+    public List <int> playerStats = new List<int>(){};
 
 
     [SerializeField] string [] statUIStrings = new string [3] { "Def: ", "Att: ", "Poison: ",};
@@ -36,13 +40,13 @@ public class PlayerInfo : MonoBehaviour{
         }
     }   
 
-    public void adjustHP(int type, int amount){
-        if (type == 0 ){//healing
-            health = isHealthFull(health + amount);
-        }else if(type == 1){// melee
-            health = health - amount;
+    public void adjustHP(int amount){
+            health = (health - amount);
             isDead();
-        }
+    }
+
+    public int getHP(){
+        return health;
     }
 
     public void adjustDef(int type, int adjustment){
@@ -69,5 +73,7 @@ public class PlayerInfo : MonoBehaviour{
 
     }
 
-    
+    public int getDef(){
+        return def;
+    }
 }

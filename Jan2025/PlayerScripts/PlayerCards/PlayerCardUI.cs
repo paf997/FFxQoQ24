@@ -103,10 +103,10 @@ public class PlayerCardUI : MonoBehaviour
     }
 
     public void executeCardAbilities(){
-        Debug.Log("Execute Card abilities");
+        //Debug.Log("Execute Card abilities");
         if(att > 0){}
         if(cardData.defAdjustment > 0){
-            Debug.Log("Execute -- adjDef");
+            //Debug.Log("Execute -- adjDef");
             executeAction.adjustDef(0, cardData.defAdjustment);
         }
         if(poison > 0){}

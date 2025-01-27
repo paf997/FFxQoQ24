@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class EnemyInfo : MonoBehaviour
 {
-    public int cost;
-    public int color;
-
+    public int initiative;
     public int block;
     public int att;
     public int poison;
@@ -14,14 +12,31 @@ public class EnemyInfo : MonoBehaviour
     public int heal;
     public int health = 8;
     public int maxHealth = 8;
-    public int dmgMelee = 2;
-    public int defMelee = 2;
+    public int def;
+    public List <int> adjustments = new List<int>(){};
     [SerializeField] Sprite enemySprite;
+    [SerializeField] List <BattleAbility> abilityList;
+    public BattleAbility ability; 
+    public enum StatTypes  {att, attRange, attMAgic}
+    public List <StatTypes> typeList = new List<StatTypes>(){};
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       /* ability = abilityList[0];
+        Debug.Log(" Ability: " + ability.adjustment[i]);*/
+    }
+
+    public BattleAbility getRandomAbility(){
+        int total = 0;
+        Debug.Log("Ability List Count " + abilityList.Count);
+        for (int i = 0; i < abilityList.Count; i++){
+            ability = abilityList[i];
+            total += ability.probability;
+            //Debug.Log("Probability = " + total);
+        }
+        int index = Random.Range(0, abilityList.Count);
+        return abilityList[index];
     }
 
     public bool isDead(){
@@ -46,7 +61,7 @@ public class EnemyInfo : MonoBehaviour
 
     public void adjustDef(int type, int adjustment){
         if(type == 0){
-            defMelee = defMelee + adjustment;
+            def = def + adjustment;
         }
     }
 

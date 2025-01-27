@@ -47,10 +47,10 @@ public class CardCanvas : MonoBehaviour
             PlayerCardUI tempCard = CardsInHand2[i].GetComponent<PlayerCardUI>();
             cost = tempCard.cost;
             color =  tempCard.color;
-            Debug.Log(" cost: " + cost + "Color: " + color);
+            //Debug.Log(" cost: " + cost + "Color: " + color);
 
             if (isCardPlayable(cost, color)){
-                Debug.Log("Playable " + CardsInHand2[i].name + "color cost = " + color + " " + CurrentTokenValues[color]);
+                //Debug.Log("Playable " + CardsInHand2[i].name + "color cost = " + color + " " + CurrentTokenValues[color]);
                 //card.cardAvailable.enabled = true;
                 //card.cardUnavailable.enabled = false;
                 //card.cardUnavailable.SetActive(false);
@@ -58,7 +58,7 @@ public class CardCanvas : MonoBehaviour
                 tempCard.updateCardAvailabilityUI(0);
             }else{
                 tempCard.updateCardAvailabilityUI(1);
-                Debug.Log("NOT PLAYABLE!! " + CardsInHand2[i].name);
+                //Debug.Log("NOT PLAYABLE!! " + CardsInHand2[i].name);
                 //card.cardAvailable.SetActive(false);
 
             }
@@ -124,7 +124,7 @@ public class CardCanvas : MonoBehaviour
         card = cardToAdd.GetComponent<PlayerCardUI> ();
         CardsInHand2.Add(cardToAdd);
         card.handIndex = CardsInHand2.Count -1;
-        Debug.Log("CardCanvas/PlayerCard: " + card.handIndex );
+        //Debug.Log("CardCanvas/PlayerCard: " + card.handIndex );
     }
 
     void updateCardCounts(){

@@ -106,7 +106,7 @@ public class PlayerBag : MonoBehaviour
             drawnToken = startingTokens[i].GetComponent<TokenUI>();
             Token tokenSO = drawnToken.getTSO();
             drawnToken.isDrawn = true;
-            Debug.Log("" + tokenSO.color + ": " + tokenSO.value);
+            //Debug.Log("" + tokenSO.color + ": " + tokenSO.value);
             adjustTokenValues(tokenSO,true);
             }  
     }  

@@ -27,19 +27,83 @@ public class PlayArea : MonoBehaviour
 
     int [] statValues = new int [3]{0,0,0};
     int [] targetStatValues = new int [3]{0,0,0};
+    [SerializeField] List <int> Initiatives = new List<int>();
+    [SerializeField] List <GameObject> participants = new List<GameObject>();
 
     public List <GameObject> playedCards = new List<GameObject>();
     
     [Header("Enemy Info")]
     [SerializeField] GameObject enemyTarget;
     EnemyInfo target;
+    public BattleAbility ability; 
+    //public enum StatTypes  {att, attRange, attMagic, def}
+    //[SerializeField] StatTypes type;
+
+    List <BattleAbility> chosenAbilities = new List<BattleAbility>();
+    [SerializeField] int activeStat;
+    [SerializeField] int oppositeStat;
+
+    void Awake()
+    {
+        target = enemyTarget.GetComponent<EnemyInfo>();
+    }
     void Start()
     {
         playerHand = cardCanvas.GetComponent<CardCanvas>();
         playerBag = playerBagGO.GetComponent<PlayerBag>();
         tokenCanvas = tokenCanvasGO.GetComponent<TokenCanvas>();
-        target = enemyTarget.GetComponent<EnemyInfo>();
         battleCanvas = BattleCanvasGO.GetComponent<BattleCanvas>();
+        target = enemyTarget.GetComponent<EnemyInfo>();
+        getInitiatives();
+        
+    }
+
+    public void getInitiatives(){
+        ability = target.getRandomAbility();
+        int initiative = ability.initiative;
+        Initiatives.Add(initiative);
+        participants.Add(enemyTarget);
+        chosenAbilities.Add(ability);
+        nextInTurnOrder();
+    }
+
+    public void nextInTurnOrder(){
+        Debug.Log(" next turn order");
+        for (int i = 0;i < participants.Count; i++ )   {
+            executeAbilities(i);
+        }
+    }
+
+    public void executeAbilities(int index){
+        ability = chosenAbilities[index];
+        Debug.Log("Chosen ability is " + ability.name);
+        for (int i = 0; i < ability.type.Count; i++){
+            Debug.Log("Execute " + i + " " + ability);
+            BattleAbility.StatTypes type = ability.type[i];
+            activeStat = ability.adjustment[i];
+            findOpposingStat(type);
+        }
+    }
+
+    public void findOpposingStat(BattleAbility.StatTypes sType){
+        //StatTypes convertedType = (StatTypes)System.Enum.Parse( typeof(StatTypes), type );  
+        //BattleAbility.StatTypes oppStat = StatTypes.def;
+        if(sType == BattleAbility.StatTypes.att){
+            oppositeStat = player.getDef();
+            if(compareStats(activeStat, oppositeStat) > 0){
+                player.adjustHP(compareStats(activeStat, oppositeStat));
+            }else{
+                Debug.Log("No damage because of def " + player.getDef());
+            }
+        } 
+    }
+
+
+    public int compareStats(int val1, int val2){
+        Debug.Log(" Adjsutment is " + val2 + " " +  val1 + " " + player.getHP());
+        int result = (val1 - val2);
+        Debug.Log("result " + result);
+        return result;
     }
 
     public void getPlayedCardInfo(GameObject playedCard){
