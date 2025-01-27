@@ -7,7 +7,6 @@ using System.Linq;
 
 public class PlayerBag : MonoBehaviour
 {
-
     [Header("Token info")]
     [SerializeField]
     public List <GameObject> startingTokens = new List<GameObject>();
@@ -51,12 +50,14 @@ public class PlayerBag : MonoBehaviour
     TokenCanvas tokenCanvas;
     public int isPrimed = 0;
     public GameObject cardCanvas;
+    CardCanvas playerHand;
     
      [SerializeField] List <int> currentTokenValues = new List<int>() {};
 
     public void Start (){
         initializeTokensInfo();
         tokenCanvas = TC.GetComponent<TokenCanvas>();
+        playerHand = cardCanvas.GetComponent<CardCanvas>();
     }
     
     public void ShuffleTokens()
@@ -79,11 +80,11 @@ public class PlayerBag : MonoBehaviour
             PrimeAction();
             isPrimed++;
         } else if(isPrimed == 1){
-            Debug .Log("Complete Action " + isPrimed);
+            Debug.Log("Complete Action " + isPrimed);
             CompleteDrawAction();
             isPrimed++;
         } else {
-            Debug .Log("Clear Amounts/End Turn " + isPrimed);
+            Debug.Log("Clear Amounts/End Turn " + isPrimed);
             ClearDrawnToken();
             isPrimed = 0;
         }
@@ -118,6 +119,7 @@ public class PlayerBag : MonoBehaviour
             drawnToken.isDrawn = true;
             Debug.Log("cnt: " + i + " " + tokenSO.color + ": " + tokenSO.value);
             adjustTokenValues(tokenSO,true);
+            playerHand.UpdatePlayableCards();
         }  
     }
         public void ClearDrawnToken(){

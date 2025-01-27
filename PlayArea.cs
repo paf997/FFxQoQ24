@@ -43,10 +43,6 @@ public class PlayArea : MonoBehaviour
     [SerializeField] int activeStat;
     [SerializeField] int oppositeStat;
 
-    void Awake()
-    {
-        target = enemyTarget.GetComponent<EnemyInfo>();
-    }
     void Start()
     {
         playerHand = cardCanvas.GetComponent<CardCanvas>();
@@ -54,7 +50,7 @@ public class PlayArea : MonoBehaviour
         tokenCanvas = tokenCanvasGO.GetComponent<TokenCanvas>();
         battleCanvas = BattleCanvasGO.GetComponent<BattleCanvas>();
         target = enemyTarget.GetComponent<EnemyInfo>();
-        getInitiatives();
+        //getInitiatives();
         
     }
 

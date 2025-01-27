@@ -47,7 +47,8 @@ public class CardCanvas : MonoBehaviour
             PlayerCardUI tempCard = CardsInHand2[i].GetComponent<PlayerCardUI>();
             cost = tempCard.cost;
             color =  tempCard.color;
-            //Debug.Log(" cost: " + cost + "Color: " + color);
+
+            Debug.Log(" cost: " + cost + "Color: " + color);
 
             if (isCardPlayable(cost, color)){
                 //Debug.Log("Playable " + CardsInHand2[i].name + "color cost = " + color + " " + CurrentTokenValues[color]);
@@ -66,7 +67,8 @@ public class CardCanvas : MonoBehaviour
     }
 
     private bool isCardPlayable(int cost, int color){
-        return (cost <= color);
+        
+        return (cost <= CurrentTokenValues[color]);
     }
 
     public void updateHandIndices(int index){
