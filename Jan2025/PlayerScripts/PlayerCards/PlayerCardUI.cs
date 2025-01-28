@@ -21,6 +21,7 @@ public class PlayerCardUI : MonoBehaviour
     public GameObject cardColorImg;
     private CardCanvas playerHand;
     public int nAbilities = 1;
+    public Transform originalHandPosTransform;
 
     private Sprite sprite;
     public bool isEmpty;

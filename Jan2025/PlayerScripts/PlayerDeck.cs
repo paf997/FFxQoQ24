@@ -98,6 +98,7 @@ public class PlayerDeck : MonoBehaviour
                 //Debug.Log("Trans " + cardPlacement + " : " cardIn );
                 cardPlacement.position = playerHand.handOrder[playerHand.handCnt].transform.position;
                 PlayerCardUI card = chosenCard2.GetComponent<PlayerCardUI>();
+                card.originalHandPosTransform = cardPlacement;
                 
                 chosenCard2.SetActive(true);
                 card.handIndex = playerHand.CardsInHand2.Count;
@@ -111,9 +112,9 @@ public class PlayerDeck : MonoBehaviour
             } else{
                 Debug.Log("Hand is Full");
             } 
-
-            playerHand.UpdatePlayableCards();
         } 
+            Debug.Log(" right after drawing cards");
+            playerHand.UpdatePlayableCards();
     }
 
     public bool isDeckEmpty(){
