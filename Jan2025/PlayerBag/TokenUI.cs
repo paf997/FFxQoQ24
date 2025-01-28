@@ -12,7 +12,7 @@ public class TokenUI : MonoBehaviour
     [Header("UI Elements")]
     /*[SerializeField] private Image backgroundImage;
     [SerializeField] private Image foregroundImage;*/
-    public TMP_Text tokenValueText;
+    //public TMP_Text tokenValueText;
     public bool isAvailable = true;     // Whether the token is available for use
     public bool isDrawn;        // Whether the token has been drawn
     public bool isExtinguishable; // Whether the token can be extinguished

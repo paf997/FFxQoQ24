@@ -60,7 +60,12 @@ public class PlayerDeck : MonoBehaviour
             playerHand.UpdateHandUI(chosenCard);
             //playerHand.UpdatePlayableCards(chosenCard.cost);
             discardCnt++;
-            discardTxt.text = discardCnt.ToString();
+            if(discardTxt != null){
+                Debug.Log("Good!" + discardCnt.ToString());
+                discardTxt.text = discardCnt.ToString();
+            }else{
+                Debug.Log("fail!! ");
+            }
             deckTxt.text = playerDeck.Count.ToString();
         } else{
             Debug.Log("Hand is Full");
@@ -102,7 +107,7 @@ public class PlayerDeck : MonoBehaviour
                 
                 chosenCard2.SetActive(true);
                 card.handIndex = playerHand.CardsInHand2.Count;
-               // Debug.Log("Adding card now in deck script " + card.handIndex);
+                Debug.Log("Adding card now in deck script "+ i + " " +  card.handIndex);
                 playerHand.addCardToHandPos(chosenCard2);
 
                // Debug.Log(" Card index " + card.handIndex + "playerHandCard count " + playerHand.CardsInHand2.Count );
@@ -112,9 +117,10 @@ public class PlayerDeck : MonoBehaviour
             } else{
                 Debug.Log("Hand is Full");
             } 
-        } 
             Debug.Log(" right after drawing cards");
             playerHand.UpdatePlayableCards();
+        } 
+          
     }
 
     public bool isDeckEmpty(){

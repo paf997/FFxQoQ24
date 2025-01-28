@@ -44,6 +44,7 @@ public class CardCanvas : MonoBehaviour
         int color = 0;
         Debug.Log(" updateing availabity");
         for (int i = 1; i < CardsInHand2.Count; i++){
+            Debug.Log(" i is here" + i);
             PlayerCardUI tempCard = CardsInHand2[i].GetComponent<PlayerCardUI>();
             cost = tempCard.cost;
             color =  tempCard.color;
@@ -133,12 +134,14 @@ public class CardCanvas : MonoBehaviour
         card = cardToAdd.GetComponent<PlayerCardUI> ();
         if(card.isAvailable){
             CardsInHand2.Add(cardToAdd);
+            Debug.Log("Cards in Hand2: " + CardsInHand2);
             card.handIndex = CardsInHand2.Count -1;
         }else{  
             cardToAdd.transform.position = card.originalHandPosTransform.position;
+            Debug.Log ("Not available");
 
         }
-        //Debug.Log("CardCanvas/PlayerCard: " + card.handIndex );
+        Debug.Log("CardCanvas/PlayerCard: " + card.handIndex );
     }
 
     void updateCardCounts(){
