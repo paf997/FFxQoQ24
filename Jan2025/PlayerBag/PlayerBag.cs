@@ -119,6 +119,7 @@ public class PlayerBag : MonoBehaviour
             drawnToken.isDrawn = true;
             Debug.Log("cnt: " + i + " " + tokenSO.color + ": " + tokenSO.value);
             adjustTokenValues(tokenSO,true);
+            Debug.Log("Update prime action then update Playable Cards");
             playerHand.UpdatePlayableCards();
         }  
     }

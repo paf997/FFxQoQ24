@@ -61,10 +61,10 @@ public class PlayerDeck : MonoBehaviour
             //playerHand.UpdatePlayableCards(chosenCard.cost);
             discardCnt++;
             if(discardTxt != null){
-                Debug.Log("Good!" + discardCnt.ToString());
+                //Debug.Log("Good!" + discardCnt.ToString());
                 discardTxt.text = discardCnt.ToString();
             }else{
-                Debug.Log("fail!! ");
+                //Debug.Log("fail!! ");
             }
             deckTxt.text = playerDeck.Count.ToString();
         } else{
@@ -88,7 +88,7 @@ public class PlayerDeck : MonoBehaviour
         }
     }
 
-    public void drawCards (int nCards = 1){
+    public void drawCards (int nCards = 5){
         Debug.Log("playerDeck: DrawCards ");
         for (int i = 0;i < nCards;i++){
              //Debug.Log("i: " + i + "Is hand full?: " + playerHand.isHandFull() + isDeckEmpty() );
@@ -117,7 +117,7 @@ public class PlayerDeck : MonoBehaviour
             } else{
                 Debug.Log("Hand is Full");
             } 
-            Debug.Log(" right after drawing cards");
+            //Debug.Log(" right after drawing cards");
             playerHand.UpdatePlayableCards();
         } 
           

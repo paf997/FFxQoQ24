@@ -26,6 +26,7 @@ public class PlayerCardUI : MonoBehaviour
     private Sprite sprite;
     public bool isEmpty;
     public bool isAvailable;
+    public bool isPlayable;
     public GameObject cardCanvas;
     public GameObject playerDeckScript;
     private PlayerDeck playerDeck;  
@@ -101,6 +102,11 @@ public class PlayerCardUI : MonoBehaviour
             Debug.Log("None " + borderColorCode);
             cardAvailable.enabled = false;
         }
+    }
+
+    public bool setIsPlayable(){
+        isPlayable = true;
+        return isPlayable;
     }
 
     public void executeCardAbilities(){

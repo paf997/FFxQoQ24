@@ -43,7 +43,7 @@ public class CardCanvas : MonoBehaviour
         int cost = 0;
         int color = 0;
         Debug.Log(" updateing availabity");
-        for (int i = 1; i < CardsInHand2.Count; i++){
+        for (int i = 0; i < CardsInHand2.Count; i++){
             Debug.Log(" i is here" + i);
             PlayerCardUI tempCard = CardsInHand2[i].GetComponent<PlayerCardUI>();
             cost = tempCard.cost;
@@ -52,15 +52,19 @@ public class CardCanvas : MonoBehaviour
             Debug.Log(" cost: " + cost + "Color: " + color);
 
             if (isCardPlayable(cost, color)){
-                Debug.Log("Playable " + CardsInHand2[i].name + "color = " + color  + " color" + cost);
+                Debug.Log("Playable " + tempCard.name + "color = " + tempCard.color  + " color" + tempCard.cost);
                 //card.cardAvailable.enabled = true;
                 //card.cardUnavailable.enabled = false;
                 //card.cardUnavailable.SetActive(false);
                 //Outline turnOnOutline = card.GetComponent<Rect>().Getomponent<Outline>();
                 tempCard.updateCardAvailabilityUI(0);
+                
+                tempCard.isPlayable = true;
+                Debug.Log(" Setting isPlayable to true " + tempCard.isPlayable);
+                
             }else{
                 tempCard.updateCardAvailabilityUI(1);
-                Debug.Log("NOT PLAYABLE!! " + CardsInHand2[i].name);
+                Debug.Log("Not Playable: " + tempCard.name);
                 //card.cardAvailable.SetActive(false);
             }
         }
@@ -110,13 +114,13 @@ public class CardCanvas : MonoBehaviour
     public void putCardInPlayArea(int cardIndex){
         Debug.Log("Put in play are ---- CardIndex" + cardIndex);
         GameObject tempCard = CardsInHand2[cardIndex];
-        if(tempCard.GetComponent<PlayerCardUI>().isAvailable){
+        if(tempCard.GetComponent<PlayerCardUI>().isPlayable){
             playArea.playedCards.Add(tempCard);
             discardCardAtPos(cardIndex);
             playArea.getPlayedCardInfo(tempCard);
         }else{
-            Debug.Log("Card is unavailable");
 
+            Debug.Log("Card is unavailable");
         }
     }
 
