@@ -4,12 +4,15 @@ using UnityEngine;
 
 public enum Target{ player1, enemy1, enemy2}
 
-public class Participant : MonoBehaviour
-{
-    [SerializeField] int poisonDmg;
+public class Participant : MonoBehaviour{
+    public int health;
+    public int maxHealth;
+    public int def;
+    public int poisonDmg;
     public int att;
-    [SerializeField] int baseAtt;
+    public int baseAtt;
     public List <BattleAbility> conditions = new List<BattleAbility>(){};
+    public List <StatTypes> typeList = new List<StatTypes>(){};
      
     //[SerializeField] Participant participant;
     
@@ -20,13 +23,34 @@ public class Participant : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+
+    public int getDef(){
+        return def;
     }
 
-    public void getDef(){
+    public int getHP(){
+        return health;
+    }
 
+    public void adjustHP(int amount){
+            health = (health - amount);
+            isDead();
+    }
+
+    public int isHealthFull(int currenthealth){
+        if (currenthealth < maxHealth ){
+            return maxHealth;
+        }else{
+            return currenthealth;
+        }
+    }  
+
+    public bool isDead(){
+        return (health < 1);
+    }
+
+    public int adjustAtt(int amount){
+       return (att += amount) > 1 ? (att += amount) : 1;
     }
 
     public void checkCurrentConditons(){
@@ -41,5 +65,20 @@ public class Participant : MonoBehaviour
                 conditions.RemoveAt(i);
             }
         }
+    }
+
+        public void isPoisoned(){
+        if (poisonDmg > 0){
+            att = baseAtt -1;
+            poisonDmg--;
+        }
+    }
+
+     public void adjustDef(int type, int adjustment){
+        if(type == 0){
+            def = def + adjustment;
+        }
+        int [] tempStats = new int[3]{def,0,0};
+        //updateStatUI(tempStats);
     }
 }

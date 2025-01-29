@@ -4,22 +4,17 @@ using UnityEngine;
 using TMPro;
 
 public class PlayerInfo : Participant{
-    [SerializeField] int health = 5;
+
     [SerializeField] int defMelee;
-    [SerializeField] int def = 2;
-    [SerializeField] int maxHealth;
     [SerializeField] int cost;
-    [SerializeField]  int color;
+    [SerializeField] int color;
 
     [SerializeField] int block;
-    [SerializeField]  int att;
-    [SerializeField]  int baseAtt;
-    [SerializeField] int poisonDmg;
+  
     [SerializeField] int pierce;
     //public enum StatTypes  {att, attRange, attMagic, def}
     //public List <StatTypes> typeList = new List<StatTypes>(){};
     public List <int> playerStats = new List<int>(){};
-    public List <BattleAbility> conditions = new List<BattleAbility>(){};
 
     [SerializeField] string [] statUIStrings = new string [3] { "Def: ", "Att: ", "Poison: ",};
     public TextMeshProUGUI  text; 
@@ -35,41 +30,11 @@ public class PlayerInfo : Participant{
     }
     public void checkCurrentConditons(){
     }
-    public int isHealthFull(int currenthealth){
-        if (currenthealth < maxHealth ){
-            return maxHealth;
-        }else{
-            return currenthealth;
-        }
-    }   
-
-    public void adjustHP(int amount){
-            health = (health - amount);
-            isDead();
-    }
-
-    public int getHP(){
-        return health;
-    }
-
-    public int adjustAtt(int amount){
-       return (att += amount) > 1 ? (att += amount) : 1;
-    }
+ 
 
     public void isPoisoned(){
-        if (poisonDmg > 0){
-            att = baseAtt -1;
-            poisonDmg--;
-        }
     }
 
-    public void adjustDef(int type, int adjustment){
-        if(type == 0){
-            defMelee = defMelee + adjustment;
-        }
-        int [] tempStats = new int[3]{defMelee,0,0};
-        updateStatUI(tempStats);
-    }
 
     void updateStatUI(int [] stats){
        string stringUICat = "";
@@ -84,10 +49,6 @@ public class PlayerInfo : Participant{
         }else{
             Debug.Log("Null" + text);
         }
-
     }
 
-    public int getDef(){
-        return def;
-    }
 }
