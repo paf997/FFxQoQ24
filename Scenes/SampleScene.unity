@@ -7947,6 +7947,8 @@ MonoBehaviour:
   abilityList:
   - {fileID: 11400000, guid: aa9f3056740d64e2dbca8b0a1ccc209b, type: 2}
   - {fileID: 11400000, guid: 21dbba841cb8344648a207cfbfaf49bb, type: 2}
+  - {fileID: 11400000, guid: a236084022df14bef8a9936d1cbd2a1d, type: 2}
+  - {fileID: 11400000, guid: 5f6bc10775666431e8eb0ad9a3d51afb, type: 2}
   ability: {fileID: 0}
   typeList: 
 --- !u!114 &814775149
@@ -11586,12 +11588,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1178419300}
         m_TargetAssemblyTypeName: PlayerDeck, Assembly-CSharp
-        m_MethodName: drawButton
-        m_Mode: 1
+        m_MethodName: drawCards
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17334,9 +17336,11 @@ MonoBehaviour:
   color: 0
   block: 0
   att: 0
-  poison: 0
+  baseAtt: 0
+  poisonDmg: 0
   pierce: 0
   playerStats: 
+  conditions: []
   statUIStrings:
   - 'Def: '
   - 'Att: '
@@ -18323,9 +18327,11 @@ MonoBehaviour:
   color: 0
   block: 0
   att: 0
-  poison: 0
+  baseAtt: 0
+  poisonDmg: 0
   pierce: 0
   playerStats: 
+  conditions: []
   statUIStrings:
   - 'Def: '
   - 'Att: '

@@ -42,6 +42,7 @@ public class PlayArea : MonoBehaviour
     List <BattleAbility> chosenAbilities = new List<BattleAbility>();
     [SerializeField] int activeStat;
     [SerializeField] int oppositeStat;
+    Participant activeParticipant;
 
     void Start()
     {
@@ -70,30 +71,33 @@ public class PlayArea : MonoBehaviour
     }
 
     public void executeAbilities(int index){
+        activeParticipant = enemy;
         ability = chosenAbilities[index];
         Debug.Log("Chosen ability is " + ability.name);
         for (int i = 0; i < ability.type.Count; i++){
             Debug.Log("Execute " + i + " " + ability);
-            BattleAbility.StatTypes type = ability.type[i];
+            StatTypes type = ability.type[i];
             activeStat = ability.adjustment[i];
-            findOpposingStat(type);
+            findOpposingStat(type,activeParticipant);
         }
     }
 
-    public void findOpposingStat(BattleAbility.StatTypes sType){
+    public void findOpposingStat(StatTypes sType, Participant target){
         //StatTypes convertedType = (StatTypes)System.Enum.Parse( typeof(StatTypes), type );  
         //BattleAbility.StatTypes oppStat = StatTypes.def;
-        if(sType == BattleAbility.StatTypes.att){
+        if(sType == StatTypes.att){
             oppositeStat = player.getDef();
             if(compareStats(activeStat, oppositeStat) > 0){
                 player.adjustHP(compareStats(activeStat, oppositeStat));
             }else{
                 //Debug.Log("No damage because of def " + player.getDef());
             }
-        }else if(sType == BattleAbility.StatTypes.def){
+        }else if(sType == StatTypes.def){
             activeStat = enemy.getDef();
             Debug.Log("Def is stype" );
             //adjustDef(0,activeStat,enemy);
+        }else if (sType == StatTypes.poison){
+            applyCondition(determineTarget(ability.target), activeStat);
         }
     }
 
@@ -121,9 +125,25 @@ public class PlayArea : MonoBehaviour
         //updateStatUI(tempStats);
     }
 
+    public void adjustAtt(int type, int adjustment, Participant targe){
+        Debug.Log("Type " + typeof(Participant));
+        if(type == 0){
+           // target.def = target.def + adjustment;
+        }
+        int [] tempStats = new int[3]{defMelee,0,0};
+        //updateStatUI(tempStats);
+    }
+
     public void AdjustTargetDef(int type = 0, int adjustment = 0){
         //adjustDef(0, adjustment);
 
         //Debug.Log("play are increase defense")
+    }
+
+    public Participant determineTarget(Target target){
+        return (target == Target.player1 ? player : enemy);
+    }
+    public void applyCondition(Participant target, int adjustment){
+        target.conditions.Add(ability);
     }
 }

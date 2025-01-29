@@ -17,7 +17,10 @@ public class EnemyInfo : Participant
     [SerializeField] Sprite enemySprite;
     [SerializeField] List <BattleAbility> abilityList;
     public BattleAbility ability; 
-    public List <BattleAbility.StatTypes> typeList = new List<BattleAbility.StatTypes>(){};
+    public List <StatTypes> typeList = new List<StatTypes>(){};
+    public List <BattleAbility> conditions = new List<BattleAbility>(){};
+    public void checkCurrentConditons(){
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -36,8 +36,7 @@ public class PlayerDeck : MonoBehaviour
         deckTxt.text = deckCnt.ToString(); 
         ShuffleDeck();
         instatiateDeck();
-        drawCards(5);
-        
+        //drawCards(5);
     }
     
     public void ShuffleDeck()
@@ -89,7 +88,7 @@ public class PlayerDeck : MonoBehaviour
     }
 
     public void drawCards (int nCards = 5){
-        Debug.Log("playerDeck: DrawCards ");
+        //Debug.Log("playerDeck: DrawCards ");
         for (int i = 0;i < nCards;i++){
              //Debug.Log("i: " + i + "Is hand full?: " + playerHand.isHandFull() + isDeckEmpty() );
             if(!playerHand.isHandFull() && !isDeckEmpty()){
