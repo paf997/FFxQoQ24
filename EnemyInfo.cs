@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyInfo : MonoBehaviour
+public class EnemyInfo : Participant
 {
     public int initiative;
     public int block;
@@ -17,8 +17,7 @@ public class EnemyInfo : MonoBehaviour
     [SerializeField] Sprite enemySprite;
     [SerializeField] List <BattleAbility> abilityList;
     public BattleAbility ability; 
-    public enum StatTypes  {att, attRange, attMAgic}
-    public List <StatTypes> typeList = new List<StatTypes>(){};
+    public List <BattleAbility.StatTypes> typeList = new List<BattleAbility.StatTypes>(){};
 
     // Start is called before the first frame update
     void Start()
@@ -58,11 +57,8 @@ public class EnemyInfo : MonoBehaviour
             isDead();
         }
     }
-
-    public void adjustDef(int type, int adjustment){
-        if(type == 0){
-            def = def + adjustment;
-        }
+    public int getDef(){
+        return def;
     }
 
 }

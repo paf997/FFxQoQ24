@@ -34,7 +34,7 @@ public class PlayArea : MonoBehaviour
     
     [Header("Enemy Info")]
     [SerializeField] GameObject enemyTarget;
-    EnemyInfo target;
+    EnemyInfo enemy;
     public BattleAbility ability; 
     //public enum StatTypes  {att, attRange, attMagic, def}
     //[SerializeField] StatTypes type;
@@ -49,13 +49,12 @@ public class PlayArea : MonoBehaviour
         playerBag = playerBagGO.GetComponent<PlayerBag>();
         tokenCanvas = tokenCanvasGO.GetComponent<TokenCanvas>();
         battleCanvas = BattleCanvasGO.GetComponent<BattleCanvas>();
-        target = enemyTarget.GetComponent<EnemyInfo>();
-        //getInitiatives();
-        
+        enemy = enemyTarget.GetComponent<EnemyInfo>();
+        getInitiatives(); 
     }
 
     public void getInitiatives(){
-        ability = target.getRandomAbility();
+        ability = enemy.getRandomAbility();
         int initiative = ability.initiative;
         Initiatives.Add(initiative);
         participants.Add(enemyTarget);
@@ -89,14 +88,18 @@ public class PlayArea : MonoBehaviour
             if(compareStats(activeStat, oppositeStat) > 0){
                 player.adjustHP(compareStats(activeStat, oppositeStat));
             }else{
-                Debug.Log("No damage because of def " + player.getDef());
+                //Debug.Log("No damage because of def " + player.getDef());
             }
-        } 
+        }else if(sType == BattleAbility.StatTypes.def){
+            activeStat = enemy.getDef();
+            Debug.Log("Def is stype" );
+            //adjustDef(0,activeStat,enemy);
+        }
     }
 
 
     public int compareStats(int val1, int val2){
-        Debug.Log(" Adjsutment is " + val2 + " " +  val1 + " " + player.getHP());
+        //Debug.Log(" Adjsutment is " + val2 + " " +  val1 + " " + player.getHP());
         int result = (val1 - val2);
         Debug.Log("result " + result);
         return result;
@@ -109,13 +112,17 @@ public class PlayArea : MonoBehaviour
 
     }
 
-    public void adjustDef(int type = 0, int adjustment = 0){
-        Debug.Log("play area increase defense");
-        player.adjustDef(0, adjustment);
-        
+    public void adjustDef(int type, int adjustment, Participant target){
+        Debug.Log("Type " + typeof(Participant));
+        if(type == 0){
+           // target.def = target.def + adjustment;
+        }
+        int [] tempStats = new int[3]{defMelee,0,0};
+        //updateStatUI(tempStats);
     }
+
     public void AdjustTargetDef(int type = 0, int adjustment = 0){
-        target.adjustDef(0, adjustment);
+        //adjustDef(0, adjustment);
 
         //Debug.Log("play are increase defense")
     }

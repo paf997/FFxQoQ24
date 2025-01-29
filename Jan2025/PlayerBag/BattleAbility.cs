@@ -9,7 +9,7 @@ public class BattleAbility : ScriptableObject {
     [Header("Name")]
 
     public string name;
-    public enum StatTypes  {att, attRange, attMAgic}
+    public enum StatTypes  {att, attRange, attMagic, def}
     public List <StatTypes> type = new List<StatTypes>(){};
 
     //public List <string> type = new List<string>(){};

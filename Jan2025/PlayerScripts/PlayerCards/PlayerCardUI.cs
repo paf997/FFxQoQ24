@@ -40,10 +40,8 @@ public class PlayerCardUI : MonoBehaviour
     [SerializeField] Color selected = new Color (.2000f, .60f, 1.0f, .10f);
     [SerializeField] Color [] availbilityColors = new Color[3];
     public int borderColorCode;
-
     public int cost;
     public int color;
-
     public int block;
     public int att;
     public int poison;
@@ -60,7 +58,7 @@ public class PlayerCardUI : MonoBehaviour
     private void Awake()
     {
         //Outline [] outlines = cardOutline.GetComponents<Outline>();
-       // Debug.Log("The # of outlines is " + outlines.Length);
+        // Debug.Log("The # of outlines is " + outlines.Length);
         //cardAvailable = outlines[0];
         //Debug.Log("#1: " + outlines[0]);
         //cardUnavailable = outlines[1];
@@ -110,28 +108,14 @@ public class PlayerCardUI : MonoBehaviour
     public void executeCardAbilities(){
         //Debug.Log("Execute Card abilities");
         if(att > 0){}
-        if(cardData.defAdjustment > 0){
+        /*if(cardData.defAdjustment > 0){
             //Debug.Log("Execute -- adjDef");
             executeAction.adjustDef(0, cardData.defAdjustment);
-        }
+        }*/
         if(poison > 0){}
         if(heal > 0){}
         if(heal > 0){}
     }
-    public void cardAbility0(){
-
-    }
-
-    public void cardAbility1(){
-
-    }
-
-    public void cardAbility2(){
-
-    }
-
-
-
     /// <summary>
     /// Updates the UI elements based on the assigned Token ScriptableObject.
     /// </summary>
@@ -178,7 +162,6 @@ public class PlayerCardUI : MonoBehaviour
     }
 
     public void calcPlayableCards(){
-        
     }
 
     public void RefreshUI()

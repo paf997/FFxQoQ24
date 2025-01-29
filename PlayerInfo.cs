@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerInfo : MonoBehaviour{
+public class PlayerInfo : Participant{
     [SerializeField] int health = 5;
     [SerializeField] int defMelee;
     [SerializeField] int def = 2;

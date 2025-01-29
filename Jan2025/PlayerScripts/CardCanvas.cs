@@ -42,7 +42,7 @@ public class CardCanvas : MonoBehaviour
     public void UpdatePlayableCards(/*int white = 0 , int red = 0; int blue = 0, int green = 0, int yellow = 0, int purple = 0*/){
         int cost = 0;
         int color = 0;
-        Debug.Log(" updateing availabity");
+       // Debug.Log(" updateing availabity");
         for (int i = 0; i < CardsInHand2.Count; i++){
            // Debug.Log(" i is here" + i);
             PlayerCardUI tempCard = CardsInHand2[i].GetComponent<PlayerCardUI>();
@@ -52,7 +52,7 @@ public class CardCanvas : MonoBehaviour
             //Debug.Log(" cost: " + cost + "Color: " + color);
 
             if (isCardPlayable(cost, color)){
-                Debug.Log("Playable " + tempCard.name + "color = " + tempCard.color  + " color" + tempCard.cost);
+                //Debug.Log("Playable " + tempCard.name + "color = " + tempCard.color  + " color" + tempCard.cost);
                 //card.cardAvailable.enabled = true;
                 //card.cardUnavailable.enabled = false;
                 //card.cardUnavailable.SetActive(false);
@@ -64,7 +64,7 @@ public class CardCanvas : MonoBehaviour
                 
             }else{
                 tempCard.updateCardAvailabilityUI(1);
-                Debug.Log("Not Playable: " + tempCard);
+                //Debug.Log("Not Playable: " + tempCard);
                 //card.cardAvailable.SetActive(false);
             }
         }
