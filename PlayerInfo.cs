@@ -61,7 +61,7 @@ public class PlayerInfo : MonoBehaviour{
        string stringUICat = "";
         for (int i = 0; i < stats.Length; i++){
             stringUICat = (stringUICat + statUIStrings[i] + stats[i].ToString() + " ");
-            Debug.Log(" String CAt: " + stringUICat);
+            //Debug.Log(" String CAt: " + stringUICat);
         }
 
         if(text!= null){

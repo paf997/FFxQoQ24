@@ -107,7 +107,7 @@ public class PlayerDeck : MonoBehaviour
                 
                 chosenCard2.SetActive(true);
                 card.handIndex = playerHand.CardsInHand2.Count;
-                Debug.Log("Adding card now in deck script "+ i + " " +  card.handIndex);
+                //Debug.Log("Adding card now in deck script "+ i + " " +  card.handIndex);
                 playerHand.addCardToHandPos(chosenCard2);
 
                // Debug.Log(" Card index " + card.handIndex + "playerHandCard count " + playerHand.CardsInHand2.Count );

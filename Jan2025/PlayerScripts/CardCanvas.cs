@@ -44,12 +44,12 @@ public class CardCanvas : MonoBehaviour
         int color = 0;
         Debug.Log(" updateing availabity");
         for (int i = 0; i < CardsInHand2.Count; i++){
-            Debug.Log(" i is here" + i);
+           // Debug.Log(" i is here" + i);
             PlayerCardUI tempCard = CardsInHand2[i].GetComponent<PlayerCardUI>();
             cost = tempCard.cost;
             color =  tempCard.color;
 
-            Debug.Log(" cost: " + cost + "Color: " + color);
+            //Debug.Log(" cost: " + cost + "Color: " + color);
 
             if (isCardPlayable(cost, color)){
                 Debug.Log("Playable " + tempCard.name + "color = " + tempCard.color  + " color" + tempCard.cost);
@@ -60,18 +60,18 @@ public class CardCanvas : MonoBehaviour
                 tempCard.updateCardAvailabilityUI(0);
                 
                 tempCard.isPlayable = true;
-                Debug.Log(" Setting isPlayable to true " + tempCard.isPlayable);
+               // Debug.Log(" Setting isPlayable to true " + tempCard.isPlayable);
                 
             }else{
                 tempCard.updateCardAvailabilityUI(1);
-                Debug.Log("Not Playable: " + tempCard.name);
+                Debug.Log("Not Playable: " + tempCard);
                 //card.cardAvailable.SetActive(false);
             }
         }
     }
 
     private bool isCardPlayable(int cost, int color){
-        Debug.Log(" playerable " +   CurrentTokenValues[color] + "cost"  + cost);
+       // Debug.Log(" playerable " +   CurrentTokenValues[color] + "cost"  + cost);
         return (cost <= CurrentTokenValues[color]);
     }
 
@@ -112,7 +112,7 @@ public class CardCanvas : MonoBehaviour
     }
 
     public void putCardInPlayArea(int cardIndex){
-        Debug.Log("Put in play are ---- CardIndex" + cardIndex);
+       // Debug.Log("Put in play are ---- CardIndex" + cardIndex);
         GameObject tempCard = CardsInHand2[cardIndex];
         if(tempCard.GetComponent<PlayerCardUI>().isPlayable){
             playArea.playedCards.Add(tempCard);
@@ -138,14 +138,14 @@ public class CardCanvas : MonoBehaviour
         card = cardToAdd.GetComponent<PlayerCardUI> ();
         if(card.isAvailable){
             CardsInHand2.Add(cardToAdd);
-            Debug.Log("Cards in Hand2: " + CardsInHand2);
+            //Debug.Log("Cards in Hand2: " + CardsInHand2);
             card.handIndex = CardsInHand2.Count -1;
         }else{  
             cardToAdd.transform.position = card.originalHandPosTransform.position;
             Debug.Log ("Not available");
 
         }
-        Debug.Log("CardCanvas/PlayerCard: " + card.handIndex );
+       // Debug.Log("CardCanvas/PlayerCard: " + card.handIndex );
     }
 
     void updateCardCounts(){

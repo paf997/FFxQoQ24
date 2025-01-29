@@ -73,8 +73,6 @@ public class PlayerCardUI : MonoBehaviour
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
         playerDeck = playerDeckScript.GetComponent<PlayerDeck>(); 
         executeAction = PlayAreaGO.GetComponent<PlayArea>();
-       
-        
 
         //Debug.Log("Type of ob = " + cardAvailable.effectColor);
         //cardAvailable.effectColor = new Color(.2000f, .050f, 1.0f, .80f);
@@ -169,6 +167,11 @@ public class PlayerCardUI : MonoBehaviour
         {
             costText.text = card.cost.ToString();
             cost = card.cost;
+        }
+
+         if (card.name != null)
+        {
+            name = card.name;
         }
 
         return card;
