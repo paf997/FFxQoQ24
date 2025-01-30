@@ -28,7 +28,7 @@ public class PlayArea : MonoBehaviour
     int [] statValues = new int [3]{0,0,0};
     int [] targetStatValues = new int [3]{0,0,0};
     [SerializeField] List <int> Initiatives = new List<int>();
-    [SerializeField] List <GameObject> participants = new List<GameObject>();
+    [SerializeField] List <Participant> participants = new List<Participant>();
 
     public List <GameObject> playedCards = new List<GameObject>();
     
@@ -50,17 +50,26 @@ public class PlayArea : MonoBehaviour
         playerBag = playerBagGO.GetComponent<PlayerBag>();
         tokenCanvas = tokenCanvasGO.GetComponent<TokenCanvas>();
         battleCanvas = BattleCanvasGO.GetComponent<BattleCanvas>();
-        enemy = enemyTarget.GetComponent<EnemyInfo>();
-        getInitiatives(); 
+        enemy = enemyTarget.GetComponent<EnemyInfo>(); 
     }
 
     public void getInitiatives(){
-        ability = enemy.getRandomAbility();
-        int initiative = ability.initiative;
-        Initiatives.Add(initiative);
-        participants.Add(enemyTarget);
-        chosenAbilities.Add(ability);
+       for (int i = 0;  i < participants.Count; i++)
+            if (participants[i].targetName == Target.player1 ){
+                Debug.Log ("player initiative  already added");
+            }else{
+                enemy = participants[i].GetComponent<EnemyInfo>();
+                ability = enemy.getRandomAbility();
+                int initiative = ability.initiative;
+                Initiatives.Add(initiative);
+                //participants.Add(enemyTarget);
+                chosenAbilities.Add(ability);
+        }
         nextInTurnOrder();
+    }
+
+    public void addInitiative(int init){
+        Initiatives.Add(init);
     }
 
     public void nextInTurnOrder(){

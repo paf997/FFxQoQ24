@@ -10,6 +10,8 @@ public class PlayerInfo : Participant{
     [SerializeField] int color;
 
     [SerializeField] int block;
+    public int focusMax;
+    public int focus;
   
     [SerializeField] int pierce;
     //public enum StatTypes  {att, attRange, attMagic, def}

@@ -8,16 +8,20 @@ public class roundButtonScript : MonoBehaviour
 
     public TextMeshProUGUI roundButtonTxt;
     public int round = 0; 
-
+    
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    public void UpdateButtonTxt(){
-        round++;
+    public void UpdateButtonTxt(string text){
         roundButtonTxt.text = round.ToString();
+        //round++;
+    }
+
+    public void endPhase(){
+
     }
 
 }

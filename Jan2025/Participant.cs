@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Target{ player1, enemy1, enemy2}
+public enum Target{ player1, enemy1, enemy2 }
 
 public class Participant : MonoBehaviour{
     public int health;
@@ -11,8 +11,11 @@ public class Participant : MonoBehaviour{
     public int poisonDmg;
     public int att;
     public int baseAtt;
+    public bool isDoneTurn;
+    public int initiative;
     public List <BattleAbility> conditions = new List<BattleAbility>(){};
     public List <StatTypes> typeList = new List<StatTypes>(){};
+    public Target targetName;
      
     //[SerializeField] Participant participant;
     
@@ -23,6 +26,9 @@ public class Participant : MonoBehaviour{
     }
 
     // Update is called once per frame
+    public void setInitiative(int init){
+        initiative = init;
+    }
 
     public int getDef(){
         return def;

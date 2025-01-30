@@ -735,8 +735,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.79941016, g: 0.6775098, b: 0.8207547, a: 1}
+    m_HighlightedColor: {r: 0.9056604, g: 0.30827567, b: 0.055535804, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2913,6 +2913,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 814775147}
+  - {fileID: 1686133921}
   m_Father: {fileID: 225834730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2932,22 +2933,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646e93f1bab864c079ae79444da3bd08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initiative: 0
-  block: 0
-  att: 0
-  poison: 0
-  pierce: 0
-  heal: 0
   health: 8
   maxHealth: 8
   def: 0
-  adjustments: 
+  poisonDmg: 0
+  att: 0
+  baseAtt: 0
+  isDoneTurn: 0
+  initiative: 0
+  conditions: []
+  typeList: 
+  targetName: 0
+  block: 0
+  pierce: 0
+  heal: 0
   enemySprite: {fileID: 0}
   abilityList:
   - {fileID: 11400000, guid: 21dbba841cb8344648a207cfbfaf49bb, type: 2}
   - {fileID: 11400000, guid: aa9f3056740d64e2dbca8b0a1ccc209b, type: 2}
   ability: {fileID: 0}
-  typeList: 
 --- !u!114 &341982515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7933,16 +7937,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646e93f1bab864c079ae79444da3bd08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initiative: 0
-  block: 0
-  att: 0
-  poison: 0
-  pierce: 0
-  heal: 0
   health: 8
   maxHealth: 8
   def: 0
-  adjustments: 
+  poisonDmg: 0
+  att: 0
+  baseAtt: 0
+  isDoneTurn: 0
+  initiative: 0
+  conditions: []
+  typeList: 
+  targetName: 0
+  block: 0
+  pierce: 0
+  heal: 0
   enemySprite: {fileID: 21300000, guid: cd2d6fa9406f5440cb93be328e99bbae, type: 3}
   abilityList:
   - {fileID: 11400000, guid: aa9f3056740d64e2dbca8b0a1ccc209b, type: 2}
@@ -7950,7 +7958,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a236084022df14bef8a9936d1cbd2a1d, type: 2}
   - {fileID: 11400000, guid: 5f6bc10775666431e8eb0ad9a3d51afb, type: 2}
   ability: {fileID: 0}
-  typeList: 
 --- !u!114 &814775149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12198,7 +12205,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1276602434}
         m_TargetAssemblyTypeName: PlayerBag, Assembly-CSharp
         m_MethodName: drawButton
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12302,7 +12309,10 @@ MonoBehaviour:
   TC: {fileID: 1869737315}
   isPrimed: 0
   cardCanvas: {fileID: 2089187167}
+  PlayArea: {fileID: 2004472977}
   currentTokenValues: 
+  initiative: 0
+  battleCoordinator: {fileID: 0}
 --- !u!224 &1310313597 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2594347571246203412, guid: a67fa0385f1794f40b48f42045b69a20, type: 3}
@@ -14153,6 +14163,115 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1686133920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1686133921}
+  - component: {fileID: 1686133924}
+  - component: {fileID: 1686133923}
+  - component: {fileID: 1686133922}
+  m_Layer: 0
+  m_Name: EnemyV2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1686133921
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686133920}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.60765386}
+  m_LocalScale: {x: 0.6300508, y: 1.1004264, z: 1.0354}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 341982513}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -29, y: -7}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1686133922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686133920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646e93f1bab864c079ae79444da3bd08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 8
+  maxHealth: 8
+  def: 0
+  poisonDmg: 0
+  att: 0
+  baseAtt: 0
+  isDoneTurn: 0
+  initiative: 0
+  conditions: []
+  typeList: 
+  targetName: 0
+  block: 0
+  pierce: 0
+  heal: 0
+  enemySprite: {fileID: 21300000, guid: cd2d6fa9406f5440cb93be328e99bbae, type: 3}
+  abilityList:
+  - {fileID: 11400000, guid: aa9f3056740d64e2dbca8b0a1ccc209b, type: 2}
+  - {fileID: 11400000, guid: 21dbba841cb8344648a207cfbfaf49bb, type: 2}
+  - {fileID: 11400000, guid: a236084022df14bef8a9936d1cbd2a1d, type: 2}
+  - {fileID: 11400000, guid: 5f6bc10775666431e8eb0ad9a3d51afb, type: 2}
+  ability: {fileID: 0}
+--- !u!114 &1686133923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686133920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.990566, g: 0.98589355, b: 0.98589355, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cd2d6fa9406f5440cb93be328e99bbae, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1686133924
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686133920}
+  m_CullTransparentMesh: 1
 --- !u!1 &1698013579
 GameObject:
   m_ObjectHideFlags: 0
@@ -17329,18 +17448,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 7
-  defMelee: 0
-  def: 1
   maxHealth: 0
+  def: 1
+  poisonDmg: 0
+  att: 0
+  baseAtt: 0
+  isDoneTurn: 0
+  initiative: 0
+  conditions: []
+  typeList: 
+  targetName: 0
+  defMelee: 0
   cost: 0
   color: 0
   block: 0
-  att: 0
-  baseAtt: 0
-  poisonDmg: 0
+  focusMax: 0
+  focus: 0
   pierce: 0
   playerStats: 
-  conditions: []
   statUIStrings:
   - 'Def: '
   - 'Att: '
@@ -18319,19 +18444,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80bcf06268fb41c3a2678842003ec22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  defMelee: 0
-  def: 2
+  health: 10
   maxHealth: 0
+  def: 0
+  poisonDmg: 0
+  att: 0
+  baseAtt: 1
+  isDoneTurn: 0
+  initiative: 0
+  conditions: []
+  typeList: 
+  targetName: 0
+  defMelee: 0
   cost: 0
   color: 0
   block: 0
-  att: 0
-  baseAtt: 0
-  poisonDmg: 0
+  focusMax: 0
+  focus: 0
   pierce: 0
   playerStats: 
-  conditions: []
   statUIStrings:
   - 'Def: '
   - 'Att: '

@@ -9,6 +9,7 @@ public class PlayerBag : MonoBehaviour
 {
     [Header("Token info")]
     [SerializeField]
+    public int focus = 2;
     public List <GameObject> startingTokens = new List<GameObject>();
     public List <int> whiteValue = new List<int>() { 1,1,1,1,2,2,4 };
     public int whiteCnt;
@@ -51,13 +52,16 @@ public class PlayerBag : MonoBehaviour
     public int isPrimed = 0;
     public GameObject cardCanvas;
     CardCanvas playerHand;
-    
-     [SerializeField] List <int> currentTokenValues = new List<int>() {};
+    [SerializeField] GameObject PlayArea;
+    [SerializeField] List <int> currentTokenValues = new List<int>() {};
+    [SerializeField] int initiative;
+    [SerializeField] PlayArea battleCoordinator;
 
     public void Start (){
         initializeTokensInfo();
         tokenCanvas = TC.GetComponent<TokenCanvas>();
         playerHand = cardCanvas.GetComponent<CardCanvas>();
+        battleCoordinator = PlayArea.GetComponent<PlayArea>();
     }
     
     public void ShuffleTokens()
@@ -73,33 +77,42 @@ public class PlayerBag : MonoBehaviour
             //Debug.Log("Player Bag" + tokenMax);
     }
 
-    public void drawButton (){
+    public void drawButton (int temp){
+        temp = focus;
         if (isPrimed == 0){
             Debug.Log("Prime Action " + isPrimed);
             ShuffleTokens();
             PrimeAction();
             isPrimed++;
-        } else if(isPrimed == 1){
+        } else if(isPrimed < temp){
             Debug.Log("Complete Action " + isPrimed);
             CompleteDrawAction();
             isPrimed++;
         } else {
             Debug.Log("Clear Amounts/End Turn " + isPrimed);
-            ClearDrawnToken();
             isPrimed = 0;
+            battleCoordinator.addInitiative(calcInitiative());
+            ClearDrawnToken();
+            battleCoordinator.getInitiatives();
         }
         tokenCanvas.UpdateTokenVals(whiteTotal, whiteDrawn, redTotal, redDrawn, blueTotal, blueDrawn, yellowTotal, yellowDrawn,
         orangeTotal, orangeDrawn,greenTotal, greenDrawn, purpleTotal, purpleDrawn, wildTotal, wildDrawn);
-        CardCanvas CardCavasSC = cardCanvas.GetComponent<CardCanvas>();
-        CardCavasSC.CurrentTokenValues[0] = whiteDrawn;
-        CardCavasSC.CurrentTokenValues[1] = redDrawn;
-        CardCavasSC.CurrentTokenValues[2] = blueDrawn;
-        CardCavasSC.CurrentTokenValues[3] = yellowDrawn;
-        CardCavasSC.CurrentTokenValues[4] = orangeDrawn;
-        CardCavasSC.CurrentTokenValues[5] = purpleDrawn;
-        CardCavasSC.CurrentTokenValues[6] = greenDrawn;
-        CardCavasSC.CurrentTokenValues[7] = wildDrawn;
+        playerHand.CurrentTokenValues[0] = whiteDrawn;
+        playerHand.CurrentTokenValues[1] = redDrawn;
+        playerHand.CurrentTokenValues[2] = blueDrawn;
+        playerHand.CurrentTokenValues[3] = yellowDrawn;
+        playerHand.CurrentTokenValues[4] = orangeDrawn;
+        playerHand.CurrentTokenValues[5] = purpleDrawn;
+        playerHand.CurrentTokenValues[6] = greenDrawn;
+        playerHand.CurrentTokenValues[7] = wildDrawn;
     
+    }
+
+    public int calcInitiative(){
+        for (int i = 0; i < playerHand.CurrentTokenValues.Length; i++) {
+            initiative += playerHand.CurrentTokenValues[i];
+        }
+        return initiative;
     }
 
     public void PrimeAction(){
@@ -119,7 +132,7 @@ public class PlayerBag : MonoBehaviour
             drawnToken.isDrawn = true;
             Debug.Log("cnt: " + i + " " + tokenSO.color + ": " + tokenSO.value);
             adjustTokenValues(tokenSO,true);
-            Debug.Log("Update prime action then update Playable Cards");
+            //Debug.Log("Update prime action then update Playable Cards");
             playerHand.UpdatePlayableCards();
         }  
     }
@@ -156,7 +169,7 @@ public class PlayerBag : MonoBehaviour
     }
 
     void initializeTokensInfo(){
-                whiteCnt = whiteValue.Count;
+        whiteCnt = whiteValue.Count;
         whiteTotal = whiteValue.Sum();
         currentTokenValues.Add(whiteTotal);
         

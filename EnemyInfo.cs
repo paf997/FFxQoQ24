@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyInfo : Participant
 {
-    public int initiative;
     public int block;
     public int pierce;
     public int heal;
