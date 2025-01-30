@@ -21,4 +21,10 @@ public class TokenCanvas : MonoBehaviour
         string vals =  $"Red: {redCnt} / {redMax} | Blue:  {blueCnt} / {blueMax} | Yellow:  {yellowCnt} / {yellowMax }| White: {whiteCnt} / {whiteMax}  ";
         text.text = vals;
     }
+
+    public void updateInitiativeUI(int init){
+        for (int i = 0; i < init; i++){
+
+        }
+    }
 }

@@ -56,6 +56,7 @@ public class PlayerBag : MonoBehaviour
     [SerializeField] List <int> currentTokenValues = new List<int>() {};
     [SerializeField] int initiative;
     [SerializeField] PlayArea battleCoordinator;
+    [SerializeField] GameObject FocusContainer;
 
     public void Start (){
         initializeTokensInfo();
@@ -91,7 +92,9 @@ public class PlayerBag : MonoBehaviour
         } else {
             Debug.Log("Clear Amounts/End Turn " + isPrimed);
             isPrimed = 0;
-            battleCoordinator.addInitiative(calcInitiative());
+            initiative = calcInitiative();
+            battleCoordinator.addInitiative(initiative);
+            tokenCanvas.updateInitiativeUI(initiative);
             ClearDrawnToken();
             battleCoordinator.getInitiatives();
         }
