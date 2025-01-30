@@ -6,7 +6,7 @@ public class ButtonTest : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public void ButtonTesPlst(){
+    public void ButtonTes(){
         Debug.Log ("Button Test");//
     }
 }

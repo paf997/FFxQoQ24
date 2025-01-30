@@ -7,10 +7,11 @@ using TMPro;
 public class TokenCanvas : MonoBehaviour
 {
     public TextMeshProUGUI text; 
+    [SerializeField] List <GameObject> FocusListUI = new List<GameObject>();
 
     public void Start()
     {
-  
+        updateFocusTokens(3);//test call
     }
 
     public void UpdateTokenVals(int whiteMax = 0, int whiteCnt = 0, int redMax = 0, int redCnt = 0,
@@ -23,8 +24,18 @@ public class TokenCanvas : MonoBehaviour
     }
 
     public void updateInitiativeUI(int init){
-        for (int i = 0; i < init; i++){
 
-        }
+    }
+
+    public void updateFocusTokens(int focus){
+        GameObject focusButton;
+        for(int i = 0; i < FocusListUI.Count; i++) {
+            focusButton = FocusListUI[i];
+            if(i < focus){
+                focusButton.SetActive(true);
+            }else{
+                focusButton.SetActive(false);
+            }    
+        }   
     }
 }
