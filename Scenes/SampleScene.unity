@@ -1815,9 +1815,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 342271634}
-        m_TargetAssemblyTypeName: ButtonTest, Assembly-CSharp
-        m_MethodName: ButtonTes
+      - m_Target: {fileID: 1276602434}
+        m_TargetAssemblyTypeName: PlayerBag, Assembly-CSharp
+        m_MethodName: FocusButtonToDrawTokens
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2320,9 +2320,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 522104523}
-        m_TargetAssemblyTypeName: ButtonTest, Assembly-CSharp
-        m_MethodName: ButtonTes
+      - m_Target: {fileID: 1276602434}
+        m_TargetAssemblyTypeName: PlayerBag, Assembly-CSharp
+        m_MethodName: FocusButtonToDrawTokens
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3369,11 +3369,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -440
+      value: -847.00006
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -635
+      value: -625
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5044,18 +5044,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
   m_PrefabInstance: {fileID: 709266521}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &522104523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522104521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c119cf4bdaba6431284df49b2a856b43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &524553493
 GameObject:
   m_ObjectHideFlags: 0
@@ -6998,11 +6986,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -710
+      value: -1117
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -635
+      value: -625
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7031,10 +7019,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 238335808}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2166530915473474708, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 522104523}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
 --- !u!1 &717313643
 GameObject:
@@ -8031,9 +8016,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 871101591}
-        m_TargetAssemblyTypeName: ButtonTest, Assembly-CSharp
-        m_MethodName: ButtonTes
+      - m_Target: {fileID: 1276602434}
+        m_TargetAssemblyTypeName: PlayerBag, Assembly-CSharp
+        m_MethodName: FocusButtonToDrawTokens
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9157,11 +9142,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -350
+      value: -757.00006
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -635
+      value: -625
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10400,9 +10385,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1540209476}
-        m_TargetAssemblyTypeName: ButtonTest, Assembly-CSharp
-        m_MethodName: ButtonTes
+      - m_Target: {fileID: 1276602434}
+        m_TargetAssemblyTypeName: PlayerBag, Assembly-CSharp
+        m_MethodName: FocusButtonToDrawTokens
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11283,11 +11268,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -620
+      value: -1027
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -635
+      value: -625
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13393,6 +13378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focus: 2
+  drawMax: 10
   startingTokens:
   - {fileID: 778273924}
   - {fileID: 730243642}
@@ -14605,11 +14591,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -530
+      value: -937.00006
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -635
+      value: -625
       objectReference: {fileID: 0}
     - target: {fileID: 6392532384713547523, guid: 49128c9f492eb4e7b98617ff5ae186e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18994,9 +18980,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1106277863}
-        m_TargetAssemblyTypeName: ButtonTest, Assembly-CSharp
-        m_MethodName: ButtonTes
+      - m_Target: {fileID: 1276602434}
+        m_TargetAssemblyTypeName: PlayerBag, Assembly-CSharp
+        m_MethodName: FocusButtonToDrawTokens
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

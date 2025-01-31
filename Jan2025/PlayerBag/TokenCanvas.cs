@@ -11,7 +11,7 @@ public class TokenCanvas : MonoBehaviour
 
     public void Start()
     {
-        updateFocusTokens(3);//test call
+        updateFocusTokens(2);//test call
     }
 
     public void UpdateTokenVals(int whiteMax = 0, int whiteCnt = 0, int redMax = 0, int redCnt = 0,

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-
-
 public class PlayerBag : MonoBehaviour
 {
     [Header("Token info")]
     [SerializeField]
-    public int focus = 2;
+    public int focus;
+    public int drawMax;
     public List <GameObject> startingTokens = new List<GameObject>();
     public List <int> whiteValue = new List<int>() { 1,1,1,1,2,2,4 };
     public int whiteCnt;
@@ -79,7 +78,6 @@ public class PlayerBag : MonoBehaviour
     }
 
     public void drawButton (int temp){
-        temp = focus;
         if (isPrimed == 0){
             Debug.Log("Prime Action " + isPrimed);
             ShuffleTokens();
@@ -109,6 +107,17 @@ public class PlayerBag : MonoBehaviour
         playerHand.CurrentTokenValues[6] = greenDrawn;
         playerHand.CurrentTokenValues[7] = wildDrawn;
     
+    }
+
+    public void FocusButtonToDrawTokens(){
+        if((drawCnt <= (drawMax - drawCnt)) && isPrimed > 0){
+            drawButton(drawCnt);
+            drawCnt += drawCnt;
+            focus--;
+        }else{
+            Debug.Log("Not enough drawing");
+        }
+        tokenCanvas.updateFocusTokens(focus);
     }
 
     public int calcInitiative(){
