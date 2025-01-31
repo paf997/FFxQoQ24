@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   value: 0
-  color: Yellow
+  color2: 
   type: Magic
-  isAvailable: 1
-  isDrawn: 0
-  isExtinguishable: 0
+  color: 0
   description: 

@@ -57,6 +57,7 @@ public class PlayerBag : MonoBehaviour
     [SerializeField] int initiative;
     [SerializeField] PlayArea battleCoordinator;
     [SerializeField] GameObject FocusContainer;
+    public TokenColor tokenColor;
 
     public void Start (){
         initializeTokensInfo();
@@ -159,25 +160,25 @@ public class PlayerBag : MonoBehaviour
         }
     }
 
-    public void adjustTokenValues(Token toke, bool isIncrease){
-        int val = toke.value;
-        if(!isIncrease) {val = (toke.value * -1);}
+    public void adjustTokenValues(Token token, bool isIncrease){
+        int val = token.value;
+        if(!isIncrease) {val = (token.value * -1);}
 
-        if(toke.color == "white"){
+        if(token.color == TokenColor.white){
             whiteDrawn = whiteDrawn + val;
-        }else if (toke.color.ToLower() == "red"){
+        }else if (token.color == TokenColor.red){
             redDrawn = redDrawn + val;
-        }else if (toke.color.ToLower() == "blue"){
+        }else if (token.color == TokenColor.blue){
             blueDrawn = blueDrawn + val;
-        }else if (toke.color.ToLower() == "yellow"){
+        }else if (token.color == TokenColor.yellow){
             yellowDrawn = yellowDrawn + val;
-        }else if (toke.color.ToLower() == "green"){
+        }else if (token.color == TokenColor.green){
             greenDrawn = greenDrawn + val;
-        }else if (toke.color.ToLower() == "purple"){
+        }else if (token.color == TokenColor.purple){
             purpleDrawn = purpleDrawn + val;
-        }else if (toke.color.ToLower() == "orange"){
+        }else if (token.color == TokenColor.orange){
             orangeDrawn = orangeDrawn + val;
-        }else if (toke.color.ToLower() == "wild"){
+        }else if (token.color == TokenColor.wild){
             wildDrawn = wildDrawn + val;
         }
     }

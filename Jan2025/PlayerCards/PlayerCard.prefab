@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2774393761108498432
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 698808002931471418, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698808002931471418, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_UseGraphicAlpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 698808002931471418, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_EffectDistance.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160060642894062898, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_Name
+      value: PlayerCardV2 Variant Variant 2 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205638255719350681, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1332
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205638255719350681, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205638255719350681, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6076535
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205638255719350681, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205638255719350681, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205638255719350681, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205638255719350681, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205638255719350681, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205638255719350681, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205638255719350681, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 698808002931471418, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1160060642894062898, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7022196313572618282}
+    - targetCorrespondingSourceObject: {fileID: 1160060642894062898, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5550532041231816058}
+    - targetCorrespondingSourceObject: {fileID: 2191706301589137654, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1327015458562738263}
+  m_SourcePrefab: {fileID: 100100000, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+--- !u!1 &1090279170097906787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2999911157866634339, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+  m_PrefabInstance: {fileID: 2774393761108498432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1436195428273910547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3850230565896776467, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+  m_PrefabInstance: {fileID: 2774393761108498432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3934454402876849458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1160060642894062898, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+  m_PrefabInstance: {fileID: 2774393761108498432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7022196313572618282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934454402876849458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b7d1c8f99b44a49bcaacf323dbbee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 0}
+  cardData: {fileID: 0}
+  handIndex: 0
+  costText: {fileID: 8827447793132047162}
+  isDrawn: 0
+  isExtinguishable: 0
+  cardBackgroundImg: {fileID: 4101126873937490166}
+  cardIconImg: {fileID: 1436195428273910547}
+  cardColorImg: {fileID: 1090279170097906787}
+  nAbilities: 1
+  originalHandPosTransform: {fileID: 0}
+  isEmpty: 0
+  isAvailable: 1
+  isPlayable: 0
+  cardCanvas: {fileID: 0}
+  playerDeckScript: {fileID: 0}
+  cardOutline: {fileID: 0}
+  cardAvailable: {fileID: 1327015458562738263}
+  cardUnavailable: {fileID: 0}
+  PlayAreaGO: {fileID: 0}
+  available: {r: 0.29019606, g: 1, b: 0.61561877, a: 0.7}
+  unavailable: {r: 1, g: 0.2216981, b: 0.22956146, a: 0.8}
+  selected: {r: 0.8301887, g: 0.80822724, b: 0.105731584, a: 1}
+  availbilityColors:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  borderColorCode: 0
+  cost: 0
+  color: 0
+  block: 0
+  att: 0
+  poison: 0
+  pierce: 0
+  heal: 0
+  abilityUses: 0
+  abilityUseRounds: 0
+--- !u!114 &5550532041231816058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934454402876849458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcfc92749e12644b48ca7d5c991a7657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDiscarded: 0
+  cardCanvasGO: {fileID: 0}
+  playerCard: {fileID: 7022196313572618282}
+  handIndex: 0
+--- !u!1 &4101126873937490166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2191706301589137654, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+  m_PrefabInstance: {fileID: 2774393761108498432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1327015458562738263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101126873937490166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.28230685, g: 0.9811321, b: 0.3521893, a: 0.5}
+  m_EffectDistance: {x: 5, y: -0.5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &8827447793132047162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6629796259339146042, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+  m_PrefabInstance: {fileID: 2774393761108498432}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   value: 1
-  color: Blue
+  color2: 
   type: Defense
+  color: 0
   description: 

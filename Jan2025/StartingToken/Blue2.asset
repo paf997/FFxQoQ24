@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   value: 2
-  color: Blue
+  color2: 
   type: Defense
-  isAvailable: 0
-  isDrawn: 1
-  isExtinguishable: 0
+  color: 0
   description: 
