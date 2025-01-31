@@ -9,6 +9,7 @@ public class PlayerBag : MonoBehaviour
     [SerializeField]
     public int focus;
     public int drawMax;
+    public int nTokens;
     public List <GameObject> startingTokens = new List<GameObject>();
     public List <int> whiteValue = new List<int>() { 1,1,1,1,2,2,4 };
     public int whiteCnt;
@@ -77,15 +78,16 @@ public class PlayerBag : MonoBehaviour
             //Debug.Log("Player Bag" + tokenMax);
     }
 
-    public void drawButton (int temp){
+    public void drawButton (int temp = 3){
         if (isPrimed == 0){
             Debug.Log("Prime Action " + isPrimed);
             ShuffleTokens();
             PrimeAction();
             isPrimed++;
+            tokenCanvas.updateFocusTokens(focus);
         } else if(isPrimed < temp){
             Debug.Log("Complete Action " + isPrimed);
-            CompleteDrawAction();
+            DrawAction();
             isPrimed++;
         } else {
             Debug.Log("Clear Amounts/End Turn " + isPrimed);
@@ -110,9 +112,9 @@ public class PlayerBag : MonoBehaviour
     }
 
     public void FocusButtonToDrawTokens(){
-        if((drawCnt <= (drawMax - drawCnt)) && isPrimed > 0){
-            drawButton(drawCnt);
-            drawCnt += drawCnt;
+        if((nTokens < (drawMax - drawCnt)) && isPrimed > 0){
+            drawButton(nTokens);
+            drawCnt += nTokens;
             focus--;
         }else{
             Debug.Log("Not enough drawing");
@@ -136,13 +138,13 @@ public class PlayerBag : MonoBehaviour
             adjustTokenValues(tokenSO,true);
             }  
     }  
-    public void CompleteDrawAction(){
+    public void DrawAction(){
 
-        for (int i = 3;i < drawCnt;i++){
-            drawnToken = startingTokens[i].GetComponent<TokenUI>();
+        for (int i = 0;i < drawCnt;i++){
+            drawnToken = startingTokens[drawCnt + i].GetComponent<TokenUI>();
             Token tokenSO = drawnToken.getTSO();
             drawnToken.isDrawn = true;
-            Debug.Log("cnt: " + i + " " + tokenSO.color + ": " + tokenSO.value);
+            Debug.Log("cnt: " + (drawCnt+ i) + " " + tokenSO.color + ": " + tokenSO.value);
             adjustTokenValues(tokenSO,true);
             //Debug.Log("Update prime action then update Playable Cards");
             playerHand.UpdatePlayableCards();
