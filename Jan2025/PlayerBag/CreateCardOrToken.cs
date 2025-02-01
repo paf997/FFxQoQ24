@@ -6,18 +6,29 @@ using UnityEngine;
 
 public class CreateCardOrToken : MonoBehaviour{
 
-[SerializeField] List<GameObject> TokenDataList = new List <GameObject> ();
-[SerializeField] List<GameObject> CardDataList = new  List <GameObject> ();
+[SerializeField] List<Token> TokenDataList = new List <Token> ();
+//[SerializeField] List<Card> CardDataList = new  List <Card> ();
+public Transform tempTransform;
 public Token token;
 public PlayerCardUI card;
+public GameObject tokenPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //instatiateCollection(TokenDataList);
     }
 
-    void instatiateCollection(List <GameObject> list ){
+    void instatiateCollection(List <Token> list ){
         Debug.Log("Instantiate Collection");
-        
+        if (list[0] is Token){
+            Debug.Log("Is token List");
+        }else {
+            Debug.Log("Is Card List");    
         }
+        foreach (Token token in list){
+            GameObject newToken = Instantiate (tokenPrefab, tempTransform.position , Quaternion.identity,tempTransform );
+            //newToken.GetComponent<TokenUI>().getDataFromSOAndSet(token);
+   
+        }
+    }
 }
