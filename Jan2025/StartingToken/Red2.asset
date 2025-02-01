@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c410d3f84cb604961abcf93c4f58f0fe, type: 3}
   m_Name: Red2
   m_EditorClassIdentifier: 
-  Name: 
+  name: 
   value: 2
   color2: 
-  type: Attack
-  color: 0
+  type: 0
+  subType: 0
+  color: 1
+  Sprite: {fileID: 21300000, guid: b2fbcab8d32014baa927f2dec7d34b90, type: 3}
   description: 

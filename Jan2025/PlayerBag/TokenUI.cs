@@ -8,7 +8,7 @@ public class TokenUI : MonoBehaviour
     [SerializeField] Token Token;
     [SerializeField] int value;
     [SerializeField] TMP_Text valueTextUI;
-    [SerializeField] Sprite sprite;
+    //[SerializeField] Sprite sprite;
     [SerializeField] GameObject Image;
     [SerializeField] TokenColor color;
     [SerializeField] StatTypes type;    
@@ -24,17 +24,11 @@ public class TokenUI : MonoBehaviour
     {
         UpdateTokenUI();
         getDataFromSOAndSet(Token);
+       //Debug.Log("type === " + sprite.name );
     }
-
-    /// <summary>
-    /// Updates the UI elements based on the assigned Token ScriptableObject.
-    /// </summary>
-    /// 
     public void getDataFromSOAndSet(Token data){
-        //Token = data;
-        Image image;
-        image = data.Sprite.GetComponent<Image>();
-        sprite = image.sprite;
+        Token = data;
+        Image.GetComponent<Image>().sprite = data.Sprite;
         value = data.value;
         valueTextUI.text = value.ToString();
         type = data.type;
@@ -52,8 +46,6 @@ public class TokenUI : MonoBehaviour
         }
 
     }
-
-
     public void RefreshUI()
     {
         UpdateTokenUI();

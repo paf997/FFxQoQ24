@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum StatTypes  { att, attRange, attMagic, def, poison}
+public enum StatTypes  { att, attRange, attMagic, def, poison, magic, bust}
 
 [CreateAssetMenu(fileName = "BattleAbility", menuName = "Game/BattleAbility", order = 1)]
 public class BattleAbility : ScriptableObject {

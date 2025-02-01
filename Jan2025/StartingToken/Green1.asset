@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c410d3f84cb604961abcf93c4f58f0fe, type: 3}
   m_Name: Green1
   m_EditorClassIdentifier: 
-  Name: 
+  name: 
   value: 1
   color2: 
-  type: Misc
-  color: 0
+  type: 0
+  subType: 0
+  color: 4
+  Sprite: {fileID: 21300000, guid: b7c30a68a11eb4309876b9e9b0bfea28, type: 3}
   description: 

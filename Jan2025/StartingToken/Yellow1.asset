@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c410d3f84cb604961abcf93c4f58f0fe, type: 3}
   m_Name: Yellow1
   m_EditorClassIdentifier: 
-  Name: 
-  value: 0
+  name: 
+  value: 1
   color2: 
-  type: Magic
-  color: 0
+  type: 0
+  subType: 0
+  color: 3
+  Sprite: {fileID: 21300000, guid: 1551d543bd14c496f9181000447cc0f7, type: 3}
   description: 
