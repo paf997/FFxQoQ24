@@ -15,7 +15,7 @@ public GameObject tokenPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        //instatiateCollection(TokenDataList);
+        instatiateCollection(TokenDataList);
     }
 
     void instatiateCollection(List <Token> list ){
@@ -27,7 +27,8 @@ public GameObject tokenPrefab;
         }
         foreach (Token token in list){
             GameObject newToken = Instantiate (tokenPrefab, tempTransform.position , Quaternion.identity,tempTransform );
-            //newToken.GetComponent<TokenUI>().getDataFromSOAndSet(token);
+            Debug.Log(" the name" + newToken.name);
+            newToken.GetComponent<TokenUI>().getDataFromSOAndSet(token);
    
         }
     }

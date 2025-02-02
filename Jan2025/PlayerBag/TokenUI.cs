@@ -5,7 +5,7 @@ using TMPro;
 public class TokenUI : MonoBehaviour
 {
     [Header("Token Data")]
-    [SerializeField] Token Token;
+    [SerializeField] Token token;
     [SerializeField] int value;
     [SerializeField] TMP_Text valueTextUI;
     //[SerializeField] Sprite sprite;
@@ -22,22 +22,24 @@ public class TokenUI : MonoBehaviour
 
     private void Start()
     {
-        UpdateTokenUI();
-        getDataFromSOAndSet(Token);
+        //UpdateTokenUI();
+        //getDataFromSOAndSet(Token);
        //Debug.Log("type === " + sprite.name );
     }
     public void getDataFromSOAndSet(Token data){
-        Token = data;
+        Debug.Log("Data os  " + data );
+        token = data;
+        Debug.Log("Data os  " + token);
         Image.GetComponent<Image>().sprite = data.Sprite;
         value = data.value;
-        valueTextUI.text = value.ToString();
+        valueTextUI.text = data.value.ToString();
         type = data.type;
         color = data.color;
         subType = data.subType;
     }
     private void UpdateTokenUI()
     {
-        if (Token == null)
+        if (token == null)
         {
             Debug.LogWarning("No Token assigned to TokenUI.");
             return;
@@ -52,6 +54,6 @@ public class TokenUI : MonoBehaviour
     }
 
     public Token getTSO(){
-        return Token;
+        return token;
     }
 }
