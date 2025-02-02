@@ -18,5 +18,6 @@ MonoBehaviour:
   type: 6
   subType: 6
   color: 0
-  Sprite: {fileID: 21300000, guid: 42c9ac48df8a847b9ab16a32fdc3e151, type: 3}
+  backgroundImage: {fileID: 21300000, guid: 42c9ac48df8a847b9ab16a32fdc3e151, type: 3}
+  battleImage: {fileID: 21300000, guid: f7a6d893caf344e259d7a801efbb0bdf, type: 3}
   description: 

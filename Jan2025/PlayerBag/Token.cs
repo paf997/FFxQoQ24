@@ -12,8 +12,8 @@ public class Token : ScriptableObject
     public StatTypes type;    
     public StatTypes subType;       // Type/category of the token
     public TokenColor color;
-    public Sprite Sprite;
-  
+    public Sprite backgroundImage;
+    public Sprite battleImage;
 
     [TextArea]
     public string description;   // Optional description of the token

@@ -26,9 +26,10 @@ public GameObject tokenPrefab;
             Debug.Log("Is Card List");    
         }
         foreach (Token token in list){
-            GameObject newToken = Instantiate (tokenPrefab, tempTransform.position , Quaternion.identity,tempTransform );
+            GameObject newToken = Instantiate (tokenPrefab, tempTransform.position , Quaternion.identity, tempTransform );
             Debug.Log(" the name" + newToken.name);
             newToken.GetComponent<TokenUI>().getDataFromSOAndSet(token);
+            tempTransform.position = new Vector2 (tempTransform.position.x + 50, tempTransform.position.y);
    
         }
     }

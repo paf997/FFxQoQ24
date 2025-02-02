@@ -9,6 +9,7 @@ public class TokenUI : MonoBehaviour
     [SerializeField] int value;
     [SerializeField] TMP_Text valueTextUI;
     //[SerializeField] Sprite sprite;
+    [SerializeField] GameObject backgroundImage;
     [SerializeField] GameObject Image;
     [SerializeField] TokenColor color;
     [SerializeField] StatTypes type;    
@@ -27,10 +28,9 @@ public class TokenUI : MonoBehaviour
        //Debug.Log("type === " + sprite.name );
     }
     public void getDataFromSOAndSet(Token data){
-        Debug.Log("Data os  " + data );
         token = data;
-        Debug.Log("Data os  " + token);
-        Image.GetComponent<Image>().sprite = data.Sprite;
+        backgroundImage.GetComponent<Image>().sprite = data.backgroundImage;
+        Image.GetComponent<Image>().sprite = data.battleImage;
         value = data.value;
         valueTextUI.text = data.value.ToString();
         type = data.type;
