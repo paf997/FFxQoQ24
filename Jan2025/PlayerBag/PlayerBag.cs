@@ -95,7 +95,6 @@ public class PlayerBag : MonoBehaviour
         } else {
             Debug.Log("Clear Amounts/End Turn " + isPrimed);
             isPrimed = 0;
-            initiative = calcInitiative();
             battleCoordinator.addInitiative(initiative);
             tokenCanvas.updateInitiativeUI(initiative);
             ClearDrawnToken();
@@ -132,7 +131,10 @@ public class PlayerBag : MonoBehaviour
         return initiative;
     }
 
-
+    public int adjustInitiative(int value){
+        initiative += value;
+        return initiative;
+    }
 
     public void PrimeAction(){
         for (int i = 0;i < 3;i++){
@@ -184,19 +186,19 @@ public class PlayerBag : MonoBehaviour
         }else if ((token.getTokenColor()) == TokenColor.wild){
             wildDrawn = wildDrawn + value;
         }
-
-        placeTokenOnATB(token);  
+        placeTokenOnATB(token); 
     }
 
     public void placeTokenOnATB(TokenUI token){
         RectTransform posATB = token.GetComponent<RectTransform>();
         Debug.Log("Transform token" + posATB);
-        float newX = ATBList[0].GetComponent<RectTransform>().position.x;
-        float newY = ATBList[0].GetComponent<RectTransform>().position.y;
-        float newZ = ATBList[0].GetComponent<RectTransform>().position.z;
-        Debug.Log("Transform  ATB" + ATBList[0].GetComponent<RectTransform>());
+        float newX = ATBList[initiative].GetComponent<RectTransform>().position.x;
+        float newY = ATBList[initiative].GetComponent<RectTransform>().position.y;
+        float newZ = ATBList[initiative].GetComponent<RectTransform>().position.z;
+       // Debug.Log("Transform  ATB" + ATBList[0].GetComponent<RectTransform>());
         posATB.position = new Vector3(newX, newY, newZ);
         //posATB.Translate(newX, newY, newZ);
+        adjustInitiative(token.getTokenValue()); 
     }
 
     void initializeTokensInfo(){
