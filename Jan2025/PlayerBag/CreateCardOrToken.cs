@@ -12,9 +12,11 @@ public Transform tempTransform;
 public Token token;
 public PlayerCardUI card;
 public GameObject tokenPrefab;
-    // Start is called before the first frame update
+PlayerBag playerBag;
+[SerializeField] GameObject Playerbag;
     void Start()
     {
+        playerBag = Playerbag.GetComponent<PlayerBag> ();
         instatiateCollection(TokenDataList);
     }
 
@@ -29,8 +31,8 @@ public GameObject tokenPrefab;
             GameObject newToken = Instantiate (tokenPrefab, tempTransform.position , Quaternion.identity, tempTransform );
             Debug.Log(" the name" + newToken.name);
             newToken.GetComponent<TokenUI>().getDataFromSOAndSet(token);
-            tempTransform.position = new Vector2 (tempTransform.position.x + 50, tempTransform.position.y);
-   
+            //tempTransform.position = new Vector2 (tempTransform.position.x + 50, tempTransform.position.y);
+            playerBag.startingTokens.Add(newToken);
         }
     }
 }

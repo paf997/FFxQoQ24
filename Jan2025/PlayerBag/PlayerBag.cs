@@ -57,6 +57,8 @@ public class PlayerBag : MonoBehaviour
     [SerializeField] int initiative;
     [SerializeField] PlayArea battleCoordinator;
     [SerializeField] GameObject FocusContainer;
+    [SerializeField] List <GameObject> ATBList = new List<GameObject>();
+
     public TokenColor tokenColor;
 
     public void Start (){
@@ -130,13 +132,15 @@ public class PlayerBag : MonoBehaviour
         return initiative;
     }
 
+
+
     public void PrimeAction(){
         for (int i = 0;i < 3;i++){
             drawnToken = startingTokens[i].GetComponent<TokenUI>();
             Token tokenSO = drawnToken.getTSO();
             drawnToken.isDrawn = true;
             //Debug.Log("" + tokenSO.color + ": " + tokenSO.value);
-            adjustTokenValues(tokenSO,true);
+            adjustTokenValues(drawnToken);
             }  
     }  
     public void DrawAction(){
@@ -146,7 +150,7 @@ public class PlayerBag : MonoBehaviour
             Token tokenSO = drawnToken.getTSO();
             drawnToken.isDrawn = true;
             Debug.Log("cnt: " + (drawCnt+ i) + " " + tokenSO.color + ": " + tokenSO.value);
-            adjustTokenValues(tokenSO,true);
+            adjustTokenValues(drawnToken);
             //Debug.Log("Update prime action then update Playable Cards");
             playerHand.UpdatePlayableCards();
         }  
@@ -156,31 +160,43 @@ public class PlayerBag : MonoBehaviour
             drawnToken = startingTokens[i].GetComponent<TokenUI>();
             Token tokenSO = drawnToken.getTSO();
             drawnToken.isDrawn = false;
-            adjustTokenValues(tokenSO, false);
+            adjustTokenValues(drawnToken);
         }
     }
 
-    public void adjustTokenValues(Token token, bool isIncrease){
-        int val = token.value;
-        if(!isIncrease) {val = (token.value * -1);}
+    public void adjustTokenValues(TokenUI token){
+        int value = token.getTokenValue();
 
-        if(token.color == TokenColor.white){
-            whiteDrawn = whiteDrawn + val;
-        }else if (token.color == TokenColor.red){
-            redDrawn = redDrawn + val;
-        }else if (token.color == TokenColor.blue){
-            blueDrawn = blueDrawn + val;
-        }else if (token.color == TokenColor.yellow){
-            yellowDrawn = yellowDrawn + val;
-        }else if (token.color == TokenColor.green){
-            greenDrawn = greenDrawn + val;
-        }else if (token.color == TokenColor.purple){
-            purpleDrawn = purpleDrawn + val;
-        }else if (token.color == TokenColor.orange){
-            orangeDrawn = orangeDrawn + val;
-        }else if (token.color == TokenColor.wild){
-            wildDrawn = wildDrawn + val;
+        if((token.getTokenColor()) == TokenColor.white){
+            whiteDrawn = whiteDrawn + value;
+        }else if ((token.getTokenColor()) == TokenColor.red){
+            redDrawn = redDrawn + value;
+        }else if ((token.getTokenColor()) == TokenColor.blue){
+            blueDrawn = blueDrawn + value;
+        }else if ((token.getTokenColor()) == TokenColor.yellow){
+            yellowDrawn = yellowDrawn + value;
+        }else if ((token.getTokenColor()) == TokenColor.green){
+            greenDrawn = greenDrawn + value;
+        }else if ((token.getTokenColor()) == TokenColor.purple){
+            purpleDrawn = purpleDrawn + value;
+        }else if ((token.getTokenColor()) == TokenColor.orange){
+            orangeDrawn = orangeDrawn + value;
+        }else if ((token.getTokenColor()) == TokenColor.wild){
+            wildDrawn = wildDrawn + value;
         }
+
+        placeTokenOnATB(token);  
+    }
+
+    public void placeTokenOnATB(TokenUI token){
+        RectTransform posATB = token.GetComponent<RectTransform>();
+        Debug.Log("Transform token" + posATB);
+        float newX = ATBList[0].GetComponent<RectTransform>().position.x;
+        float newY = ATBList[0].GetComponent<RectTransform>().position.y;
+        float newZ = ATBList[0].GetComponent<RectTransform>().position.z;
+        Debug.Log("Transform  ATB" + ATBList[0].GetComponent<RectTransform>());
+        posATB.position = new Vector3(newX, newY, newZ);
+        //posATB.Translate(newX, newY, newZ);
     }
 
     void initializeTokensInfo(){

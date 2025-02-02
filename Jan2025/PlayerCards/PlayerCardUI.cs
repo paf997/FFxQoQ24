@@ -172,5 +172,4 @@ public class PlayerCardUI : MonoBehaviour
     public PlayerCardSO getPlayerCardStats(){
         return card;
     }
-
 }

@@ -44,9 +44,14 @@ public class TokenUI : MonoBehaviour
             Debug.LogWarning("No Token assigned to TokenUI.");
             return;
         }else{
-
         }
+    }
+    public int getTokenValue(){
+        return value;
+    }
 
+    public TokenColor getTokenColor(){
+        return color;
     }
     public void RefreshUI()
     {
