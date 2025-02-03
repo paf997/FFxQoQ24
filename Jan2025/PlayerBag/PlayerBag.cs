@@ -35,7 +35,7 @@ public class PlayerBag : MonoBehaviour
     public int orangeCnt;
     public int orangeDrawn = 0;
     public int orangeTotal;
-    public List <int> purpleValues = new List<int>() {  1};
+    public List <int> purpleValues = new List<int>() { 1 };
     public int purpleCnt;
     public int purpleDrawn = 0;
     public int purpleTotal;
@@ -59,6 +59,8 @@ public class PlayerBag : MonoBehaviour
     [SerializeField] GameObject FocusContainer;
     [SerializeField] List <GameObject> ATBList = new List<GameObject>();
     public TokenColor tokenColor;
+    [SerializeField] bool hasBusted;
+    [SerializeField] GameObject TokenDiscardArea;
 
     public void Start (){
         initializeTokensInfo();
@@ -109,6 +111,10 @@ public class PlayerBag : MonoBehaviour
         playerHand.CurrentTokenValues[5] = purpleDrawn;
         playerHand.CurrentTokenValues[6] = greenDrawn;
         playerHand.CurrentTokenValues[7] = wildDrawn;
+
+        if(playerHand.CurrentTokenValues[0] > 7){
+            hasBusted = true;
+        }
     
     }
     public void PrimeAction(){
@@ -124,46 +130,52 @@ public class PlayerBag : MonoBehaviour
     public void DrawAction(){
 
         for (int i = 0;i < drawCnt;i++){
-            drawnToken = startingTokens[nTokens + i].GetComponent<TokenUI>();
-            Token tokenSO = drawnToken.getTSO();
-            drawnToken.isDrawn = true;
-            Debug.Log("cnt: " + (drawCnt+ i) + " " + tokenSO.color + ": " + tokenSO.value);
-            nTokens++;
-            adjustTokenValues(drawnToken);
-            //Debug.Log("Update prime action then update Playable Cards");
-            playerHand.UpdatePlayableCards();
+            if(hasBusted){
+                Debug.Log(" Can't draw more tokens because of bust");
+                break;
+            }else{
+                drawnToken = startingTokens[nTokens + i].GetComponent<TokenUI>();
+                Token tokenSO = drawnToken.getTSO();
+                drawnToken.isDrawn = true;
+                Debug.Log("cnt: " + (drawCnt+ i) + " " + tokenSO.color + ": " + tokenSO.value);
+                nTokens++;
+                adjustTokenValues(drawnToken);
+                //Debug.Log("Update prime action then update Playable Cards");
+                playerHand.UpdatePlayableCards();
+            }
         }  
     }
         public void ClearDrawnToken(){
-        for (int i = 0;i < nTokens;i++){
+        for (int i = 0;i < startingTokens.Count;i++){
             drawnToken = startingTokens[i].GetComponent<TokenUI>();
             Token tokenSO = drawnToken.getTSO();
-            drawnToken.isDrawn = false;
+            if(drawnToken.isDrawn){
+                TokenDiscardArea.GetComponent<TokenDiscardArea>().addTokenToDiscardArea(startingTokens[i]);
+                drawnToken.isDrawn = false;
+            }
             //adjustTokenValues(drawnToken);?
+        }
             isPrimed = 0;
             nTokens = 0;
-        }
     }
-    
-
     public void FocusButtonToDrawTokens(){
         if((nTokens < (drawMax - drawCnt)) && isPrimed > 0){
+            //Debug.Log("ntokens: " + nTokens +  " draw count: " + drawCnt + " draw max- drawCnt: " + (drawMax - drawCnt));
             drawButton(nTokens);
             drawCnt += nTokens;
             focus--;
         }else{
+            Debug.Log("ntokens: " + nTokens +  " draw count: " + drawCnt + " draw max- drawCnt: " + (drawMax - drawCnt));
             Debug.Log("Not enough drawing");
         }
         tokenCanvas.updateFocusTokens(focus);
     }
-
     public int calcInitiative(){
         for (int i = 0; i < playerHand.CurrentTokenValues.Length; i++) {
             initiative += playerHand.CurrentTokenValues[i];
         }
         return initiative;
     }
-
     public int adjustInitiative(int value){
         initiative += value;
         return initiative;
