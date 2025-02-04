@@ -23,13 +23,13 @@ PlayerBag playerBag;
     void instatiateCollection(List <Token> list ){
         Debug.Log("Instantiate Collection");
         if (list[0] is Token){
-            Debug.Log("Is token List");
+           // Debug.Log("Is token List");
         }else {
-            Debug.Log("Is Card List");    
+            //Debug.Log("Is Card List");    
         }
         foreach (Token token in list){
             GameObject newToken = Instantiate (tokenPrefab, tempTransform.position , Quaternion.identity, tempTransform );
-            Debug.Log(" the name" + newToken.name);
+            //Debug.Log(" the name" + newToken.name);
             newToken.GetComponent<TokenUI>().getDataFromSOAndSet(token);
             //tempTransform.position = new Vector2 (tempTransform.position.x + 50, tempTransform.position.y);
             playerBag.startingTokens.Add(newToken);
