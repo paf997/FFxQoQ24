@@ -10,7 +10,7 @@ public class EnemyBase : ScriptableObject
 
     [SerializeField] int startingHP;
     [SerializeField] int startingDmg;
-    int dmg;
+    public int dmg;
     [SerializeField] int startingMDmg;
     int mDmg;
     [SerializeField] int startingRDmg;
@@ -43,7 +43,6 @@ public class EnemyBase : ScriptableObject
 
     void Start()
     {
-
         randomAction();
     }
 
@@ -60,14 +59,12 @@ public class EnemyBase : ScriptableObject
         def = def + adjDef;
         magDef = magDef + adjMDef;
         rangeDef = rangeDef + adjRDef;
-
     }
 
     public void resetDef(int adjDef = 0, int adjRDef = 0, int adjustMDef = 0){//0= att, 1 = ranged, 2 = magic 
         if(adjDef != 0) def = startingDef;
         if(adjRDef !=0) rangeDef = startingRangeDef;
         if(adjustMDef !=0) magDef = startingMagDef;
-
     }
 
     public void adjustAttack(int attAdj = 0, int rAttAdj = 0, int mAttAdj = 0,int nAttacks = 1){
@@ -95,7 +92,10 @@ public class EnemyBase : ScriptableObject
         }
     }
 
-    
+    public int getBaseDmg(){
+        return dmg;
+    }
+
     public void baseAttack(){
         
     }
