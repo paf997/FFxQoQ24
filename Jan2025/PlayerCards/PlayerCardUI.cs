@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class PlayerCardUI : MonoBehaviour
 {
     [Header("Card Data")]
     [SerializeField] private PlayerCardSO card;
-    public PlayerCardSO cardData;
+    public PlayerCardSO [] cardData = new PlayerCardSO [3];
     
     public int handIndex;
 
@@ -17,8 +18,9 @@ public class PlayerCardUI : MonoBehaviour
     public bool isDrawn;        // Whether the token has been drawn
     public bool isExtinguishable; // Whether the token can be extinguished
     public GameObject cardBackgroundImg;
-    public GameObject cardIconImg;
-    public GameObject cardColorImg;
+    public GameObject [] cardIconImg = new GameObject[3];
+    public GameObject [] cardColorImg = new GameObject[3];
+    public GameObject [] abilityAreas  = new GameObject[3];
     private CardCanvas playerHand;
     public int nAbilities = 1;
     public Transform originalHandPosTransform;
@@ -30,10 +32,12 @@ public class PlayerCardUI : MonoBehaviour
     public GameObject cardCanvas;
     public GameObject playerDeckScript;
     private PlayerDeck playerDeck;  
+    private CardAbility abilityScript; 
     public GameObject cardOutline;
     public Outline cardAvailable;
     public Outline cardUnavailable; 
     [SerializeField] GameObject PlayAreaGO ;
+    public GameObject cardAbilityScript;
     PlayArea executeAction;
     [SerializeField] Color available = new Color (.40f, .290f, 1.0f, .70f);
     [SerializeField] Color unavailable = new Color (.3f, .050f, .80f, .80f);
@@ -49,6 +53,10 @@ public class PlayerCardUI : MonoBehaviour
     public int heal;
     [SerializeField] int abilityUses;
     [SerializeField] int abilityUseRounds;
+
+    [SerializeField] GameObject backgroundImage;
+    [SerializeField] GameObject Image;
+    [SerializeField] TMP_Text valueTextUI;
 
     //public Color [] cardAvailabilityColors = new Color{  };
 
@@ -71,6 +79,8 @@ public class PlayerCardUI : MonoBehaviour
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
         playerDeck = playerDeckScript.GetComponent<PlayerDeck>(); 
         executeAction = PlayAreaGO.GetComponent<PlayArea>();
+        GetDataFromSOAndSet(cardData);
+        
 
         //Debug.Log("Type of ob = " + cardAvailable.effectColor);
         //cardAvailable.effectColor = new Color(.2000f, .050f, 1.0f, .80f);
@@ -121,44 +131,66 @@ public class PlayerCardUI : MonoBehaviour
     /// </summary>
     public PlayerCardSO UpdateCardUI()
     {
-        card = cardData;
+        for (int i = 0; i < 3; i++){
+            card = cardData[i];
+            //card.cardCostIcon;
 
-        Image img;
-        //Debug.Log("PlayerCardUI");
+            Image img;
+            //Debug.Log("PlayerCardUI");
 
-        // playerDeck.removeCard();
-        // Update background color
-        if (card.cardBackgroundImg != null)
-        {}
+            // playerDeck.removeCard();
+            // Update background color
+            if (card.cardBackgroundImg != null)
+            {}
 
-        // Update foreground image (optional, based on token type)
-        if (card.cardActionIcon != null)
-        {
-            img = cardIconImg.GetComponent<Image>();
-            img.sprite = card.cardActionIcon;
-            //Debug.Log("Not Empty!");
-        }else{
-            Debug.Log("Empty");
-        }
-        if (card.cardCostIcon != null)
-        {
-            img = cardColorImg.GetComponent<Image>();
-            img.sprite = card.cardCostIcon;
-            //Debug.Log("Not Empty!");
-        }
+            // Update foreground image (optional, based on token type)
+            if (card.cardActionIcon != null)
+            {
+                /*Debug.Log(card.name + "i: " + i);
+                img = cardIconImg[i].GetComponent<Image>();
+                img.sprite = card.cardActionIcon;
+                //Debug.Log("Not Empty!");*/
+            }else{
+                Debug.Log("Empty");
+            }
+            if (card.cardCostIcon != null)
+            {
+                /*img = cardColorImg[i].GetComponent<Image>();
+                img.sprite = card.cardCostIcon;
+                //Debug.Log("Not Empty!");*/
+            }
 
-        if (card.cost != null)
-        {
-            costText.text = card.cost.ToString();
-            cost = card.cost;
-        }
+            if (card.cost != null)
+            {
+                /*costText.text = card.cost.ToString();
+                cost = card.cost;*/
+            }
 
-         if (card.name != null)
-        {
-            name = card.name;
+            if (card.name != null)
+            {
+                name = card.name;
+            }
         }
 
         return card;
+    }
+
+    public void GetDataFromSOAndSet(PlayerCardSO [] data){
+        for(int i = 0; i < data.Length;i++){
+            PlayerCardSO ability = data[i];
+            abilityScript = abilityAreas[i].GetComponent<CardAbility>();
+            abilityScript.UpdateIcon(data[i].cardCostIcon);
+            abilityScript.TestScript();
+            //Debug.Log(data[i].cardCostIcon);
+            //backgroundImage.GetComponent<Image>().sprite = data[i].cardBackgroundImg;
+            //Image.GetComponent<Image>().sprite = data[i].cardCostIcon;
+            //valueTextUI.text = data[i].colorCosts.ToString();
+            abilityScript.UpdateColorCost(data[i].colorCosts.ToString());
+            //valueTextUI.text = data.value.ToString();
+            //type = data.type;
+            //color = data.color;
+            //subType = data.subType;
+        }
     }
 
     public void calcPlayableCards(){

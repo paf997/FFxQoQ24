@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using TMPro;
+using System;
 
 public class PlayerDeck : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerDeck : MonoBehaviour
     public List <PlayerCardSO> playerDeck = new List<PlayerCardSO>();
 
     public List <GameObject> playerDeck2 = new List<GameObject>();
-    public int deckSize = 1;
+    public int deckSize = 2;
     public int deckCnt;
     public int discardCnt = 0;
     public int drawNum = 1;
@@ -29,7 +30,7 @@ public class PlayerDeck : MonoBehaviour
 
     public void Start (){
         playerHand = cardCanvas.GetComponent<CardCanvas> ();
-        deckSize = playerDeck2.Count;
+        //deckSize = playerDeck2.Count;
         discardCnt = 0;
         deckCnt = deckSize - discardCnt;
         discardTxt.text = discardCnt.ToString();
@@ -41,19 +42,19 @@ public class PlayerDeck : MonoBehaviour
     
     public void ShuffleDeck()
     {
-        for (int i = 0; i < 2; i++)
+        /**for (int i = 0; i < 2; i++)
         {
-            int randomIndex = Random.Range(0, playerDeck.Count);
+            int randomIndex = Random.Range(0, playerDeck.Count); Random not working, but don't need it right now
             PlayerCardSO temp = playerDeck[i];
             playerDeck[i] = playerDeck[randomIndex];
             playerDeck[randomIndex] = temp;
-        }
+        }*/
     }
     
     public void drawButton (){
         if(playerHand.handCnt < playerHand.handMax){
             //Debug.Log("playerDeck");
-            ShuffleDeck();
+            //ShuffleDeck();
             chosenCard = playerDeck[0];
             playerDeck.RemoveAt(0);
             playerHand.UpdateHandUI(chosenCard);
@@ -74,16 +75,17 @@ public class PlayerDeck : MonoBehaviour
     void instatiateDeck(){
         Debug.Log("Instantiate");
         GameObject newCard;
-        for (int i = 0; i < 5/*deckSize*/; i++){
-            currentHandIndex = playerHand.handOrder[0].transform;//change back to i later for hand 
+        int j = 1;
+        Debug.Log("Deck size: "  + deckSize);
+        for (int i = 0; i < 2; i++){
+            currentHandIndex = playerHand.handOrder[i].transform;//change back to i later for hand 
             newCard = Instantiate (playerCardPreFab, currentHandIndex.position, Quaternion.identity, currentHandIndex);
             //newCard.SetActive(false);
-            //Debug.Log("Card created: " + newCard.name.ToString());
+            Debug.Log("Card created: " + newCard.name.ToString());
             PlayerCardUI card = newCard.GetComponent<PlayerCardUI>();
-            card.cardData = playerDeck[i];
             playerDeck2.Add(newCard);
             card.UpdateCardUI();
-            deckSize = playerDeck2.Count;
+            //deckSize = playerDeck2.Count;
         }
     }
 
@@ -118,8 +120,7 @@ public class PlayerDeck : MonoBehaviour
             } 
             //Debug.Log(" right after drawing cards");
             playerHand.UpdatePlayableCards();
-        } 
-          
+        }     
     }
 
     public bool isDeckEmpty(){
@@ -136,8 +137,6 @@ public class PlayerDeck : MonoBehaviour
     public void removeCard(){
         playerDeck.RemoveAt(0);
     }
-
- 
 
   /*      public void ClearDrawnToken(){
         for (int i = 0;i < drawCnt;i++){
