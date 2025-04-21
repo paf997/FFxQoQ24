@@ -113,7 +113,7 @@ public class CardCanvas : MonoBehaviour
 
     public void putCardInPlayArea(int cardIndex){
        // Debug.Log("Put in play are ---- CardIndex" + cardIndex);
-        GameObject tempCard = CardsInHand2[cardIndex];
+        /*GameObject tempCard = CardsInHand2[cardIndex];
         if(tempCard.GetComponent<PlayerCardUI>().isPlayable){
             playArea.playedCards.Add(tempCard);
             discardCardAtPos(cardIndex);
@@ -121,7 +121,7 @@ public class CardCanvas : MonoBehaviour
         }else{
 
             Debug.Log("Card is unavailable");
-        }
+        }*/
     }
 
     public void putCardBackInHand(GameObject tempCard){

@@ -21,7 +21,4 @@ MonoBehaviour:
   duration: 0
   mAttAdjustment: 0
   defAdjustment: 0
-  description: 'Cost a sword to deal weapon dmg.
-
-    Spend 2 red for + 1 or 3 red
-    for +2 dmg'
+  description: Testing

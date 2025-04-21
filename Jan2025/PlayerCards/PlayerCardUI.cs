@@ -182,11 +182,8 @@ public class PlayerCardUI : MonoBehaviour
             abilityScript.UpdateIcon(data[i].cardCostIcon);
             abilityScript.TestScript();
             //Debug.Log(data[i].cardCostIcon);
-            //backgroundImage.GetComponent<Image>().sprite = data[i].cardBackgroundImg;
-            //Image.GetComponent<Image>().sprite = data[i].cardCostIcon;
-            //valueTextUI.text = data[i].colorCosts.ToString();
             abilityScript.UpdateColorCost(data[i].colorCosts.ToString());
-            //valueTextUI.text = data.value.ToString();
+            abilityScript.UpdateAbilityText(data[i].description);
             //type = data.type;
             //color = data.color;
             //subType = data.subType;
