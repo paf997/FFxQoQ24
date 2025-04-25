@@ -26,11 +26,21 @@ public class CardAbility : MonoBehaviour
     }
 
     public void UpdateColorCost(string data){
-        valueTextUI.text = data;
+        if(data == null){
+            //Debug.Log(" Is null");
+        }else{
+            valueTextUI.text = data;
+            //Debug.Log("not null");
+        } 
     }
 
     public void UpdateAbilityText(string data){
-        abilityTextUI.text = data;
+        if(data == null){
+            //Debug.Log(" Is null");
+        }else{
+            abilityTextUI.text = data;
+            //Debug.Log("not null");
+        } 
     }
 
     public void TestScript(){

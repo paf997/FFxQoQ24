@@ -11,7 +11,10 @@ public class PlayerCardSO : ScriptableObject
     [Header("Card Properties")]
     public string Name;
     public int cost; 
-
+    [SerializeField] int abilityIndex;
+    [SerializeField] bool ability1HaveToBeActive;
+    [SerializeField] bool ability2HaveToBeActive;
+    public bool isAvailable;
     public int colorCosts; //new
     public int duration;   
     public int mAttAdjustment;
