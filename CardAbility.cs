@@ -10,10 +10,17 @@ public class CardAbility : MonoBehaviour
     [SerializeField] GameObject abilityButton;
     [SerializeField] TMP_Text valueTextUI;
     [SerializeField] TMP_Text abilityTextUI;
+    [SerializeField] int cost;
+    [SerializeField] TokenColor tokenColor;
+    public bool isAvailable;
+    [SerializeField] GameObject TokenCanvas;
+    private TokenCanvas tokenCanvas; 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        tokenCanvas = TokenCanvas.GetComponent<TokenCanvas>();
     }
 
     public void UpdateIcon(Sprite data){
@@ -24,16 +31,15 @@ public class CardAbility : MonoBehaviour
             //Debug.Log("not null");
         }
     }
-
-    public void UpdateColorCost(string data){
+    public void UpdateColorCost(int data){
         if(data == null){
             //Debug.Log(" Is null");
         }else{
-            valueTextUI.text = data;
+            valueTextUI.text = data.ToString();
+            cost = data;
             //Debug.Log("not null");
         } 
     }
-
     public void UpdateAbilityText(string data){
         if(data == null){
             //Debug.Log(" Is null");
@@ -43,8 +49,22 @@ public class CardAbility : MonoBehaviour
         } 
     }
 
+    public void UpdateTokenColors(TokenColor data){
+        if(data == null){
+            //Debug.Log(" Is null");
+        }else{
+            tokenColor = data;
+            CheckAbilityCost();
+            //Debug.Log("not null");
+        } 
+    }
+
+    public bool CheckAbilityCost(){
+        return (cost <= tokenCanvas.getColorValue(tokenColor));
+    }
+
+
     public void TestScript(){
         Debug.Log (" Test Script !!!");
     }
-
 }

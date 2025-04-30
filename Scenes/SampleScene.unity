@@ -9622,6 +9622,24 @@ PrefabInstance:
       propertyPath: playerDeckScript
       value: 
       objectReference: {fileID: 1178419294}
+    - target: {fileID: 1264376819791695172, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: cardData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 723d5ca6537cb4baf9a31c51238de80b, type: 2}
+    - target: {fileID: 1264376819791695172, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: cardData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d7820ff8be124d8c9c87ba89a4df171, type: 2}
+    - target: {fileID: 1264376819791695172, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: cardData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d7820ff8be124d8c9c87ba89a4df171, type: 2}
+    - target: {fileID: 1393342813809834546, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: m_text
+      value: 'Armor
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3934454402876849458, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
       propertyPath: m_Name
       value: Equipped Armour
@@ -22834,6 +22852,10 @@ PrefabInstance:
       propertyPath: playerDeckScript
       value: 
       objectReference: {fileID: 1178419294}
+    - target: {fileID: 2722239760029874120, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 3934454402876849458, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
       propertyPath: m_Name
       value: PlayerCard

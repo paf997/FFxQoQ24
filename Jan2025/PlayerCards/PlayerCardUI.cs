@@ -180,9 +180,9 @@ public class PlayerCardUI : MonoBehaviour
             PlayerCardSO ability = data[i];
             abilityScript = abilityAreas[i].GetComponent<CardAbility>();
             abilityScript.UpdateIcon(data[i].cardCostIcon);
-            abilityScript.TestScript();
+            //abilityScript.TestScript();
             //Debug.Log(data[i].cardCostIcon);
-            abilityScript.UpdateColorCost(data[i].colorCosts.ToString());
+            abilityScript.UpdateColorCost(data[i].colorCosts);
             abilityScript.UpdateAbilityText(data[i].description);
             //type = data.type;
             //color = data.color;
