@@ -10,6 +10,7 @@ public class TokenCanvas : MonoBehaviour
     public TextMeshProUGUI text; 
     [SerializeField] List <GameObject> FocusListUI = new List<GameObject>();
     [SerializeField] int focus = 0;
+    [SerializeField] bool powerTotalsHaveChanged;
 
     public void Start()
     {
@@ -33,6 +34,7 @@ public class TokenCanvas : MonoBehaviour
     int purpleCnt = 0;
     int wildMax = 0;
     int wildCnt = 0;
+    [SerializeField] int initiative;
 
     public void UpdateTokenVals(int whiteValueMax = 0, int whiteValueCnt = 0, int redValueMax = 0, int redValueCnt = 0,
                                 int blueValueMax = 0, int blueValueCnt = 0,int yellowValueMax = 0, int yellowValueCnt = 0,
@@ -42,7 +44,7 @@ public class TokenCanvas : MonoBehaviour
         whiteMax = whiteValueMax;
         whiteCnt = whiteValueCnt;
         redMax = redValueMax;
-        redCnt = redValueMax;
+        redCnt = redValueCnt;
         blueMax = blueValueMax;
         blueCnt = blueValueCnt;
         yellowMax = yellowValueMax;
@@ -58,6 +60,7 @@ public class TokenCanvas : MonoBehaviour
   
         string vals =  $"Red: {redCnt} / {redMax} | Green:  {greenCnt} / {greenMax} | Yellow:  {yellowCnt} / {yellowMax }| White: {whiteCnt} / {whiteMax}  ";
         text.text = vals;
+        initiative = whiteCnt + redCnt + greenCnt + yellowCnt + blueCnt + orangeCnt  + purpleCnt + wildCnt;
     }
 
     public int getAvailableRedPower(){
@@ -89,6 +92,10 @@ public class TokenCanvas : MonoBehaviour
         return wildCnt;
     }
 
+    public int getTotalInitiativeCnt(){
+        return initiative;
+    }
+
     public int getColorValue(TokenColor data){
 
         if(data == TokenColor.white){
@@ -116,8 +123,18 @@ public class TokenCanvas : MonoBehaviour
     public int getFocusCount(){
         return focus;
     }
+
+    public bool getPowerTotalsHaveChanged(){
+        return powerTotalsHaveChanged;
+    }
+
+    private void setPowerTotalsHaveChanged(){
+        Debug.Log("setPowerTotalHaveChanged");
+        powerTotalsHaveChanged = !powerTotalsHaveChanged;
+    }
     
     public void updateFocusTokens(int data){
+        Debug.Log("UpdateFocus");
         GameObject focusButton;
         focus = data;
         for(int i = 0; i < FocusListUI.Count; i++) {

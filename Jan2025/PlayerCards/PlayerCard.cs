@@ -18,7 +18,8 @@ public class PlayerCardSO : ScriptableObject
     public int colorCosts; //new
     public int duration;   
     public int mAttAdjustment;
-    public int defAdjustment;
+    public int defAdjustment;//
+    public TokenColor tokenColor;
     int deckIndex;        
     [TextArea]
     public string description;  

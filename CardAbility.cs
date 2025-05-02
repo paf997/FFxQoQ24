@@ -11,6 +11,7 @@ public class CardAbility : MonoBehaviour
     [SerializeField] TMP_Text valueTextUI;
     [SerializeField] TMP_Text abilityTextUI;
     [SerializeField] int cost;
+    [SerializeField] int currentPower = 0;
     [SerializeField] TokenColor tokenColor;
     public bool isAvailable;
     [SerializeField] bool isBasicAction;
@@ -26,6 +27,10 @@ public class CardAbility : MonoBehaviour
 
     void Update()
     {
+        /*if(tokenCanvas.getPowerTotalsHaveChanged()) {
+            Debug.Log("getPowerTotalHaveChanged"); 
+            //CheckAbilityCost(); 
+        }*/
         CheckAbilityCost();
     }
 
@@ -83,16 +88,25 @@ public class CardAbility : MonoBehaviour
 
     public bool CheckAbilityCost()
     {
-        if (tokenCanvas.getFocusCount() > 0){
+        if (tokenCanvas.getTotalInitiativeCnt() > 5 && isBasicAction){
+                isAvailable = true;
+                currentPower = tokenCanvas.getColorValue(tokenColor);
+                //Debug.Log("CheckAbilityCost : Available = " + tokenColor + " " +  currentPower +  " cost " + cost + " " + abilityTextUI.text);
         }else{
-            if (cost <= tokenCanvas.getColorValue(tokenColor))
+            if (currentPower != tokenCanvas.getColorValue(tokenColor) &&  cost <= tokenCanvas.getColorValue(tokenColor))
             {
                 isAvailable = true;
+                currentPower = tokenCanvas.getColorValue(tokenColor);
+                Debug.Log("CheckAbilityCost : Available = " + tokenColor + " " +  currentPower +  " cost " + cost + " " + abilityTextUI.text);
+    
             }
-            else
+            else if (currentPower != tokenCanvas.getColorValue(tokenColor) &&  cost > tokenCanvas.getColorValue(tokenColor))
             {
+  
                 isAvailable = false;
-            }
+                currentPower = tokenCanvas.getColorValue(tokenColor);
+                Debug.Log("CheckAbilityCost : NOT Available = " + currentPower +  " cost " + cost);
+            }else{}
         }
         UpdateAvailabilityOutline();
 

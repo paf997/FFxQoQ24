@@ -25,4 +25,5 @@ MonoBehaviour:
   duration: 2
   mAttAdjustment: 0
   defAdjustment: 2
+  tokenColor: 4
   description: +2 Defense

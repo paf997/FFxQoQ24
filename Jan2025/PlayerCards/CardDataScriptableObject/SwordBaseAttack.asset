@@ -20,10 +20,12 @@ MonoBehaviour:
   abilityIndex: 0
   ability1HaveToBeActive: 0
   ability2HaveToBeActive: 0
+  isAvailable: 0
   colorCosts: 3
   duration: 0
   mAttAdjustment: 0
   defAdjustment: 0
+  tokenColor: 1
   description: 'Attack x 1
 
     Damage 3'

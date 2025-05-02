@@ -177,11 +177,13 @@ public class PlayerBag : MonoBehaviour
         return initiative;
     }
     public int adjustInitiative(int value){
+        Debug.Log("adjustInitiative");
         initiative += value;
         return initiative;
     }
 
     public void adjustTokenValues(TokenUI token){
+        Debug.Log("AdjustTokenValues");
         int value = token.getTokenValue();
 
         if((token.getTokenColor()) == TokenColor.white){
@@ -205,6 +207,7 @@ public class PlayerBag : MonoBehaviour
     }
 
     public void placeTokenOnATB(TokenUI token){
+        Debug.Log("placeTokenOnATB");
         RectTransform posATB = token.GetComponent<RectTransform>();
         //Debug.Log("Transform token" + token.name);
         adjustInitiative(token.getTokenValue()); 
@@ -214,9 +217,11 @@ public class PlayerBag : MonoBehaviour
        // Debug.Log("Transform  ATB" + ATBList[0].GetComponent<RectTransform>());
         posATB.position = new Vector3(newX, newY, newZ);
         //posATB.Translate(newX, newY, newZ);
+        
     }
 
     void initializeTokensInfo(){
+        Debug.Log("initializeTokensInfo");
         whiteCnt = whiteValue.Count;
         whiteTotal = whiteValue.Sum();
         currentTokenValues.Add(whiteTotal);

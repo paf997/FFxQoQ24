@@ -19964,6 +19964,8 @@ MonoBehaviour:
   - {fileID: 1540209475}
   - {fileID: 342271633}
   - {fileID: 871101590}
+  focus: 0
+  powerTotalsHaveChanged: 0
 --- !u!114 &1869737323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22884,6 +22886,10 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 2722239760029874120, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: isBasicAction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3033000517132064700, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
       propertyPath: TokenCanvas
       value: 
