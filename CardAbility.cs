@@ -13,8 +13,9 @@ public class CardAbility : MonoBehaviour
     [SerializeField] int cost;
     [SerializeField] TokenColor tokenColor;
     public bool isAvailable;
+    [SerializeField] bool isBasicAction;
     [SerializeField] GameObject TokenCanvas;
-    private TokenCanvas tokenCanvas; 
+    private TokenCanvas tokenCanvas;
 
 
     // Start is called before the first frame update
@@ -23,48 +24,97 @@ public class CardAbility : MonoBehaviour
         tokenCanvas = TokenCanvas.GetComponent<TokenCanvas>();
     }
 
-    public void UpdateIcon(Sprite data){
-        if(abilityButton.GetComponent<Image>().sprite == null){
+    void Update()
+    {
+        CheckAbilityCost();
+    }
+
+    public void UpdateIcon(Sprite data)
+    {
+        if (abilityButton.GetComponent<Image>().sprite == null)
+        {
             //Debug.Log(" Is null");
-        }else{
+        }
+        else
+        {
             abilityButton.GetComponent<Image>().sprite = data;
             //Debug.Log("not null");
         }
     }
-    public void UpdateColorCost(int data){
-        if(data == null){
+    public void UpdateColorCost(int data)
+    {
+        if (data == null)
+        {
             //Debug.Log(" Is null");
-        }else{
+        }
+        else
+        {
             valueTextUI.text = data.ToString();
             cost = data;
             //Debug.Log("not null");
-        } 
+        }
     }
-    public void UpdateAbilityText(string data){
-        if(data == null){
+    public void UpdateAbilityText(string data)
+    {
+        if (data == null)
+        {
             //Debug.Log(" Is null");
-        }else{
+        }
+        else
+        {
             abilityTextUI.text = data;
             //Debug.Log("not null");
-        } 
+        }
     }
 
-    public void UpdateTokenColors(TokenColor data){
-        if(data == null){
+    public void UpdateTokenColors(TokenColor data)
+    {
+        if (data == null)
+        {
             //Debug.Log(" Is null");
-        }else{
+        }
+        else
+        {
             tokenColor = data;
             CheckAbilityCost();
             //Debug.Log("not null");
-        } 
+        }
     }
 
-    public bool CheckAbilityCost(){
-        return (cost <= tokenCanvas.getColorValue(tokenColor));
+    public bool CheckAbilityCost()
+    {
+        if (tokenCanvas.getFocusCount() > 0){
+        }else{
+            if (cost <= tokenCanvas.getColorValue(tokenColor))
+            {
+                isAvailable = true;
+            }
+            else
+            {
+                isAvailable = false;
+            }
+        }
+        UpdateAvailabilityOutline();
+
+        return isAvailable;
+    }
+
+    public void UpdateAvailabilityOutline()
+    {
+        Outline outline = GetComponent<Outline>();
+        if (isAvailable)
+        {
+            outline.enabled = true;
+        }
+        else
+        {
+            outline.enabled = false;
+        }
     }
 
 
-    public void TestScript(){
-        Debug.Log (" Test Script !!!");
+    public void TestScript()
+    {
+        Debug.Log(" Test Script !!!");
     }
 }

@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 
 public class TokenCanvas : MonoBehaviour
 {
     public TextMeshProUGUI text; 
     [SerializeField] List <GameObject> FocusListUI = new List<GameObject>();
+    [SerializeField] int focus = 0;
 
     public void Start()
     {
@@ -54,7 +56,7 @@ public class TokenCanvas : MonoBehaviour
         wildMax = wildValueMax;
         wildCnt = wildValueCnt;
   
-        string vals =  $"Red: {redCnt} / {redMax} | Blue:  {blueCnt} / {blueMax} | Yellow:  {yellowCnt} / {yellowMax }| White: {whiteCnt} / {whiteMax}  ";
+        string vals =  $"Red: {redCnt} / {redMax} | Green:  {greenCnt} / {greenMax} | Yellow:  {yellowCnt} / {yellowMax }| White: {whiteCnt} / {whiteMax}  ";
         text.text = vals;
     }
 
@@ -111,11 +113,16 @@ public class TokenCanvas : MonoBehaviour
 
     }
 
-    public void updateFocusTokens(int focus){
+    public int getFocusCount(){
+        return focus;
+    }
+    
+    public void updateFocusTokens(int data){
         GameObject focusButton;
+        focus = data;
         for(int i = 0; i < FocusListUI.Count; i++) {
             focusButton = FocusListUI[i];
-            if(i < focus){
+            if(i < data){
                 focusButton.SetActive(true);
             }else{
                 focusButton.SetActive(false);

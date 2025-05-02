@@ -29,10 +29,13 @@ PlayerBag playerBag;
         }
         foreach (Token token in list){
             GameObject newToken = Instantiate (tokenPrefab, tempTransform.position , Quaternion.identity, tempTransform );
-            //Debug.Log(" the name" + newToken.name);
+            //TokenUI tokenUI = newToken.GetComponent<TokenUI>();
+            //Token tokenSO = tokenUI.getTSO();
+            //Debug.Log(" the name" + tokenSO.name);
             newToken.GetComponent<TokenUI>().getDataFromSOAndSet(token);
             //tempTransform.position = new Vector2 (tempTransform.position.x + 50, tempTransform.position.y);
             playerBag.startingTokens.Add(newToken);
+            //Debug.Log(" In the bag" + token.color + " " + token.value);
         }
     }
 }

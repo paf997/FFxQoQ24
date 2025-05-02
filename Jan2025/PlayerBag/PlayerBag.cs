@@ -19,11 +19,11 @@ public class PlayerBag : MonoBehaviour
     public int redCnt;
     public int redDrawn = 0;
     public int redTotal;
-    public List <int> blueValues = new List<int>() { 1,2 };
+    public List <int> blueValues = new List<int>() { 1 };
     public int blueCnt;
     public int blueDrawn = 0;
     public int blueTotal;
-    public List <int> greenValues = new List<int>() { 1 };
+    public List <int> greenValues = new List<int>() { 1,2 };
     public int greenCnt;
     public int greenDrawn = 0;
     public int greenTotal;
@@ -137,7 +137,7 @@ public class PlayerBag : MonoBehaviour
                 drawnToken = startingTokens[nTokens + i].GetComponent<TokenUI>();
                 Token tokenSO = drawnToken.getTSO();
                 drawnToken.isDrawn = true;
-                Debug.Log("cnt: " + (drawCnt+ i) + " " + tokenSO.color + ": " + tokenSO.value);
+                //Debug.Log("cnt: " + (drawCnt+ i) + " " + tokenSO.color + ": " + tokenSO.value);
                 nTokens++;
                 adjustTokenValues(drawnToken);
                 //Debug.Log("Update prime action then update Playable Cards");
@@ -206,7 +206,7 @@ public class PlayerBag : MonoBehaviour
 
     public void placeTokenOnATB(TokenUI token){
         RectTransform posATB = token.GetComponent<RectTransform>();
-        Debug.Log("Transform token" + posATB);
+        //Debug.Log("Transform token" + token.name);
         adjustInitiative(token.getTokenValue()); 
         float newX = ATBList[initiative].GetComponent<RectTransform>().position.x;
         float newY = ATBList[initiative].GetComponent<RectTransform>().position.y;
@@ -244,6 +244,7 @@ public class PlayerBag : MonoBehaviour
         greenCnt = greenValues.Count;
         greenTotal = greenValues.Sum();
         currentTokenValues.Add(greenTotal);
+        //Debug.Log("Green " + greenTotal);
 
         purpleCnt = purpleValues.Count;
         purpleTotal = purpleValues.Sum();

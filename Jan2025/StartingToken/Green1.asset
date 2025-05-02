@@ -19,5 +19,5 @@ MonoBehaviour:
   subType: 0
   color: 4
   backgroundImage: {fileID: 21300000, guid: b7c30a68a11eb4309876b9e9b0bfea28, type: 3}
-  battleImage: {fileID: 0}
+  battleImage: {fileID: 21300000, guid: 68c4bf4248c7241c38d9e7353bdc3ec2, type: 3}
   description: 

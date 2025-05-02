@@ -2109,11 +2109,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 282f6b0453fb540cab583dca70e6ff9b, type: 2}
   - {fileID: 11400000, guid: 282f6b0453fb540cab583dca70e6ff9b, type: 2}
   - {fileID: 11400000, guid: 028d0ec2e8a444d3cb7d82f5928821a6, type: 2}
-  - {fileID: 11400000, guid: 647b93fdcb4aa45e180f1fc9ba0216d6, type: 2}
-  - {fileID: 11400000, guid: c31d2ca0fb8ba4e3184ef024ee5fb687, type: 2}
   - {fileID: 11400000, guid: 0c9a9a172381844a78958db2c0ac6bd9, type: 2}
   - {fileID: 11400000, guid: acf98bded51cb487f91ca7fafbccac5e, type: 2}
   - {fileID: 11400000, guid: c4ffeb08f398644f886e31a35cc2bc1a, type: 2}
+  - {fileID: 11400000, guid: 1038e5d41ab124cc196b0bbbe2192cb1, type: 2}
+  - {fileID: 11400000, guid: 9a93ad562378241768c5c354d480b42f, type: 2}
   tempTransform: {fileID: 775485140}
   token: {fileID: 0}
   card: {fileID: 0}
@@ -9610,6 +9610,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 752880736}
     m_Modifications:
+    - target: {fileID: 312639767112001347, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 1264376819791695172, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
       propertyPath: PlayAreaGO
       value: 
@@ -9640,6 +9644,14 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 2722239760029874120, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3033000517132064700, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 3934454402876849458, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
       propertyPath: m_Name
       value: Equipped Armour
@@ -11915,6 +11927,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 752880736}
     m_Modifications:
+    - target: {fileID: 312639767112001347, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 1264376819791695172, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
       propertyPath: PlayAreaGO
       value: 
@@ -11939,6 +11955,14 @@ PrefabInstance:
       propertyPath: cardData.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 7abd8f6b49641463caa3c3ce201eea02, type: 2}
+    - target: {fileID: 2722239760029874120, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3033000517132064700, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 3934454402876849458, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
       propertyPath: m_Name
       value: Equipped Sword
@@ -14571,11 +14595,11 @@ MonoBehaviour:
   redCnt: 0
   redDrawn: 0
   redTotal: 0
-  blueValues: 0100000002000000
+  blueValues: 01000000
   blueCnt: 0
   blueDrawn: 0
   blueTotal: 0
-  greenValues: 01000000
+  greenValues: 0100000002000000
   greenCnt: 0
   greenDrawn: 0
   greenTotal: 0
@@ -22840,6 +22864,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 752880736}
     m_Modifications:
+    - target: {fileID: 312639767112001347, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 1264376819791695172, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
       propertyPath: PlayAreaGO
       value: 
@@ -22853,6 +22881,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1178419294}
     - target: {fileID: 2722239760029874120, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3033000517132064700, guid: 5f1aa7a4956f0456cb8a44e89e4ac804, type: 3}
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
