@@ -601,6 +601,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 759286603677652688}
     - target: {fileID: 3966361108582929732, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: CardNameText
+      value: 
+      objectReference: {fileID: 1393342813809834546}
+    - target: {fileID: 3966361108582929732, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
       propertyPath: cardData.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 723d5ca6537cb4baf9a31c51238de80b, type: 2}
@@ -851,8 +855,10 @@ MonoBehaviour:
   valueTextUI: {fileID: 7096952494396599854}
   abilityTextUI: {fileID: 2775314421301619504}
   cost: 0
+  currentPower: 0
   tokenColor: 0
   isAvailable: 0
+  isBasicAction: 0
   TokenCanvas: {fileID: 0}
 --- !u!114 &7313928522303304198
 MonoBehaviour:
@@ -896,8 +902,10 @@ MonoBehaviour:
   valueTextUI: {fileID: 4219821076102717274}
   abilityTextUI: {fileID: 2933242339229303108}
   cost: 0
+  currentPower: 0
   tokenColor: 0
   isAvailable: 0
+  isBasicAction: 0
   TokenCanvas: {fileID: 0}
 --- !u!114 &1429675708187767262
 MonoBehaviour:
@@ -936,8 +944,10 @@ MonoBehaviour:
   valueTextUI: {fileID: 759286603677652688}
   abilityTextUI: {fileID: 4080129849319765552}
   cost: 0
+  currentPower: 0
   tokenColor: 0
   isAvailable: 0
+  isBasicAction: 1
   TokenCanvas: {fileID: 0}
 --- !u!114 &5102348809688783051
 MonoBehaviour:

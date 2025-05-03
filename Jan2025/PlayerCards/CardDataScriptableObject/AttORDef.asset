@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 808e16b99edec454ab7d816f8b65beab, type: 3}
-  m_Name: Defense+
+  m_Name: AttORDef
   m_EditorClassIdentifier: 
   cardBackgroundImg: {fileID: 0}
-  cardActionIcon: {fileID: 21300000, guid: 56591342f73384ff6853adf0965bd0b5, type: 3}
-  cardCostIcon: {fileID: 21300000, guid: b7c30a68a11eb4309876b9e9b0bfea28, type: 3}
-  Name: Defense+
+  cardActionIcon: {fileID: 0}
+  cardCostIcon: {fileID: 21300000, guid: b2fbcab8d32014baa927f2dec7d34b90, type: 3}
+  Name: 
   cost: 1
   abilityIndex: 0
-  ability1HaveToBeActive: 0
+  ability1HaveToBeActive: 1
   ability2HaveToBeActive: 0
   isAvailable: 0
-  colorCosts: 2
-  duration: 2
+  colorCosts: 1
+  duration: 0
   mAttAdjustment: 0
-  defAdjustment: 2
-  tokenColor: 4
-  description: +3 Defense
+  defAdjustment: 0
+  tokenColor: 1
+  description: add +2 dam or +2 def

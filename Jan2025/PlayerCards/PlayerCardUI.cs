@@ -51,6 +51,8 @@ public class PlayerCardUI : MonoBehaviour
     public int poison;
     public int pierce;
     public int heal;
+    public TMP_Text CardNameText;
+
     [SerializeField] int abilityUses;
     [SerializeField] int abilityUseRounds;
 
@@ -131,6 +133,7 @@ public class PlayerCardUI : MonoBehaviour
     /// </summary>
     public PlayerCardSO UpdateCardUI()
     {
+        
         for (int i = 0; i < 3; i++){
             card = cardData[i];
             //card.cardCostIcon;
@@ -168,7 +171,13 @@ public class PlayerCardUI : MonoBehaviour
 
             if (card.name != null)
             {
-                name = card.name;
+                 if(i == 0){
+                    CardNameText.text = card.name;
+                }else{
+                    name = card.name;
+                }
+                
+               
             }
         }
 
@@ -176,6 +185,7 @@ public class PlayerCardUI : MonoBehaviour
     }
 
     public void GetDataFromSOAndSet(PlayerCardSO [] data){
+            
         for(int i = 0; i < data.Length;i++){
             PlayerCardSO ability = data[i];
             abilityScript = abilityAreas[i].GetComponent<CardAbility>();

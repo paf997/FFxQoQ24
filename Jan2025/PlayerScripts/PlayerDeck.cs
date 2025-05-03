@@ -11,6 +11,7 @@ public class PlayerDeck : MonoBehaviour
     public List <PlayerCardSO> playerDeck = new List<PlayerCardSO>();
 
     public List <GameObject> playerDeck2 = new List<GameObject>();
+    public List <GameObject> playerCards = new List<GameObject>();
     public int deckSize = 2;
     public int deckCnt;
     public int discardCnt = 0;
