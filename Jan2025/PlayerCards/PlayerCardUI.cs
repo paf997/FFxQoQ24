@@ -59,6 +59,8 @@ public class PlayerCardUI : MonoBehaviour
     [SerializeField] GameObject backgroundImage;
     [SerializeField] GameObject Image;
     [SerializeField] TMP_Text valueTextUI;
+    [SerializeField] GameObject TokenCanvasGO;
+    [SerializeField] TokenCanvas tokenCanvas;
 
     //public Color [] cardAvailabilityColors = new Color{  };
 
@@ -73,6 +75,7 @@ public class PlayerCardUI : MonoBehaviour
         //Debug.Log("#1: " + outlines[0]);
         //cardUnavailable = outlines[1];
         //Debug.Log("#1: " + outlines[1]);
+        tokenCanvas = TokenCanvasGO.GetComponent<TokenCanvas>();
     }
 
     private void Start()
@@ -188,6 +191,7 @@ public class PlayerCardUI : MonoBehaviour
             
         for(int i = 0; i < data.Length;i++){
             PlayerCardSO ability = data[i];
+            //abilityScript.setTokenCanvasExplicitly(TokenCanvasGO);
             abilityScript = abilityAreas[i].GetComponent<CardAbility>();
             abilityScript.UpdateIcon(data[i].cardCostIcon);
             //abilityScript.TestScript();

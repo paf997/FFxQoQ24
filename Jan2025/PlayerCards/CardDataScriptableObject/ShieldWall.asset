@@ -19,8 +19,8 @@ MonoBehaviour:
   cost: 0
   abilityIndex: 0
   ability1HaveToBeActive: 1
-  ability2HaveToBeActive: 0
-  isAvailable: 0
+  ability2HaveToBeActive: 1
+  isAvailable: 1
   colorCosts: 0
   duration: 0
   mAttAdjustment: 0

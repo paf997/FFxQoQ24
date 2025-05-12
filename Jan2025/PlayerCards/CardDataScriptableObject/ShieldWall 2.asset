@@ -16,12 +16,12 @@ MonoBehaviour:
   cardActionIcon: {fileID: 0}
   cardCostIcon: {fileID: 21300000, guid: b7c30a68a11eb4309876b9e9b0bfea28, type: 3}
   Name: ShieldWall
-  cost: 2
+  cost: 0
   abilityIndex: 0
-  ability1HaveToBeActive: 0
+  ability1HaveToBeActive: 1
   ability2HaveToBeActive: 0
   isAvailable: 0
-  colorCosts: 0
+  colorCosts: 2
   duration: 0
   mAttAdjustment: 0
   defAdjustment: 0

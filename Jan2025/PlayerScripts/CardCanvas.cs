@@ -153,7 +153,7 @@ public class CardCanvas : MonoBehaviour
         discardCnt = CardsInDiscardPile.Count;
     }
 
-    public bool isHandFull(){
+    public bool isHandFull(){//* not needed if player have standard hand of cards
          //Debug.Log("Cards in HAnd Count " +  CardsInHand.Count);
         return (CardsInHand.Count > handMax);
     }

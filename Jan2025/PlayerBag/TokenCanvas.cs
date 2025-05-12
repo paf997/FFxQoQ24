@@ -34,9 +34,14 @@ public class TokenCanvas : MonoBehaviour
     int purpleCnt = 0;
     int wildMax = 0;
     int wildCnt = 0;
-    [SerializeField] int initiative;
+    [SerializeField] int initiative = 0;
 
-    public void UpdateTokenVals(int whiteValueMax = 0, int whiteValueCnt = 0, int redValueMax = 0, int redValueCnt = 0,
+  public void Awake()
+  {
+    initiative = 0;
+  }
+
+  public void UpdateTokenVals(int whiteValueMax = 0, int whiteValueCnt = 0, int redValueMax = 0, int redValueCnt = 0,
                                 int blueValueMax = 0, int blueValueCnt = 0,int yellowValueMax = 0, int yellowValueCnt = 0,
                                 int orangeValueMax = 0, int orangeValueCnt = 0,int greenValueMax = 0, int greenValueCnt = 0,
                                 int purpleValueMax = 0, int purpleValueCnt = 0,int wildValueMax = 0, int wildValueCnt = 0){
@@ -93,6 +98,7 @@ public class TokenCanvas : MonoBehaviour
     }
 
     public int getTotalInitiativeCnt(){
+        //Debug.Log("getTotalInitiativeCnt");
         return initiative;
     }
 
@@ -129,7 +135,7 @@ public class TokenCanvas : MonoBehaviour
     }
 
     private void setPowerTotalsHaveChanged(){
-        Debug.Log("setPowerTotalHaveChanged");
+        //Debug.Log("setPowerTotalHaveChanged");
         powerTotalsHaveChanged = !powerTotalsHaveChanged;
     }
     

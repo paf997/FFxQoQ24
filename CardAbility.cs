@@ -32,6 +32,7 @@ public class CardAbility : MonoBehaviour
             //CheckAbilityCost(); 
         }*/
         CheckAbilityCost();
+        
     }
 
     public void UpdateIcon(Sprite data)
@@ -88,11 +89,13 @@ public class CardAbility : MonoBehaviour
 
     public bool CheckAbilityCost()
     {
+        //Debug.Log("Before");
         if (tokenCanvas.getTotalInitiativeCnt() > 5 && isBasicAction){
                 isAvailable = true;
                 currentPower = tokenCanvas.getColorValue(tokenColor);
                 //Debug.Log("CheckAbilityCost : Available = " + tokenColor + " " +  currentPower +  " cost " + cost + " " + abilityTextUI.text);
         }else{
+            
             if (currentPower != tokenCanvas.getColorValue(tokenColor) &&  cost <= tokenCanvas.getColorValue(tokenColor))
             {
                 isAvailable = true;
@@ -124,6 +127,10 @@ public class CardAbility : MonoBehaviour
         {
             outline.enabled = false;
         }
+    }
+
+    public void setTokenCanvasExplicitly(GameObject data){
+        tokenCanvas = data.GetComponent<TokenCanvas>();
     }
 
 

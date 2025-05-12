@@ -11,7 +11,8 @@ public class PlayerDeck : MonoBehaviour
     public List <PlayerCardSO> playerDeck = new List<PlayerCardSO>();
 
     public List <GameObject> playerDeck2 = new List<GameObject>();
-    public List <GameObject> playerCards = new List<GameObject>();
+    public List <GameObject> PlayerCards = new List<GameObject>();
+    public GameObject playerCard;
     public int deckSize = 2;
     public int deckCnt;
     public int discardCnt = 0;
@@ -57,7 +58,11 @@ public class PlayerDeck : MonoBehaviour
             //Debug.Log("playerDeck");
             //ShuffleDeck();
             chosenCard = playerDeck[0];
+            playerCard = PlayerCards[0];
+    
             playerDeck.RemoveAt(0);
+            PlayerCards.RemoveAt(0);
+            
             playerHand.UpdateHandUI(chosenCard);
             //playerHand.UpdatePlayableCards(chosenCard.cost);
             discardCnt++;
@@ -78,9 +83,9 @@ public class PlayerDeck : MonoBehaviour
         GameObject newCard;
         int j = 1;
         Debug.Log("Deck size: "  + deckSize);
-        for (int i = 0; i < 2; i++){
+        for (int i = 0; i < PlayerCards.Count; i++){
             currentHandIndex = playerHand.handOrder[i].transform;//change back to i later for hand 
-            newCard = Instantiate (playerCardPreFab, currentHandIndex.position, Quaternion.identity, currentHandIndex);
+            newCard = Instantiate (PlayerCards[i], currentHandIndex.position, Quaternion.identity, currentHandIndex);
             //newCard.SetActive(false);
             Debug.Log("Card created: " + newCard.name.ToString());
             PlayerCardUI card = newCard.GetComponent<PlayerCardUI>();
@@ -92,9 +97,9 @@ public class PlayerDeck : MonoBehaviour
 
     public void drawCards (int nCards = 5){
         //Debug.Log("playerDeck: DrawCards ");
-        for (int i = 0;i < nCards;i++){
+        for (int i = 0;i < PlayerCards.Count;i++){
              //Debug.Log("i: " + i + "Is hand full?: " + playerHand.isHandFull() + isDeckEmpty() );
-            if(!playerHand.isHandFull() && !isDeckEmpty()){
+            if(!isDeckEmpty()){
                 chosenCard2 = playerDeck2[0];
                 playerDeck2.RemoveAt(0);
                 int handindex = playerHand.handCnt;
