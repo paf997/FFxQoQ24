@@ -31,7 +31,7 @@ public class CardAbility : MonoBehaviour
             Debug.Log("getPowerTotalHaveChanged"); 
             //CheckAbilityCost(); 
         }*/
-        CheckAbilityCost();
+        //CheckAbilityCost();
         
     }
 
@@ -96,14 +96,14 @@ public class CardAbility : MonoBehaviour
                 //Debug.Log("CheckAbilityCost : Available = " + tokenColor + " " +  currentPower +  " cost " + cost + " " + abilityTextUI.text);
         }else{
             
-            if (currentPower != tokenCanvas.getColorValue(tokenColor) &&  cost <= tokenCanvas.getColorValue(tokenColor))
+            if ( cost <= tokenCanvas.getColorValue(tokenColor))
             {
                 isAvailable = true;
                 currentPower = tokenCanvas.getColorValue(tokenColor);
                 Debug.Log("CheckAbilityCost : Available = " + tokenColor + " " +  currentPower +  " cost " + cost + " " + abilityTextUI.text);
     
             }
-            else if (currentPower != tokenCanvas.getColorValue(tokenColor) &&  cost > tokenCanvas.getColorValue(tokenColor))
+            else if ( cost > tokenCanvas.getColorValue(tokenColor))
             {
   
                 isAvailable = false;
@@ -111,6 +111,7 @@ public class CardAbility : MonoBehaviour
                 Debug.Log("CheckAbilityCost : NOT Available = " + currentPower +  " cost " + cost);
             }else{}
         }
+        
         UpdateAvailabilityOutline();
 
         return isAvailable;
@@ -119,6 +120,7 @@ public class CardAbility : MonoBehaviour
     public void UpdateAvailabilityOutline()
     {
         Outline outline = GetComponent<Outline>();
+        Debug.Log("UpdateAvailabilityOutline");
         if (isAvailable)
         {
             outline.enabled = true;

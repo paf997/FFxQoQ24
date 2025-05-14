@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml.Serialization;
 
 
 public class TokenCanvas : MonoBehaviour
@@ -11,6 +12,9 @@ public class TokenCanvas : MonoBehaviour
     [SerializeField] List <GameObject> FocusListUI = new List<GameObject>();
     [SerializeField] int focus = 0;
     [SerializeField] bool powerTotalsHaveChanged;
+
+    [SerializeField] GameObject CardCanvasGO;
+
 
     public void Start()
     {
@@ -66,6 +70,10 @@ public class TokenCanvas : MonoBehaviour
         string vals =  $"Red: {redCnt} / {redMax} | Green:  {greenCnt} / {greenMax} | Yellow:  {yellowCnt} / {yellowMax }| White: {whiteCnt} / {whiteMax}  ";
         text.text = vals;
         initiative = whiteCnt + redCnt + greenCnt + yellowCnt + blueCnt + orangeCnt  + purpleCnt + wildCnt;
+
+        CardCanvas playerHand = CardCanvasGO.GetComponent<CardCanvas>();
+        playerHand.GetCardsInHand();
+        
     }
 
     public int getAvailableRedPower(){

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using System.Collections.Generic;
 
 public class PlayerCardUI : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class PlayerCardUI : MonoBehaviour
     public Outline cardAvailable;
     public Outline cardUnavailable; 
     [SerializeField] GameObject PlayAreaGO ;
+    [SerializeField] List <GameObject> cardAbilities = new List<GameObject>();
     public GameObject cardAbilityScript;
     PlayArea executeAction;
     [SerializeField] Color available = new Color (.40f, .290f, 1.0f, .70f);
@@ -89,6 +91,14 @@ public class PlayerCardUI : MonoBehaviour
 
         //Debug.Log("Type of ob = " + cardAvailable.effectColor);
         //cardAvailable.effectColor = new Color(.2000f, .050f, 1.0f, .80f);
+    }
+
+    public void UpdateAllAbilityAvailability(){
+        foreach (GameObject data in cardAbilities){
+            CardAbility cardAbility = data.GetComponent<CardAbility>();
+            cardAbility.CheckAbilityCost();
+            cardAbility.UpdateAvailabilityOutline();
+        }
     }
 
     private void uploadAvailabilityColors(){

@@ -129,6 +129,7 @@ public class PlayerDeck : MonoBehaviour
         }     
     }
 
+
     public bool isDeckEmpty(){
         //Debug.Log("DeckSIze " + deckSize.ToString());
         return (deckSize < 1);

@@ -256,6 +256,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17435177}
   m_CullTransparentMesh: 1
+--- !u!114 &20299723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7092660048021977336, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+  m_PrefabInstance: {fileID: 2009146471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &32521392
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +805,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114762214}
   m_CullTransparentMesh: 1
+--- !u!1 &115932541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115932542}
+  - component: {fileID: 115932544}
+  - component: {fileID: 115932543}
+  m_Layer: 0
+  m_Name: AbilityTxt (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &115932542
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115932541}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.12499001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1752297332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &115932543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115932541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4283058775
+  m_fontColor: {r: 0.33962262, g: 0.28996083, b: 0.28996083, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 27.95
+  m_fontSizeBase: 16
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 44.917995, y: 5.6326637, z: 4.3373795, w: 4.4892826}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &115932544
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115932541}
+  m_CullTransparentMesh: 1
 --- !u!1 &116189631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,6 +1337,14 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 717277196578965143, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 884806634}
+    - target: {fileID: 1940430734843950822, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 1957969922730849784, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 196.98856
@@ -1236,6 +1389,10 @@ PrefabInstance:
       propertyPath: cardCanvasGO
       value: 
       objectReference: {fileID: 2089187167}
+    - target: {fileID: 4318981673294804203, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 6713632680076104019, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
       propertyPath: m_Name
       value: ShieldBash
@@ -1244,10 +1401,26 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 7196613287242765008, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 1023466635}
+    - target: {fileID: 8656334617379375366, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 8750172971830068254, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 8750172971830068254, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 408561987}
+    - target: {fileID: 8807237886312046885, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+      propertyPath: costText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8807237886312046885, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
       propertyPath: PlayAreaGO
       value: 
@@ -1261,6 +1434,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1869737322}
     - target: {fileID: 8807237886312046885, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+      propertyPath: CardNameText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807237886312046885, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
       propertyPath: TokenCanvasGO
       value: 
       objectReference: {fileID: 1869737315}
@@ -1269,7 +1446,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1178419294}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6550801055112325781, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+    - {fileID: 2933170669980137700, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+    - {fileID: 1604388661416677150, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+    - {fileID: 8691712937771493878, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
@@ -3643,7 +3824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -298, y: 9.791702}
+  m_AnchoredPosition: {x: -298, y: 9.791687}
   m_SizeDelta: {x: -549.66, y: -356.8094}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341982514
@@ -4289,6 +4470,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &408561987 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3943675471200384232, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+  m_PrefabInstance: {fileID: 140577917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410505838
 GameObject:
   m_ObjectHideFlags: 0
@@ -4958,6 +5150,10 @@ PrefabInstance:
       propertyPath: playerDeckScript
       value: 
       objectReference: {fileID: 1178419294}
+    - target: {fileID: 1885469749571280665, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 4548758347708598092, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
       propertyPath: m_Name
       value: Equipped Sword
@@ -4966,10 +5162,38 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 5967981844940871261, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 621974839}
+    - target: {fileID: 6411399843527789076, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 6484031403532542708, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 7594173313914016178, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 7594173313914016178, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 1636624689}
+    - target: {fileID: 8416791752529094534, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 8711714022530998521, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 8711714022530998521, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 1630959653}
     - target: {fileID: 8730203149809558503, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 196.98856
@@ -5014,8 +5238,18 @@ PrefabInstance:
       propertyPath: cardCanvasGO
       value: 
       objectReference: {fileID: 2089187167}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    - target: {fileID: 9043679607628398941, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    m_RemovedComponents:
+    - {fileID: 46178775536898196, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+    - {fileID: 573268077436903827, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 4860141595757001844, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+    - {fileID: 4522454303090274129, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+    - {fileID: 7759807206212553095, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+    - {fileID: 3403521064672420924, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
@@ -7020,6 +7254,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &621974839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2985502145502410659, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+  m_PrefabInstance: {fileID: 457825461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &624272400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7834,6 +8079,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3963611825161721939, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
   m_PrefabInstance: {fileID: 1271738105}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &686812789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2283852688851709356, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+  m_PrefabInstance: {fileID: 2009146471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &697441358
 GameObject:
   m_ObjectHideFlags: 0
@@ -8050,6 +8306,30 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 897530201760628960, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 2120109233}
+    - target: {fileID: 1077895618356543259, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 1150461209890756603, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 2504803950046237321, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3138218231904203858, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3380677017204725238, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
       propertyPath: m_LocalPosition.x
       value: 196.98856
@@ -8098,6 +8378,14 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 4685102092861735471, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 1359645558}
+    - target: {fileID: 5487111497284823574, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
       propertyPath: PlayAreaGO
       value: 
@@ -8122,12 +8410,20 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 6457067201942729185, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 1579571259}
     - target: {fileID: 7578649938598097475, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
       propertyPath: m_Name
       value: Equipped Armour
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 347616713116066216, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+    - {fileID: 2444904776498971160, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+    - {fileID: 1924209466629874268, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+    - {fileID: 8734474238711599411, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
@@ -8562,6 +8858,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7697088575438065495, guid: 153739e13ef0842efa6a7a7e98ff2b39, type: 3}
   m_PrefabInstance: {fileID: 4429419196492066701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &744385815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1848719832499345264, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+  m_PrefabInstance: {fileID: 1271738105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &749536569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10209,6 +10516,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857629033}
   m_CullTransparentMesh: 1
+--- !u!114 &867431141 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1916060929474812227, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+  m_PrefabInstance: {fileID: 1271738105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &871101588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10361,6 +10679,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c119cf4bdaba6431284df49b2a856b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &884806634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6329615766094881643, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+  m_PrefabInstance: {fileID: 140577917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &896470293
@@ -10999,6 +11328,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1639082615}
     m_Modifications:
+    - target: {fileID: 379413934316956799, guid: fbc991b3ecf90403894ea50f09a73379, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 530035797125416028, guid: fbc991b3ecf90403894ea50f09a73379, type: 3}
       propertyPath: PlayAreaGO
       value: 
@@ -11028,6 +11361,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1869737315}
     - target: {fileID: 4931301117211751855, guid: fbc991b3ecf90403894ea50f09a73379, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 5085287993752916370, guid: fbc991b3ecf90403894ea50f09a73379, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 7127193774175416891, guid: fbc991b3ecf90403894ea50f09a73379, type: 3}
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
@@ -11079,6 +11420,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7462257835066561439, guid: fbc991b3ecf90403894ea50f09a73379, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 7757179641354540256, guid: fbc991b3ecf90403894ea50f09a73379, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11818,6 +12167,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982662103}
   m_CullTransparentMesh: 1
+--- !u!114 &986506962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7442435967895342103, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+  m_PrefabInstance: {fileID: 1271738105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000941935
 GameObject:
   m_ObjectHideFlags: 0
@@ -11991,6 +12351,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1023466635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5432837199101305276, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
+  m_PrefabInstance: {fileID: 140577917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1031649127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14593,6 +14964,22 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 393945156032018460, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 867431141}
+    - target: {fileID: 1719691452459555136, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3945227807811410765, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3945227807811410765, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 744385815}
     - target: {fileID: 3963611825161721939, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 196.98856
@@ -14637,6 +15024,10 @@ PrefabInstance:
       propertyPath: cardCanvasGO
       value: 
       objectReference: {fileID: 2089187167}
+    - target: {fileID: 6056482546338276525, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 6202600732210089102, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
       propertyPath: PlayAreaGO
       value: 
@@ -14665,12 +15056,26 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 7739049076144051054, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 986506962}
     - target: {fileID: 8144221075332136184, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
       propertyPath: m_Name
       value: MultiAttack
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 393945156032018460, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+    - {fileID: 1966528624793802316, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+    - {fileID: 6586085805993538765, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+    - {fileID: 5777125413502466310, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+    - {fileID: 7739049076144051054, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+    - {fileID: 3456940476405465059, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 6750166118068361859, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+    - {fileID: 4624886449276691321, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+    - {fileID: 2708393992738353715, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+    - {fileID: 6997967197124665224, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
@@ -15042,6 +15447,10 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 2646005458862939464, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4082248484073892672, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
       propertyPath: PlayAreaGO
       value: 
@@ -15062,10 +15471,26 @@ PrefabInstance:
       propertyPath: playerDeckScript
       value: 
       objectReference: {fileID: 1178419294}
+    - target: {fileID: 4233362859372086115, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     - target: {fileID: 4798840462362206141, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 4798840462362206141, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373539151756377219, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 6373539151756377219, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 115932543}
     - target: {fileID: 6463382530042199965, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 196.98856
@@ -15114,9 +15539,19 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 8750086831876128398, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5305521326328502122, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+    - {fileID: 5384105336926450330, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+    - {fileID: 5414798045962606077, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7999081006798145760, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 115932542}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
 --- !u!1 &1298088970
@@ -15382,6 +15817,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6847859000427974592, guid: a6a0ebb8b3a9e4cb390cf9bf9bd97fe1, type: 3}
   m_PrefabInstance: {fileID: 417996339}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1359645558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 197568354974619640, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+  m_PrefabInstance: {fileID: 712941784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1368193695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1957969922730849784, guid: cde955b3d31974a75b7f873254f522b8, type: 3}
@@ -17338,6 +17784,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572597212}
   m_CullTransparentMesh: 1
+--- !u!114 &1579571259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9178907825244013228, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+  m_PrefabInstance: {fileID: 712941784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1606746109
 GameObject:
   m_ObjectHideFlags: 0
@@ -17687,6 +18144,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8991064599353493983, guid: a6a0ebb8b3a9e4cb390cf9bf9bd97fe1, type: 3}
   m_PrefabInstance: {fileID: 1624664677}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1630959653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9218750852510298531, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+  m_PrefabInstance: {fileID: 457825461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1636624689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6102743862616367863, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+  m_PrefabInstance: {fileID: 457825461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1639082614
 GameObject:
   m_ObjectHideFlags: 0
@@ -18909,6 +19388,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!224 &1752297332 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7999081006798145760, guid: 946873e53623245dfb4cadd18892dc1d, type: 3}
+  m_PrefabInstance: {fileID: 1278084036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1754816704 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6965473932442046794, guid: 78026b99032734abd92391b362e412bc, type: 3}
@@ -20471,6 +20955,8 @@ MonoBehaviour:
   - {fileID: 871101590}
   focus: 0
   powerTotalsHaveChanged: 0
+  PlayerDeckGO: {fileID: 1178419294}
+  CardCanvasGO: {fileID: 2089187167}
   initiative: 0
 --- !u!114 &1869737323
 MonoBehaviour:
@@ -22022,7 +22508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40, y: -150}
+  m_AnchoredPosition: {x: -30, y: -150}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2009146471
@@ -22037,6 +22523,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCard
       objectReference: {fileID: 0}
+    - target: {fileID: 3239765122552759574, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3381384731623451957, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+      propertyPath: costText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3381384731623451957, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
       propertyPath: PlayAreaGO
       value: 
@@ -22050,6 +22544,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1869737322}
     - target: {fileID: 3381384731623451957, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+      propertyPath: CardNameText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381384731623451957, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
       propertyPath: TokenCanvasGO
       value: 
       objectReference: {fileID: 1869737315}
@@ -22057,6 +22555,14 @@ PrefabInstance:
       propertyPath: playerDeckScript
       value: 
       objectReference: {fileID: 1178419294}
+    - target: {fileID: 5636611409853430518, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 5636611409853430518, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5728933435850031216, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
       propertyPath: cardCanvasGO
       value: 
@@ -22105,7 +22611,19 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 6141574783287750929, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 20299723}
     - target: {fileID: 7544434654933651844, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 7544434654933651844, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 686812789}
+    - target: {fileID: 8008690674416040187, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
@@ -22114,7 +22632,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1869737315}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6732637367835104136, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+    - {fileID: 7088926918812388445, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+    - {fileID: 1790172068802946776, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
+    - {fileID: 964414558228224923, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94351334fc697475e8b7a6931fc271c2, type: 3}
@@ -23286,6 +23808,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098086821}
   m_CullTransparentMesh: 1
+--- !u!114 &2120109233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7192258148152049787, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+  m_PrefabInstance: {fileID: 712941784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2127872174
 GameObject:
   m_ObjectHideFlags: 0

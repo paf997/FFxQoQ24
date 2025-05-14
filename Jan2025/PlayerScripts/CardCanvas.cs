@@ -138,6 +138,7 @@ public class CardCanvas : MonoBehaviour
         card = cardToAdd.GetComponent<PlayerCardUI> ();
         if(card.isAvailable){
             CardsInHand2.Add(cardToAdd);
+            
             //Debug.Log("Cards in Hand2: " + CardsInHand2);
             card.handIndex = CardsInHand2.Count -1;
         }else{  
@@ -163,6 +164,16 @@ public class CardCanvas : MonoBehaviour
     }
     private void activatePlayerHandUI(int cardPos){
         handOrder[cardPos].SetActive(true);
+    }
+
+     public void GetCardsInHand (){
+        foreach (GameObject item in handOrder){
+            //GameObject currentCard = item.GetComponentInChildren<GameObject>();
+            card = item.GetComponentInChildren<PlayerCardUI>();
+            //Debug.Log("GetCardsInHand" + item.name.ToString());
+            card.UpdateAllAbilityAvailability();
+            //card.UpdateAllAbilityAvailability
+        }
     }
 
 }
