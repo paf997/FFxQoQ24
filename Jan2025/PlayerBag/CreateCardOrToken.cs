@@ -17,16 +17,17 @@ PlayerBag playerBag;
     void Start()
     {
         playerBag = Playerbag.GetComponent<PlayerBag> ();
-        instatiateCollection(TokenDataList);
+        InstatiateCollection(TokenDataList);
     }
 
-    void instatiateCollection(List <Token> list ){
+    public List <GameObject> InstatiateCollection(List <Token> list, bool isForCharacter = false ){
         Debug.Log("Instantiate Collection");
-        if (list[0] is Token){
+        List <GameObject> startingTokenBag = new List<GameObject>();
+        /**if (list[0] is Token){
            // Debug.Log("Is token List");
         }else {
             //Debug.Log("Is Card List");    
-        }
+        }*/
         foreach (Token token in list){
             GameObject newToken = Instantiate (tokenPrefab, tempTransform.position , Quaternion.identity, tempTransform );
             //TokenUI tokenUI = newToken.GetComponent<TokenUI>();
@@ -34,8 +35,13 @@ PlayerBag playerBag;
             //Debug.Log(" the name" + tokenSO.name);
             newToken.GetComponent<TokenUI>().getDataFromSOAndSet(token);
             //tempTransform.position = new Vector2 (tempTransform.position.x + 50, tempTransform.position.y);
-            playerBag.startingTokens.Add(newToken);
+            if ( isForCharacter ){
+                playerBag.startingTokens.Add(newToken);
+            }else{
+                startingTokenBag.Add(newToken);
+            }
             //Debug.Log(" In the bag" + token.color + " " + token.value);
         }
+        return startingTokenBag;
     }
 }

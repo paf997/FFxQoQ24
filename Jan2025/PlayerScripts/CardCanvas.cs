@@ -170,7 +170,7 @@ public class CardCanvas : MonoBehaviour
         foreach (GameObject item in handOrder){
             //GameObject currentCard = item.GetComponentInChildren<GameObject>();
             card = item.GetComponentInChildren<PlayerCardUI>();
-            //Debug.Log("GetCardsInHand" + item.name.ToString());
+            Debug.Log("GetCardsInHand" + item.name.ToString());
             card.UpdateAllAbilityAvailability();
             //card.UpdateAllAbilityAvailability
         }
