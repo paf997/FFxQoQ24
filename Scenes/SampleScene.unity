@@ -3033,6 +3033,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c4ffeb08f398644f886e31a35cc2bc1a, type: 2}
   - {fileID: 11400000, guid: 1038e5d41ab124cc196b0bbbe2192cb1, type: 2}
   - {fileID: 11400000, guid: 9a93ad562378241768c5c354d480b42f, type: 2}
+  startingTokenBag: []
   tempTransform: {fileID: 775485140}
   token: {fileID: 0}
   card: {fileID: 0}
@@ -6538,6 +6539,10 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 7077554116415815809, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7594173313914016178, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
       propertyPath: TokenCanvas
       value: 
@@ -17815,6 +17820,8 @@ MonoBehaviour:
   startingTokens: []
   tokenBag: []
   mainCanvas: {fileID: 225834726}
+  equippedItems:
+  - {fileID: 712941786}
 --- !u!114 &1177049560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17828,6 +17835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TokenDataList: []
+  startingTokenBag: []
   tempTransform: {fileID: 775485140}
   token: {fileID: 0}
   card: {fileID: 0}
@@ -18675,10 +18683,18 @@ PrefabInstance:
       propertyPath: abilityTextUI
       value: 
       objectReference: {fileID: 867431141}
+    - target: {fileID: 743498238655330680, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1719691452459555136, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 3179259374480259893, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3945227807811410765, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
       propertyPath: TokenCanvas
       value: 
@@ -18731,6 +18747,10 @@ PrefabInstance:
       propertyPath: cardCanvasGO
       value: 
       objectReference: {fileID: 2089187167}
+    - target: {fileID: 5386672551026503883, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6056482546338276525, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
       propertyPath: TokenCanvas
       value: 

@@ -18,7 +18,6 @@ public class CardAbility : MonoBehaviour
     [SerializeField] GameObject TokenCanvas;
     private TokenCanvas tokenCanvas;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -100,7 +99,7 @@ public class CardAbility : MonoBehaviour
             {
                 isAvailable = true;
                 currentPower = tokenCanvas.getColorValue(tokenColor);
-                Debug.Log("CheckAbilityCost : Available = " + tokenColor + " " +  currentPower +  " cost " + cost + " " + abilityTextUI.text);
+                //Debug.Log("CheckAbilityCost : Available = " + tokenColor + " " +  currentPower +  " cost " + cost + " " + abilityTextUI.text);
     
             }
             else if ( cost > tokenCanvas.getColorValue(tokenColor))
@@ -108,7 +107,7 @@ public class CardAbility : MonoBehaviour
   
                 isAvailable = false;
                 currentPower = tokenCanvas.getColorValue(tokenColor);
-                Debug.Log("CheckAbilityCost : NOT Available = " + currentPower +  " cost " + cost);
+                //Debug.Log("CheckAbilityCost : NOT Available = " + currentPower +  " cost " + cost);
             }else{}
         }
         
@@ -120,7 +119,7 @@ public class CardAbility : MonoBehaviour
     public void UpdateAvailabilityOutline()
     {
         Outline outline = GetComponent<Outline>();
-        Debug.Log("UpdateAvailabilityOutline");
+        //Debug.Log("UpdateAvailabilityOutline");
         if (isAvailable)
         {
             outline.enabled = true;

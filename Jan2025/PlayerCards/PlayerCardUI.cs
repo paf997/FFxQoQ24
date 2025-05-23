@@ -9,6 +9,7 @@ public class PlayerCardUI : MonoBehaviour
     [Header("Card Data")]
     [SerializeField] private PlayerCardSO card;
     public PlayerCardSO [] cardData = new PlayerCardSO [3];
+    [SerializeField] List<Token> bonusTokensForBag = new List<Token>();
     
     public int handIndex;
 
@@ -100,8 +101,13 @@ public class PlayerCardUI : MonoBehaviour
             cardAbility.UpdateAvailabilityOutline();
         }
     }
+    public List<Token> GetBonusTokens()
+    {
+        return bonusTokensForBag;
+    }
 
-    private void uploadAvailabilityColors(){
+    private void uploadAvailabilityColors()
+    {
         availbilityColors[0] = available;
         availbilityColors[1] = unavailable;
         availbilityColors[2] = selected;
