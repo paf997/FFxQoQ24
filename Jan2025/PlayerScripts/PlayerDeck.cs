@@ -79,7 +79,7 @@ public class PlayerDeck : MonoBehaviour
     }
 
     void instatiateDeck(){
-        Debug.Log("Instantiate");
+        Debug.Log("Instantiate Deck");
         GameObject newCard;
         int j = 1;
         Debug.Log("Deck size: "  + deckSize);

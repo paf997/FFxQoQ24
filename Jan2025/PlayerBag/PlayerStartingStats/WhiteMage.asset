@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60674c749953a47ebb92c6fec0f5f533, type: 3}
+  m_Name: WhiteMage
+  m_EditorClassIdentifier: 
+  maxHP: 0
+  characterClass: 2
+  startingTokens:
+  - {fileID: 11400000, guid: 25c753a8deee6436aaf55c11c929958e, type: 2}
+  - {fileID: 11400000, guid: 25c753a8deee6436aaf55c11c929958e, type: 2}
+  - {fileID: 11400000, guid: 25c753a8deee6436aaf55c11c929958e, type: 2}
+  - {fileID: 11400000, guid: 25c753a8deee6436aaf55c11c929958e, type: 2}
+  - {fileID: 11400000, guid: 282f6b0453fb540cab583dca70e6ff9b, type: 2}
+  - {fileID: 11400000, guid: 282f6b0453fb540cab583dca70e6ff9b, type: 2}
+  - {fileID: 11400000, guid: 028d0ec2e8a444d3cb7d82f5928821a6, type: 2}
+  - {fileID: 11400000, guid: 647b93fdcb4aa45e180f1fc9ba0216d6, type: 2}
+  - {fileID: 11400000, guid: 0c9a9a172381844a78958db2c0ac6bd9, type: 2}
+  - {fileID: 11400000, guid: 1038e5d41ab124cc196b0bbbe2192cb1, type: 2}
+  - {fileID: 11400000, guid: c4ffeb08f398644f886e31a35cc2bc1a, type: 2}
+  - {fileID: 11400000, guid: f4514c621e0bb41b48d62fa3269eb027, type: 2}
+  startingEquipment:
+  - {fileID: 3995610681621178627, guid: ae58633a624324d77ad26854cd02f0d0, type: 3}

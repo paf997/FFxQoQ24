@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 808e16b99edec454ab7d816f8b65beab, type: 3}
-  m_Name: SwordBaseAttack
+  m_Name: Rod3
   m_EditorClassIdentifier: 
   cardBackgroundImg: {fileID: 0}
   cardActionIcon: {fileID: 0}
-  cardCostIcon: {fileID: 21300000, guid: b2fbcab8d32014baa927f2dec7d34b90, type: 3}
-  Name: 
-  cost: 0
+  cardCostIcon: {fileID: 21300000, guid: 1551d543bd14c496f9181000447cc0f7, type: 3}
+  Name: Heal Damage
+  cost: 1
   abilityIndex: 0
   ability1HaveToBeActive: 0
   ability2HaveToBeActive: 0
   isAvailable: 0
-  colorCosts: 0
+  colorCosts: 1
   duration: 0
   mAttAdjustment: 0
   defAdjustment: 0
-  tokenColor: 1
-  description: Attack x1, Damage 2
+  tokenColor: 3
+  description: Heal 3 Damage

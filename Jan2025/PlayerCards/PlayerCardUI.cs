@@ -103,7 +103,12 @@ public class PlayerCardUI : MonoBehaviour
     }
     public List<Token> GetBonusTokens()
     {
-        return bonusTokensForBag;
+        if (bonusTokensForBag.Count > 0)
+        {
+            return bonusTokensForBag;
+        }
+        return null;
+        
     }
 
     private void uploadAvailabilityColors()

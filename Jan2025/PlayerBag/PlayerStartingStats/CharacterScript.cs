@@ -21,8 +21,17 @@ public class CharacterScript : MonoBehaviour
     {
         maxHP = 12;
         startingTokens = characterClass.GetStartingTokens();
-        createToken = mainCanvas.GetComponent<CreateCardOrToken>();
-        tokenBag = createToken.InstatiateCollection(startingTokens, true);
+        createToken = GetComponent<CreateCardOrToken>();
+        if (startingTokens != null)
+        {
+            Debug.Log("Starting token Length " + startingTokens.Count);
+            tokenBag = createToken.InstatiateCollection(startingTokens, true);
+        }
+        else
+        {
+            Debug.Log("Starting token Length " + startingTokens.Count);
+        }
+        
         if (characterClass.GetStartingGear() != null)
         {
             equippedItems = characterClass.GetStartingGear();
@@ -43,17 +52,27 @@ public class CharacterScript : MonoBehaviour
 
     public void CheckEquippedGear()
     {
-        Debug.Log("CheckingGear");
-        foreach (GameObject item in equippedItems)
+        Debug.Log("CheckingGear - charcter script");
+        if (equippedItems.Count > 0)
         {
-            if (item.GetComponent<PlayerCardUI>().GetBonusTokens() != null)
+            Debug.Log("Not Null");
+            foreach (GameObject item in equippedItems)
             {
-                foreach (Token token in item.GetComponent<PlayerCardUI>().GetBonusTokens())
+                Debug.Log("Items in list" + item.name);
+                if (item.GetComponent<PlayerCardUI>().GetBonusTokens() != null)
                 {
-                    Debug.Log("CheckingGear: " + token);
-                    createToken.AddTokenToBag(token, true);
+                    Debug.Log("Get bonus token return value " + item.name + " " + item.GetComponent<PlayerCardUI>().GetBonusTokens());
+                    foreach (Token token in item.GetComponent<PlayerCardUI>().GetBonusTokens())
+                    {
+                        Debug.Log("CheckingGear: " + token);
+                        createToken.AddTokenToBag(token, true);
+                    }
+                }
+                else
+                {
+                    Debug.Log(" No bonus tokens in list");
                 }
             }
-        }
+        }Debug.Log("Exiting CheckGeaR");
     }
 }

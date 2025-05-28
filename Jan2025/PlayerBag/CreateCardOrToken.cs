@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -14,10 +15,10 @@ public class CreateCardOrToken : MonoBehaviour
     public PlayerCardUI card;
     public GameObject tokenPrefab;
     PlayerBag playerBag;
-    [SerializeField] GameObject Playerbag;
+    [SerializeField] GameObject PlayerBagGO;
     void Start()
     {
-        playerBag = Playerbag.GetComponent<PlayerBag>();
+        playerBag = PlayerBagGO.GetComponent<PlayerBag>();
         //InstatiateCollection(TokenDataList);
     }
 
@@ -29,6 +30,7 @@ public class CreateCardOrToken : MonoBehaviour
         }else {
             //Debug.Log("Is Card List");    
         }*/
+        Debug.Log("List length" + list.Count);
         foreach (Token token in list)
         {
             AddTokenToBag(token, true);
@@ -41,7 +43,7 @@ public class CreateCardOrToken : MonoBehaviour
     {
         GameObject newToken = Instantiate(tokenPrefab, tempTransform.position, Quaternion.identity, tempTransform);
         newToken.GetComponent<TokenUI>().getDataFromSOAndSet(token);
-        Debug.Log("isforCahracter: " + isForCharacter);
+        Debug.Log("isforCahracter: " + isForCharacter );
         if (!isForCharacter)
         {
             Debug.Log("Adding new token to player bag " + newToken.name + " : " + playerBag.startingTokens.Count);
@@ -49,10 +51,17 @@ public class CreateCardOrToken : MonoBehaviour
         }
         else
         {
-            startingTokenBag.Add(newToken); Debug.Log("Startingbag");
+            Debug.Log("Startingbag createScript");
+            startingTokenBag.Add(newToken);
+            if (playerBag != null)
+            {
+                playerBag.AddTokenToPlayerBag(newToken);
+            }
+            
+            
             Debug.Log(" bag count " + startingTokenBag.Count);
         }
-        
+
     }
-    
+
 }
