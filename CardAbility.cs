@@ -18,10 +18,15 @@ public class CardAbility : MonoBehaviour
     [SerializeField] GameObject TokenCanvas;
     private TokenCanvas tokenCanvas;
 
-    // Start is called before the first frame update
-    void Start()
+  void Awake()
+  {
+    tokenCanvas = TokenCanvas.GetComponent<TokenCanvas>();
+  }
+
+  // Start is called before the first frame update
+  void Start()
     {
-        tokenCanvas = TokenCanvas.GetComponent<TokenCanvas>();
+        //tokenCanvas = TokenCanvas.GetComponent<TokenCanvas>();
     }
 
     void Update()

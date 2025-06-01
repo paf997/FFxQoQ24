@@ -10,9 +10,11 @@ public class CharacterScript : MonoBehaviour
     [SerializeField] int maxHP;
     [SerializeField] int hp;
     [SerializeField] List<Token> startingTokens = new List<Token>();
-    [SerializeField] List<GameObject> tokenBag = new List<GameObject>();
+    [SerializeField] List<GameObject> tokenBagTokens = new List<GameObject>();
     [SerializeField] GameObject mainCanvas;
     [SerializeField] List<GameObject> equippedItems = new List<GameObject>();
+    [SerializeField] GameObject tokenBagGO;
+    private PlayerBag playerBag;
 
     CreateCardOrToken createToken;
 
@@ -25,18 +27,23 @@ public class CharacterScript : MonoBehaviour
         if (startingTokens != null)
         {
             Debug.Log("Starting token Length " + startingTokens.Count);
-            tokenBag = createToken.InstatiateCollection(startingTokens, true);
+            tokenBagTokens = createToken.InstatiateCollection(startingTokens, true);
         }
         else
         {
             Debug.Log("Starting token Length " + startingTokens.Count);
         }
-        
+
         if (characterClass.GetStartingGear() != null)
         {
             equippedItems = characterClass.GetStartingGear();
             CheckEquippedGear();
         }
+
+        playerBag = tokenBagGO.GetComponent<PlayerBag>();
+        playerBag.startingTokens = tokenBagTokens;
+        playerBag.SetBagText(characterClass.name.ToString());
+        Debug.Log("copied bags " + playerBag.startingTokens.Count);
     }
 
     // Update is called once per frame
@@ -73,6 +80,8 @@ public class CharacterScript : MonoBehaviour
                     Debug.Log(" No bonus tokens in list");
                 }
             }
-        }Debug.Log("Exiting CheckGeaR");
+        }
+        Debug.Log("Exiting CheckGeaR");
     }
+
 }

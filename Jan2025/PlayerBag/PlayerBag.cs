@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.ComponentModel;
+using TMPro;
 
 public class PlayerBag : MonoBehaviour
 {
@@ -61,6 +63,8 @@ public class PlayerBag : MonoBehaviour
     public TokenColor tokenColor;
     [SerializeField] bool hasBusted;
     [SerializeField] GameObject TokenDiscardArea;
+    [SerializeField] TMP_Text bagText; 
+
 
     public void Start()
     {
@@ -82,6 +86,11 @@ public class PlayerBag : MonoBehaviour
         }
         tokenMax = startingTokens.Count;
         //Debug.Log("Player Bag" + tokenMax);
+    }
+
+    public void SetBagText(string data)
+    {
+        bagText.text = data;
     }
 
     public void drawButton(int temp = 3)
@@ -127,6 +136,7 @@ public class PlayerBag : MonoBehaviour
     }
     public void PrimeAction()
     {
+        Debug.Log("Tokens length after Prime action " + startingTokens.Count);
         for (int i = 0; i < 3; i++)
         {
             drawnToken = startingTokens[i].GetComponent<TokenUI>();

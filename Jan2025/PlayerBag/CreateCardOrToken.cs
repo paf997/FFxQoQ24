@@ -34,7 +34,7 @@ public class CreateCardOrToken : MonoBehaviour
         foreach (Token token in list)
         {
             AddTokenToBag(token, true);
-            Debug.Log(" In the bag" + token.color + " " + token.value);
+//            Debug.Log(" In the bag" + token.color + " " + token.value);
         }
         return startingTokenBag;
     }
@@ -43,10 +43,10 @@ public class CreateCardOrToken : MonoBehaviour
     {
         GameObject newToken = Instantiate(tokenPrefab, tempTransform.position, Quaternion.identity, tempTransform);
         newToken.GetComponent<TokenUI>().getDataFromSOAndSet(token);
-        Debug.Log("isforCahracter: " + isForCharacter );
+        //Debug.Log("isforCahracter: " + isForCharacter );
         if (!isForCharacter)
         {
-            Debug.Log("Adding new token to player bag " + newToken.name + " : " + playerBag.startingTokens.Count);
+            //Debug.Log("Adding new token to player bag " + newToken.name + " : " + playerBag.startingTokens.Count);
             playerBag.startingTokens.Add(newToken);
         }
         else
@@ -59,7 +59,7 @@ public class CreateCardOrToken : MonoBehaviour
             }
             
             
-            Debug.Log(" bag count " + startingTokenBag.Count);
+            //Debug.Log(" bag count " + startingTokenBag.Count);
         }
 
     }
