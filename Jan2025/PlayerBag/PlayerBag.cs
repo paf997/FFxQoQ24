@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using System.ComponentModel;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerBag : MonoBehaviour
 {
@@ -63,7 +64,8 @@ public class PlayerBag : MonoBehaviour
     public TokenColor tokenColor;
     [SerializeField] bool hasBusted;
     [SerializeField] GameObject TokenDiscardArea;
-    [SerializeField] TMP_Text bagText; 
+    [SerializeField] TMP_Text bagText;
+    [SerializeField] Slider tokenDrawValue;
 
 
     public void Start()
@@ -90,7 +92,8 @@ public class PlayerBag : MonoBehaviour
 
     public void SetBagText(string data)
     {
-        bagText.text = data;
+        
+        bagText.text = data + "  " + GetDrawCount().ToString();
     }
 
     public void drawButton(int temp = 3)
@@ -149,7 +152,7 @@ public class PlayerBag : MonoBehaviour
     }
     public void DrawAction()
     {
-
+        GetDrawCount();
         for (int i = 0; i < drawCnt; i++)
         {
             if (hasBusted)
@@ -215,6 +218,12 @@ public class PlayerBag : MonoBehaviour
         Debug.Log("adjustInitiative");
         initiative += value;
         return initiative;
+    }
+
+    public int GetDrawCount()
+    {
+        drawCnt = (int)tokenDrawValue.value;
+        return drawCnt;
     }
 
     public void adjustTokenValues(TokenUI token)
