@@ -66,10 +66,11 @@ public class TokenCanvas : MonoBehaviour
         purpleCnt = purpleValueCnt;
         wildMax = wildValueMax;
         wildCnt = wildValueCnt;
-  
-        string vals =  $"Red: {redCnt} / {redMax} | Green:  {greenCnt} / {greenMax} | Yellow:  {yellowCnt} / {yellowMax }| White: {whiteCnt} / {whiteMax}  ";
-        text.text = vals;
+
         initiative = whiteCnt + redCnt + greenCnt + yellowCnt + blueCnt + orangeCnt  + purpleCnt + wildCnt;
+        string vals =  $"Red: {redCnt} / {redMax} | Green:  {greenCnt} / {greenMax} | Yellow:  {yellowCnt} / {yellowMax }| blue:  {blueCnt} / {blueValueMax }| White: {whiteCnt} / {whiteMax}| Initiative: " + initiative;
+        text.text = vals;
+        
 
         CardCanvas playerHand = CardCanvasGO.GetComponent<CardCanvas>();
         playerHand.GetCardsInHand();

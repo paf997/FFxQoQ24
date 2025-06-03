@@ -66,6 +66,7 @@ public class PlayerBag : MonoBehaviour
     [SerializeField] GameObject TokenDiscardArea;
     [SerializeField] TMP_Text bagText;
     [SerializeField] Slider tokenDrawValue;
+    int primeAmout = 3;
 
 
     public void Start()
@@ -92,8 +93,19 @@ public class PlayerBag : MonoBehaviour
 
     public void SetBagText(string data)
     {
-        
+        if (hasBusted)
+        {
+            bagText.text = "0";
+            tokenDrawValue.value = 0;
+        }
+        else if (playerHand.CurrentTokenValues[0] > 7)
+        {
+            int val = (7 - (playerHand.CurrentTokenValues[0]));
+            tokenDrawValue.value = val;
+            bagText.text = (val).ToString();
+        }
         bagText.text = data + "  " + GetDrawCount().ToString();
+        tokenDrawValue.value = GetDrawCount();
     }
 
     public void drawButton(int temp = 3)
@@ -119,6 +131,8 @@ public class PlayerBag : MonoBehaviour
             tokenCanvas.updateInitiativeUI(initiative);
             ClearDrawnToken();
             battleCoordinator.getInitiatives();
+            hasBusted = false;
+            ResetDrawnTokenValues();
         }
         tokenCanvas.UpdateTokenVals(whiteTotal, whiteDrawn, redTotal, redDrawn, blueTotal, blueDrawn, yellowTotal, yellowDrawn,
         orangeTotal, orangeDrawn, greenTotal, greenDrawn, purpleTotal, purpleDrawn, wildTotal, wildDrawn);
@@ -137,10 +151,24 @@ public class PlayerBag : MonoBehaviour
         }
 
     }
+
+    public void ResetDrawnTokenValues()
+    {
+        whiteDrawn = 0;
+        redDrawn = 0;
+        blueDrawn = 0;
+        yellowDrawn = 0;
+        orangeDrawn = 0;
+        greenDrawn = 0;
+        purpleDrawn = 0;
+        wildDrawn = 0;
+        tokenCanvas.UpdateTokenVals(whiteTotal, whiteDrawn, redTotal, redDrawn, blueTotal, blueDrawn, yellowTotal, yellowDrawn,
+        orangeTotal, orangeDrawn, greenTotal, greenDrawn, purpleTotal, purpleDrawn, wildTotal, wildDrawn);
+    }
     public void PrimeAction()
     {
         Debug.Log("Tokens length after Prime action " + startingTokens.Count);
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < primeAmout; i++)
         {
             drawnToken = startingTokens[i].GetComponent<TokenUI>();
             Token tokenSO = drawnToken.getTSO();
@@ -162,6 +190,7 @@ public class PlayerBag : MonoBehaviour
             }
             else
             {
+                Debug.Log("Token index in player pag " + i);
                 drawnToken = startingTokens[nTokens + i].GetComponent<TokenUI>();
                 Token tokenSO = drawnToken.getTSO();
                 drawnToken.isDrawn = true;
@@ -188,6 +217,8 @@ public class PlayerBag : MonoBehaviour
         }
         isPrimed = 0;
         nTokens = 0;
+        initiative = -1;
+        hasBusted = false;
     }
     public void FocusButtonToDrawTokens()
     {
