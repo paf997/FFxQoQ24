@@ -59,7 +59,7 @@ public class Participant : MonoBehaviour{
        return (att += amount) > 1 ? (att += amount) : 1;
     }
 
-    public void checkCurrentConditons(){
+    /*public void checkCurrentConditons(){
 
         for(int i = 0; i < conditions.Count; i++) {
             BattleAbility condition = conditions[i];
@@ -71,7 +71,7 @@ public class Participant : MonoBehaviour{
                 conditions.RemoveAt(i);
             }
         }
-    }
+    }*/
 
         public void isPoisoned(){
         if (poisonDmg > 0){

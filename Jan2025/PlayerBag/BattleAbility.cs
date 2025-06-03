@@ -16,9 +16,8 @@ public class BattleAbility : ScriptableObject {
     public List <int> adjustment = new List<int>(){};
     public int initiative;
     public int probability;
-    public int nTimePlayed;
-    public int maxPlayed;
-    public int duration;
+    public int nOfTotalInDeck;
+    public int totalInDeck;
     public Target target;
 }
 
