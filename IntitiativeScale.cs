@@ -10,7 +10,7 @@ public class IntitiativeScale : MonoBehaviour
     [SerializeField] List<CharacterScript> participantInitiativeAndIcon = new List<CharacterScript>();
     [SerializeField] List<GameObject> participantIcons = new List<GameObject>();
     [SerializeField] int iconPosition = 0;
-    [SerializeField] int participants;
+    [SerializeField] int maxParticipants = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,16 @@ public class IntitiativeScale : MonoBehaviour
 
     public void AddParticipantInitiative(CharacterScript data)
     {
+        if (participantInitiativeAndIcon.Count < maxParticipants)
+        { }
+        else
+        {
+            ClearParticapants();
+        }
+
         participantInitiativeAndIcon.Add(data);
         OrderParticipantsOnInittiativeScale();
-        participants = participantIcons.Count;
+        
     }
 
     public void OrderParticipantsOnInittiativeScale()
@@ -44,11 +51,18 @@ public class IntitiativeScale : MonoBehaviour
 
     public void ClearParticapants()
     {
-        if (participantIcons.Count > 0 && iconPosition < participantIcons.Count)
+        if (participantInitiativeAndIcon.Count > 0)
         {
-            Button icon = participantInitiativeAndIcon[iconPosition].GetInitiativeIcon();
-            icon.gameObject.SetActive(false);
-            iconPosition++;
+            for (int i = 0; i < maxParticipants; i++)
+            {
+                CharacterScript participant = participantInitiativeAndIcon[i].GetComponent<CharacterScript>();
+                Debug.Log("participant iteration " + iconPosition);
+                Button icon = participant.GetInitiativeIcon();
+                icon.gameObject.SetActive(false);
+                iconPosition++;
+            }
+            participantInitiativeAndIcon.Clear();
+            
         }
         else
         {
