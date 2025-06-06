@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterScript : MonoBehaviour
 {
@@ -15,7 +16,11 @@ public class CharacterScript : MonoBehaviour
     [SerializeField] List<GameObject> equippedItems = new List<GameObject>();
     [SerializeField] GameObject tokenBagGO;
     private PlayerBag playerBag;
-
+    [SerializeField] int initiative;
+    [SerializeField] Button initiativeIconBtn;
+    [SerializeField] GameObject initiativeScaleGO;
+    private IntitiativeScale intitiativeScale;
+    
     CreateCardOrToken createToken;
 
     // Start is called before the first frame update
@@ -24,6 +29,7 @@ public class CharacterScript : MonoBehaviour
         maxHP = 12;
         startingTokens = characterClass.GetStartingTokens();
         createToken = GetComponent<CreateCardOrToken>();
+        intitiativeScale = initiativeScaleGO.GetComponent<IntitiativeScale>();
         if (startingTokens != null)
         {
             Debug.Log("Starting token Length " + startingTokens.Count);
@@ -46,11 +52,26 @@ public class CharacterScript : MonoBehaviour
         Debug.Log("copied bags " + playerBag.startingTokens.Count);
     }
 
-    // Update is called once per frame
-    void Update()
+    public int GetInitiative()
     {
-
+        return initiative;
     }
+
+    public void SetTurnInitiative(int data)
+    {
+            initiative = data;
+            intitiativeScale.AddParticipantInitiative(this);
+    }
+
+    public Button GetInitiativeIcon()
+    {
+        return initiativeIconBtn;
+    }
+    public void ClearInitiative()
+    {
+        initiative = 0;
+    }
+
     public int GetHP(bool isMax = false)
     {// update later for variable return value
         if (isMax) return maxHP;

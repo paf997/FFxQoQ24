@@ -66,15 +66,19 @@ public class PlayerBag : MonoBehaviour
     [SerializeField] GameObject TokenDiscardArea;
     [SerializeField] TMP_Text bagText;
     [SerializeField] Slider tokenDrawValue;
+    [SerializeField] GameObject InitiativeScaleGO;
+    private IntitiativeScale intitiativeScale;
     int primeAmout = 3;
-
-
+    [SerializeField] GameObject CharacterGO;
+    [SerializeField] CharacterScript character;
     public void Start()
     {
         initializeTokensInfo();
         tokenCanvas = TC.GetComponent<TokenCanvas>();
         playerHand = cardCanvas.GetComponent<CardCanvas>();
         battleCoordinator = PlayArea.GetComponent<PlayArea>();
+        intitiativeScale = InitiativeScaleGO.GetComponent<IntitiativeScale>();
+        character = CharacterGO.GetComponent<CharacterScript>();
         initiative = -1;
     }
 
@@ -98,12 +102,12 @@ public class PlayerBag : MonoBehaviour
             bagText.text = "0";
             tokenDrawValue.value = 0;
         }
-        else if (playerHand.CurrentTokenValues[0] > 7)
+        /*else if (playerHand.CurrentTokenValues[0] > 7)
         {
             int val = (7 - (playerHand.CurrentTokenValues[0]));
             tokenDrawValue.value = val;
             bagText.text = (val).ToString();
-        }
+        }*/
         bagText.text = data + "  " + GetDrawCount().ToString();
         tokenDrawValue.value = GetDrawCount();
     }
@@ -129,6 +133,10 @@ public class PlayerBag : MonoBehaviour
             Debug.Log("Clear Amounts/End Turn " + isPrimed);
             battleCoordinator.addInitiative(initiative);
             tokenCanvas.updateInitiativeUI(initiative);
+            //intitiativeScale.AddParticipantInitiative(initiative);
+            character.SetTurnInitiative(initiative);
+            character.ClearInitiative();
+
             ClearDrawnToken();
             battleCoordinator.getInitiatives();
             hasBusted = false;
