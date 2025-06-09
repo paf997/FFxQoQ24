@@ -8,6 +8,7 @@ public class EnemyInfo : Participant
     public int pierce;
     public int heal;
     [SerializeField] Sprite enemySprite;
+    int init = 0;
     [SerializeField] List <BattleAbility> abilityList;
     public BattleAbility ability; 
 
@@ -19,10 +20,12 @@ public class EnemyInfo : Participant
         Debug.Log(" Ability: " + ability.adjustment[i]);*/
     }
 
-    public BattleAbility getRandomAbility(){
+    public BattleAbility getRandomAbility()
+    {
         int total = 0;
         Debug.Log("Ability List Count " + abilityList.Count);
-        for (int i = 0; i < abilityList.Count; i++){
+        for (int i = 0; i < abilityList.Count; i++)
+        {
             ability = abilityList[i];
             total += ability.probability;
             //Debug.Log("Probability = " + total);

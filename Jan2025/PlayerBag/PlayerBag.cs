@@ -128,15 +128,18 @@ public class PlayerBag : MonoBehaviour
             DrawAction();
             isPrimed++;
         }
-        else
+        else if (isPrimed == focus + 1)
         {
             Debug.Log("Clear Amounts/End Turn " + isPrimed);
             battleCoordinator.addInitiative(initiative);
             tokenCanvas.updateInitiativeUI(initiative);
             //intitiativeScale.AddParticipantInitiative(initiative);
             character.SetTurnInitiative(initiative);
+            isPrimed++;
+        }
+        else
+        {
             character.ClearInitiative();
-
             ClearDrawnToken();
             battleCoordinator.getInitiatives();
             hasBusted = false;

@@ -54,13 +54,13 @@ public class PlayArea : MonoBehaviour
     }
 
     public void getInitiatives(){
-       for (int i = 0;  i < participants.Count; i++)
-            if (participants[i].targetName == Target.player1 ){
+        for (int i = 0; i < participants.Count; i++)
+            if (participants[i].GetComponent<Participant>().GetTarget() == Target.player1 ){
                 Debug.Log ("player initiative  already added");
             }else{
                 enemy = participants[i].GetComponent<EnemyInfo>();
                 ability = enemy.getRandomAbility();
-                int initiative = ability.initiative;
+                int initiative = ability.GetInitiative();
                 Initiatives.Add(initiative);
                 //participants.Add(enemyTarget);
                 chosenAbilities.Add(ability);
@@ -95,18 +95,18 @@ public class PlayArea : MonoBehaviour
         //StatTypes convertedType = (StatTypes)System.Enum.Parse( typeof(StatTypes), type );  
         //BattleAbility.StatTypes oppStat = StatTypes.def;
         if(sType == StatTypes.att){
-            oppositeStat = player.getDef();
+            //oppositeStat = player.getDef();
             if(compareStats(activeStat, oppositeStat) > 0){
-                player.adjustHP(compareStats(activeStat, oppositeStat));
+                //player.adjustHP(compareStats(activeStat, oppositeStat));
             }else{
                 //Debug.Log("No damage because of def " + player.getDef());
             }
         }else if(sType == StatTypes.def){
-            activeStat = enemy.getDef();
+           // activeStat = enemy.getDef();
             Debug.Log("Def is stype" );
             //adjustDef(0,activeStat,enemy);
         }else if (sType == StatTypes.poison){
-            applyCondition(determineTarget(ability.target), activeStat);
+            //applyCondition(determineTarget(ability.target), activeStat);
         }
     }
 
@@ -152,7 +152,7 @@ public class PlayArea : MonoBehaviour
     public Participant determineTarget(Target target){
         return (target == Target.player1 ? player : enemy);
     }
-    public void applyCondition(Participant target, int adjustment){
-        target.conditions.Add(ability);
-    }
+    /*public void applyCondition(){take a look afterwards. probably have to redo older method
+        target.GetComponent<Participant>().AddCondition()
+    }*/
 }

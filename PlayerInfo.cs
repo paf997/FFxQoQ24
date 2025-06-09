@@ -28,7 +28,7 @@ public class PlayerInfo : Participant{
        // text.text = " 0 , 0- , 0";
     }
     public bool isDead(){
-        return (health < 1);
+        return (GetHP() < 1);
     }
     public void checkCurrentConditons(){
     }

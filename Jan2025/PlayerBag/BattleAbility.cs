@@ -6,19 +6,25 @@ using UnityEngine.UI;
 public enum StatTypes  { att, attRange, attMagic, def, poison, magic, bust}
 
 [CreateAssetMenu(fileName = "BattleAbility", menuName = "Game/BattleAbility", order = 1)]
-public class BattleAbility : ScriptableObject {
+public class BattleAbility : ScriptableObject
+{
     [Header("Name")]
 
     public string name;
-    public List <StatTypes> type = new List<StatTypes>(){};
+    public List<StatTypes> type = new List<StatTypes>() { };
 
     //public List <string> type = new List<string>(){};
-    public List <int> adjustment = new List<int>(){};
-    public int initiative;
+    public List<int> adjustment = new List<int>() { };
+    [SerializeField] int initiative;
     public int probability;
     public int nOfTotalInDeck;
     public int totalInDeck;
     public Target target;
+    
+    public int GetInitiative()
+    {
+        return initiative;
+    }
 }
 
 

@@ -5,17 +5,17 @@ using UnityEngine;
 public enum Target{ player1, enemy1, enemy2 }
 
 public class Participant : MonoBehaviour{
-    public int health;
-    public int maxHealth;
-    public int def;
-    public int poisonDmg;
-    public int att;
-    public int baseAtt;
-    public bool isDoneTurn;
+    public int hp;
+    public int maxHP;
+    [SerializeField] int def;
+    [SerializeField] int poisonDmg;
+    [SerializeField] int att;
+    [SerializeField] int baseAtt;
+    [SerializeField] bool isDoneTurn;
     public int initiative;
-    public List <BattleAbility> conditions = new List<BattleAbility>(){};
-    public List <StatTypes> typeList = new List<StatTypes>(){};
-    public Target targetName;
+    [SerializeField] List <BattleAbility> conditions = new List<BattleAbility>(){};
+    [SerializeField] List <StatTypes> typeList = new List<StatTypes>(){};
+    [SerializeField] Target targetName;
      
     //[SerializeField] Participant participant;
     
@@ -25,37 +25,54 @@ public class Participant : MonoBehaviour{
         
     }
 
+    public int GetInitiative()
+    {
+        return initiative;
+    }
+
+    public void AddCondition(BattleAbility data)
+    {
+        conditions.Add(data);
+    }
+
     // Update is called once per frame
-    public void setInitiative(int init){
+    public void SetTurnInitiative(int init)
+    {
         initiative = init;
     }
 
-    public int getDef(){
+    public Target GetTarget()
+    {
+        return targetName;
+    }
+
+    public int GetDef()
+    {
         return def;
     }
 
-    public int getHP(){
-        return health;
+    public int GetHP(){
+        return hp;
     }
 
-    public void adjustHP(int amount){
-            health = (health - amount);
-            isDead();
+    public void AdjustHP(int amount){
+            hp = (hp - amount);
+            IsDead();
     }
 
-    public int isHealthFull(int currenthealth){
-        if (currenthealth < maxHealth ){
-            return maxHealth;
+    public int IsHealthFull(int currenthealth){
+        if (currenthealth < maxHP ){
+            return maxHP;
         }else{
             return currenthealth;
         }
     }  
 
-    public bool isDead(){
-        return (health < 1);
+    public bool IsDead(){
+        return (hp < 1);
     }
 
-    public int adjustAtt(int amount){
+    public int AdjustAtt(int amount){
        return (att += amount) > 1 ? (att += amount) : 1;
     }
 
@@ -73,14 +90,14 @@ public class Participant : MonoBehaviour{
         }
     }*/
 
-        public void isPoisoned(){
+        public void IsPoisoned(){
         if (poisonDmg > 0){
             att = baseAtt -1;
             poisonDmg--;
         }
     }
 
-     public void adjustDef(int type, int adjustment){
+     public void AdjustDef(int type, int adjustment){
         if(type == 0){
             def = def + adjustment;
         }

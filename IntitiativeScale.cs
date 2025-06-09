@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class IntitiativeScale : MonoBehaviour
 {
     [SerializeField] List<GameObject> inititaitveScalePositions = new List<GameObject>();
-    [SerializeField] List<CharacterScript> participantInitiativeAndIcon = new List<CharacterScript>();
+    [SerializeField] List<Participant> participantInitiativeAndIcon = new List<Participant>();
+    [SerializeField] GameObject enemyCanvas;
     [SerializeField] List<GameObject> participantIcons = new List<GameObject>();
     [SerializeField] int iconPosition = 0;
     [SerializeField] int maxParticipants = 2;
@@ -18,7 +19,7 @@ public class IntitiativeScale : MonoBehaviour
 
     }
 
-    public void AddParticipantInitiative(CharacterScript data)
+    public void AddParticipantInitiative(Participant data)
     {
         if (participantInitiativeAndIcon.Count < maxParticipants)
         { }
@@ -44,9 +45,14 @@ public class IntitiativeScale : MonoBehaviour
             float newZ = inititaitveScalePositions[i].GetComponent<RectTransform>().position.z;
             i++;
             initiativeScalePos.position = new Vector3(newX, newY, newZ);
-            string tempStr = $"x: {newX} + y: {newY} + z: {newZ} + i:{i}";
-            Debug.Log(tempStr);
+            /*string tempStr = $"x: {newX} + y: {newY} + z: {newZ} + i:{i}";
+            Debug.Log(tempStr);*/
         }
+    }
+
+    public void AddEnemyActionAndInitiative()
+    {
+        EnemyInfo enemy = enemyCanvas.GetComponent<EnemyInfo>();
     }
 
     public void ClearParticapants()
@@ -62,7 +68,6 @@ public class IntitiativeScale : MonoBehaviour
                 iconPosition++;
             }
             participantInitiativeAndIcon.Clear();
-            
         }
         else
         {
