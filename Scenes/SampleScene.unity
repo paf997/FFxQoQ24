@@ -5640,6 +5640,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   biome: []
   biomeData: {fileID: 11400000, guid: ea1be4e51a76d4da58ff4c76befc3653, type: 2}
+  tempEnemyPrefab: {fileID: 4971448050276189837, guid: 1808bc676aed74d72885677cc8b9d5b0, type: 3}
+  tempTransform: {fileID: 775485140}
 --- !u!1001 &342271631
 PrefabInstance:
   m_ObjectHideFlags: 0

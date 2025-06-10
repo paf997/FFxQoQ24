@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class IntitiativeScale : MonoBehaviour
 {
     [SerializeField] List<GameObject> inititaitveScalePositions = new List<GameObject>();

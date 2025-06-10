@@ -6,6 +6,7 @@ using UnityEngine;
 public class BiomeData : ScriptableObject
 {
     public List<GameObject> encounters = new List<GameObject>();
+    public GameObject tempEnemyPrefab;
 
     public List<GameObject> GetList()
     {

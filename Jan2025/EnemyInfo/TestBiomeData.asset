@@ -15,3 +15,4 @@ MonoBehaviour:
   encounters:
   - {fileID: 4971448050276189837, guid: 1808bc676aed74d72885677cc8b9d5b0, type: 3}
   - {fileID: 5718331962906013578, guid: bc72324fc3df4465a9ae8d81ec614dee, type: 3}
+  tempEnemyPrefab: {fileID: 0}
