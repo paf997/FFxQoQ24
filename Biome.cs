@@ -7,7 +7,6 @@ public class Biome : MonoBehaviour
 {
     [SerializeField] List<GameObject> biome = new List<GameObject>();
     [SerializeField] BiomeData biomeData;
-    [SerializeField] GameObject tempEnemyPrefab;
     [SerializeField] Transform tempTransform;
 
     // Start is called before the first frame update
@@ -42,7 +41,8 @@ public class Biome : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 choice = Random.Range(0, biome.Count);
-                GameObject newEnemy = Instantiate(tempEnemyPrefab, tempTransform.position, Quaternion.identity, tempTransform);
+                GameObject enemyPreFab = biome[choice];
+                GameObject newEnemy = Instantiate(enemyPreFab, tempTransform.position, Quaternion.identity, tempTransform);
                 randomEncounter.Add(newEnemy);
             }
 
