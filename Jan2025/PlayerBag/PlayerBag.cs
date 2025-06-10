@@ -5,6 +5,7 @@ using System.Linq;
 using System.ComponentModel;
 using TMPro;
 using UnityEngine.UI;
+using System.Security.Cryptography;
 
 public class PlayerBag : MonoBehaviour
 {
@@ -71,6 +72,7 @@ public class PlayerBag : MonoBehaviour
     int primeAmout = 3;
     [SerializeField] GameObject CharacterGO;
     [SerializeField] CharacterScript character;
+    [SerializeField] bool isNextTurnReady = false;
     public void Start()
     {
         initializeTokensInfo();
@@ -112,6 +114,25 @@ public class PlayerBag : MonoBehaviour
         tokenDrawValue.value = GetDrawCount();
     }
 
+    public void ToggleIsTurnReady()
+    {
+        isNextTurnReady = (!isNextTurnReady);
+    }
+
+    public void EndTurn()
+    {
+        Debug.Log("End Turn");
+        if (isNextTurnReady)
+        {
+            Debug.Log("IsNextReady");
+            character.ClearInitiative();
+            ClearDrawnToken();
+            battleCoordinator.getInitiatives();
+            hasBusted = false;
+            ResetDrawnTokenValues();
+        }
+    }
+
     public void drawButton(int temp = 3)
     {
         if (isPrimed == 0)
@@ -139,11 +160,7 @@ public class PlayerBag : MonoBehaviour
         }
         else
         {
-            character.ClearInitiative();
-            ClearDrawnToken();
-            battleCoordinator.getInitiatives();
-            hasBusted = false;
-            ResetDrawnTokenValues();
+            EndTurn();
         }
         tokenCanvas.UpdateTokenVals(whiteTotal, whiteDrawn, redTotal, redDrawn, blueTotal, blueDrawn, yellowTotal, yellowDrawn,
         orangeTotal, orangeDrawn, greenTotal, greenDrawn, purpleTotal, purpleDrawn, wildTotal, wildDrawn);
@@ -160,7 +177,6 @@ public class PlayerBag : MonoBehaviour
         {
             hasBusted = true;
         }
-
     }
 
     public void ResetDrawnTokenValues()
@@ -210,6 +226,7 @@ public class PlayerBag : MonoBehaviour
                 adjustTokenValues(drawnToken);
                 //Debug.Log("Update prime action then update Playable Cards");
                 playerHand.UpdatePlayableCards();
+                ToggleIsTurnReady();
             }
         }
     }

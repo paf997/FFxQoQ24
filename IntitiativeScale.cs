@@ -11,12 +11,14 @@ public class IntitiativeScale : MonoBehaviour
     [SerializeField] GameObject enemyCanvas;
     [SerializeField] List<GameObject> participantIcons = new List<GameObject>();
     [SerializeField] int iconPosition = 0;
-    [SerializeField] int maxParticipants = 2;
+    [SerializeField] int maxParticipants = 3;
+    [SerializeField] Button nextRoundButton;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        nextRoundButton.interactable = false;
+        AddEnemyActionAndInitiative();
     }
 
     public void AddParticipantInitiative(Participant data)
@@ -30,14 +32,27 @@ public class IntitiativeScale : MonoBehaviour
 
         participantInitiativeAndIcon.Add(data);
         OrderParticipantsOnInittiativeScale();
-        
+        data.gameObject.SetActive(true);
+    }
+
+    public void ToggleNextRoundButtonActive()
+    {
+        nextRoundButton.interactable = !nextRoundButton.interactable;
+        nextRoundButton.GetComponent<Image>().color =
+        (nextRoundButton.interactable == true) ? Color.blue : Color.red;
+    }
+
+    public void NextRoundButton()
+    {
+        ClearParticapants();
+        ToggleNextRoundButtonActive();
     }
 
     public void OrderParticipantsOnInittiativeScale()
     {
         participantInitiativeAndIcon.Sort((a, b) => a.GetInitiative().CompareTo(b.GetInitiative()));
         int i = 0;
-        foreach (CharacterScript participant in participantInitiativeAndIcon)
+        foreach (Participant participant in participantInitiativeAndIcon)
         {
             RectTransform initiativeScalePos = participant.GetInitiativeIcon().GetComponent<RectTransform>();
             float newX = inititaitveScalePositions[i].GetComponent<RectTransform>().position.x;
@@ -48,11 +63,18 @@ public class IntitiativeScale : MonoBehaviour
             /*string tempStr = $"x: {newX} + y: {newY} + z: {newZ} + i:{i}";
             Debug.Log(tempStr);*/
         }
+        if (participantInitiativeAndIcon.Count == maxParticipants)
+        {
+            ToggleNextRoundButtonActive();
+        }
     }
 
     public void AddEnemyActionAndInitiative()
     {
         EnemyInfo enemy = enemyCanvas.GetComponent<EnemyInfo>();
+        enemy.getRandomAbility();
+        Participant enemyScript = enemy.GetParticipantScript();
+        AddParticipantInitiative(enemyScript);
     }
 
     public void ClearParticapants()
@@ -61,11 +83,16 @@ public class IntitiativeScale : MonoBehaviour
         {
             for (int i = 0; i < maxParticipants; i++)
             {
-                CharacterScript participant = participantInitiativeAndIcon[i].GetComponent<CharacterScript>();
+                Participant participant = participantInitiativeAndIcon[i].GetComponent<Participant>();
                 Debug.Log("participant iteration " + iconPosition);
                 Button icon = participant.GetInitiativeIcon();
                 icon.gameObject.SetActive(false);
                 iconPosition++;
+                if (participant.GetType() == typeof(CharacterScript))
+                {
+                    CharacterScript character = participant as CharacterScript;
+                    character.GetPlayerBag().EndTurn();
+                }
             }
             participantInitiativeAndIcon.Clear();
         }

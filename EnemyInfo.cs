@@ -31,6 +31,7 @@ public class EnemyInfo : Participant
             //Debug.Log("Probability = " + total);
         }
         int index = Random.Range(0, abilityList.Count);
+        initiative = abilityList[index].GetInitiative();
         return abilityList[index];
     }
 }

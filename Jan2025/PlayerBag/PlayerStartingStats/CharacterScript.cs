@@ -14,7 +14,6 @@ public class CharacterScript : Participant
     [SerializeField] List<GameObject> equippedItems = new List<GameObject>();
     [SerializeField] GameObject tokenBagGO;
     private PlayerBag playerBag;
-    [SerializeField] Button initiativeIconBtn;
     [SerializeField] GameObject initiativeScaleGO;
     private IntitiativeScale intitiativeScale;
     
@@ -49,16 +48,17 @@ public class CharacterScript : Participant
         Debug.Log("copied bags " + playerBag.startingTokens.Count);
     }
 
-    public void SetTurnInitiative(int data)
+    public PlayerBag GetPlayerBag()
     {
-            initiative = data;
-            intitiativeScale.AddParticipantInitiative(this);
+        return playerBag;
     }
 
-    public Button GetInitiativeIcon()
+    public void SetTurnInitiative(int data)
     {
-        return initiativeIconBtn;
+        initiative = data;
+        intitiativeScale.AddParticipantInitiative(this);
     }
+
     public void ClearInitiative()
     {
         initiative = 0;
@@ -72,19 +72,19 @@ public class CharacterScript : Participant
 
     public void CheckEquippedGear()
     {
-        Debug.Log("CheckingGear - charcter script");
+        //Debug.Log("CheckingGear - charcter script");
         if (equippedItems.Count > 0)
         {
-            Debug.Log("Not Null");
+            //Debug.Log("Not Null");
             foreach (GameObject item in equippedItems)
             {
-                Debug.Log("Items in list" + item.name);
+                //Debug.Log("Items in list" + item.name);
                 if (item.GetComponent<PlayerCardUI>().GetBonusTokens() != null)
                 {
-                    Debug.Log("Get bonus token return value " + item.name + " " + item.GetComponent<PlayerCardUI>().GetBonusTokens());
+                    //Debug.Log("Get bonus token return value " + item.name + " " + item.GetComponent<PlayerCardUI>().GetBonusTokens());
                     foreach (Token token in item.GetComponent<PlayerCardUI>().GetBonusTokens())
                     {
-                        Debug.Log("CheckingGear: " + token);
+                        //Debug.Log("CheckingGear: " + token);
                         createToken.AddTokenToBag(token, true);
                     }
                 }
