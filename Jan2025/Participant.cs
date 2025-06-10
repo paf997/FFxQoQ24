@@ -70,15 +70,15 @@ public class Participant : MonoBehaviour
         IsDead();
     }
 
-    public int IsHealthFull(int currenthealth)
+    public int IsHealthFull(int currentHealth)
     {
-        if (currenthealth < maxHP)
+        if (currentHealth < maxHP)
         {
             return maxHP;
         }
         else
         {
-            return currenthealth;
+            return currentHealth;
         }
     }
 

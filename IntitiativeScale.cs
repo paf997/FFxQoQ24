@@ -72,10 +72,15 @@ public class IntitiativeScale : MonoBehaviour
 
     public void AddEnemyActionAndInitiative()
     {
-        EnemyInfo enemy = enemyCanvas.GetComponent<EnemyInfo>();
-        enemy.getRandomAbility();
-        Participant enemyScript = enemy.GetParticipantScript();
-        AddParticipantInitiative(enemyScript);
+        Biome biome = enemyCanvas.GetComponent<Biome>();
+        List<GameObject> enemies = new List<GameObject>();
+        enemies = biome.GetRandomEncounter();
+        foreach (GameObject enemy in enemies)
+        {
+            EnemyInfo enemyScript = enemy.GetComponent<EnemyInfo>();
+            enemyScript.getRandomAbility();
+            AddParticipantInitiative(enemyScript.GetParticipantScript());
+        }
     }
 
     public void ClearParticapants()
