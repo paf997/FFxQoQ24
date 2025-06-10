@@ -46,6 +46,7 @@ public class IntitiativeScale : MonoBehaviour
     {
         ClearParticapants();
         ToggleNextRoundButtonActive();
+        AddEnemyActionAndInitiative();
     }
 
     public void OrderParticipantsOnInittiativeScale()

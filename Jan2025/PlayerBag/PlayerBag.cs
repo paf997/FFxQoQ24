@@ -160,7 +160,7 @@ public class PlayerBag : MonoBehaviour
         }
         else
         {
-            EndTurn();
+            
         }
         tokenCanvas.UpdateTokenVals(whiteTotal, whiteDrawn, redTotal, redDrawn, blueTotal, blueDrawn, yellowTotal, yellowDrawn,
         orangeTotal, orangeDrawn, greenTotal, greenDrawn, purpleTotal, purpleDrawn, wildTotal, wildDrawn);
