@@ -55,7 +55,7 @@ public class PlayArea : MonoBehaviour
 
     public void getInitiatives(){
         for (int i = 0; i < participants.Count; i++)
-            if (participants[i].GetComponent<Participant>().GetTarget() == Target.player1 ){
+            if (participants[i].GetComponent<Participant>().GetTarget() == Target.player ){
                 Debug.Log ("player initiative  already added");
             }else{
                 enemy = participants[i].GetComponent<EnemyInfo>();
@@ -150,7 +150,7 @@ public class PlayArea : MonoBehaviour
     }
 
     public Participant determineTarget(Target target){
-        return (target == Target.player1 ? player : enemy);
+        return (target == Target.player ? player : enemy);
     }
     /*public void applyCondition(){take a look afterwards. probably have to redo older method
         target.GetComponent<Participant>().AddCondition()

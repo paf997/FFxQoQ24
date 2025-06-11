@@ -45,6 +45,7 @@ public class IntitiativeScale : MonoBehaviour
 
     public void NextRoundButton()
     {
+        //ExecuteActions()
         ClearParticapants();
         ToggleNextRoundButtonActive();
         AddEnemyActionAndInitiative();
@@ -79,8 +80,35 @@ public class IntitiativeScale : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             EnemyInfo enemyScript = enemy.GetComponent<EnemyInfo>();
-            enemyScript.getRandomAbility();
+            BattleAbility action = enemyScript.getRandomAbility();
             AddParticipantInitiative(enemyScript.GetParticipantScript());
+        }
+    }
+
+    public void ExecuteParticipantTurns()
+    {
+        foreach (Participant participant in participantInitiativeAndIcon)
+        {
+            //if monster get randomly chosen ability
+            //if battle ability type is att, then get target type. If needed determine target
+            BattleAbility action = participant.GetCurrentAction();
+            if (action.type[0] == StatTypes.att)
+            {
+                int flip = Random.Range(0, 1);
+                if (flip == 0)
+                {
+                    //find player1
+                }
+                else
+                {
+                    //find player 2
+                }
+                //target.AdjustHp
+            }
+            // determine type of action and target, execute action
+
+            //else if player get input
+            // determine type of action and target, execute action
         }
     }
 

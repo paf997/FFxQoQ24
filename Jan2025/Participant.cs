@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Serialization;
+using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Target{ player1, enemy1, enemy2 }
+public enum Target { player, enemy, self }
+public enum Row{ front, back }
 
 public class Participant : MonoBehaviour
 {
@@ -15,10 +19,12 @@ public class Participant : MonoBehaviour
     [SerializeField] int baseAtt;
     [SerializeField] bool isDoneTurn;
     public int initiative;
+    private BattleAbility currentAbility;
     [SerializeField] List<BattleAbility> conditions = new List<BattleAbility>() { };
     [SerializeField] List<StatTypes> typeList = new List<StatTypes>() { };
     [SerializeField] Target targetName;
     [SerializeField] Button initiativeIconBtn;
+    [SerializeField] Dictionary <string, int> stats = new Dictionary<string, int>();
 
     //[SerializeField] Participant participant;
 
@@ -26,6 +32,13 @@ public class Participant : MonoBehaviour
     void Start()
     {
 
+    }
+
+    public void AdjustStats(string type, int value)
+    {
+        int baseValue = stats[type];
+        //baseValue +- modifiers
+        //calculate change
     }
 
     public int GetInitiative()
@@ -123,6 +136,11 @@ public class Participant : MonoBehaviour
         }
         int[] tempStats = new int[3] { def, 0, 0 };
         //updateStatUI(tempStats);
+    }
+
+    public BattleAbility GetCurrentAction()
+    {
+        return currentAbility;
     }
 
     public Participant GetParticipantScript()
