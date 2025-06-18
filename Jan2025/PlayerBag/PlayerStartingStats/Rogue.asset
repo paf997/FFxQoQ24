@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60674c749953a47ebb92c6fec0f5f533, type: 3}
-  m_Name: WarriorData
+  m_Name: Rogue
   m_EditorClassIdentifier: 
-  maxHP: 12
-  luck: 0
-  speed: 0
-  characterClass: 0
+  maxHP: 10
+  luck: 1
+  speed: 1
+  characterClass: 1
   startingTokens:
   - {fileID: 11400000, guid: 25c753a8deee6436aaf55c11c929958e, type: 2}
   - {fileID: 11400000, guid: 25c753a8deee6436aaf55c11c929958e, type: 2}
@@ -26,9 +26,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 028d0ec2e8a444d3cb7d82f5928821a6, type: 2}
   - {fileID: 11400000, guid: 0c9a9a172381844a78958db2c0ac6bd9, type: 2}
   - {fileID: 11400000, guid: 1038e5d41ab124cc196b0bbbe2192cb1, type: 2}
-  - {fileID: 11400000, guid: acf98bded51cb487f91ca7fafbccac5e, type: 2}
-  - {fileID: 11400000, guid: 9a93ad562378241768c5c354d480b42f, type: 2}
-  - {fileID: 11400000, guid: e30a910396eff438985e8eadce1c722a, type: 2}
+  - {fileID: 11400000, guid: 647b93fdcb4aa45e180f1fc9ba0216d6, type: 2}
+  - {fileID: 11400000, guid: 6a938be9dd1b849e2b06c5aaeed02edf, type: 2}
   startingEquipment:
-  - {fileID: 7578649938598097475, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
-  - {fileID: 4548758347708598092, guid: d1f03beb688bd4cb79a3bfa1917e615a, type: 3}
+  - {fileID: 2529501349748815092, guid: 0065eb6f1da54478798c77131ba978d9, type: 3}

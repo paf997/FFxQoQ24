@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c410d3f84cb604961abcf93c4f58f0fe, type: 3}
-  m_Name: Wildtoken
+  m_Name: Wild1
   m_EditorClassIdentifier: 
-  name: PrefabOG
+  name: 
   value: 1
-  color2: 
+  color2: 1
   type: 0
   subType: 0
   color: 7
   backgroundImage: {fileID: 21300000, guid: 1408a70122800411f833406316d08271, type: 3}
-  battleImage: {fileID: 0}
+  battleImage: {fileID: 21300000, guid: 1408a70122800411f833406316d08271, type: 3}
   description: 

@@ -13,6 +13,8 @@ public class CharacterClass : ScriptableObject
     }
 
     [SerializeField] int maxHP;
+    [SerializeField] int luck;
+    [SerializeField] int speed;
     [SerializeField] CharacterClassType characterClass;
     [SerializeField] List<Token> startingTokens;
     [SerializeField] List<GameObject> startingEquipment = new List<GameObject>();
@@ -20,6 +22,16 @@ public class CharacterClass : ScriptableObject
     public int GetMaxHP()
     {
         return maxHP;
+    }
+
+    public int GetSpeed()
+    {
+        return 0;
+    }
+
+    public int GetLuck()
+    {
+        return 0;
     }
 
     public List<Token> GetStartingTokens()

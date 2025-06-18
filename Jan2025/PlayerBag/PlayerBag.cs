@@ -217,8 +217,8 @@ public class PlayerBag : MonoBehaviour
             }
             else
             {
-                Debug.Log("Token index in player pag " + i);
-                drawnToken = startingTokens[nTokens + i].GetComponent<TokenUI>();
+                //Debug.Log("Token index in player pag " + i + " " + startingTokens.Count);
+                drawnToken = startingTokens[nTokens].GetComponent<TokenUI>();
                 Token tokenSO = drawnToken.getTSO();
                 drawnToken.isDrawn = true;
                 //Debug.Log("cnt: " + (drawCnt+ i) + " " + tokenSO.color + ": " + tokenSO.value);
@@ -227,6 +227,7 @@ public class PlayerBag : MonoBehaviour
                 //Debug.Log("Update prime action then update Playable Cards");
                 playerHand.UpdatePlayableCards();
                 ToggleIsTurnReady();
+                //Debug.Log("afters " + i + " " + startingTokens.Count + " " +nTokens);
             }
         }
     }
