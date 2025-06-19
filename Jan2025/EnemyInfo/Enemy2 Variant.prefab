@@ -8,34 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 616645657013226340, guid: 1808bc676aed74d72885677cc8b9d5b0, type: 3}
-      propertyPath: ability
-      value: 
-      objectReference: {fileID: 11400000, guid: 5f6bc10775666431e8eb0ad9a3d51afb, type: 2}
-    - target: {fileID: 616645657013226340, guid: 1808bc676aed74d72885677cc8b9d5b0, type: 3}
-      propertyPath: initiative
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 616645657013226340, guid: 1808bc676aed74d72885677cc8b9d5b0, type: 3}
-      propertyPath: abilityList.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 616645657013226340, guid: 1808bc676aed74d72885677cc8b9d5b0, type: 3}
-      propertyPath: abilityList.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 50a5f7f2dfe8246d4bb3bb2a561ef94f, type: 2}
-    - target: {fileID: 616645657013226340, guid: 1808bc676aed74d72885677cc8b9d5b0, type: 3}
-      propertyPath: abilityList.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 1c1fdc726a50449b39ce8c039ec29979, type: 2}
-    - target: {fileID: 616645657013226340, guid: 1808bc676aed74d72885677cc8b9d5b0, type: 3}
-      propertyPath: abilityList.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 5f6bc10775666431e8eb0ad9a3d51afb, type: 2}
-    - target: {fileID: 3830711583981638592, guid: 1808bc676aed74d72885677cc8b9d5b0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1381.8212
-      objectReference: {fileID: 0}
     - target: {fileID: 4328030866259126689, guid: 1808bc676aed74d72885677cc8b9d5b0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

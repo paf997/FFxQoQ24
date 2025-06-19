@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 
 public class EnemyInfo : Participant
@@ -10,8 +11,7 @@ public class EnemyInfo : Participant
     [SerializeField] Sprite enemySprite;
     int init = 0;
     [SerializeField] List <BattleAbility> abilityList;
-    public BattleAbility ability; 
-
+    public BattleAbility ability;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,7 @@ public class EnemyInfo : Participant
         }
         int index = Random.Range(0, abilityList.Count);
         initiative = abilityList[index].GetInitiative();
+        SetIconTxt(abilityList[index].GetAbilityToText());
         return abilityList[index];
     }
 }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae131b4fbacdd46ef9087bff1da913ca, type: 3}
   m_Name: RangedAttack
   m_EditorClassIdentifier: 
-  name: RangedAttack
   type: 
   adjustment: 
   initiative: 12
+  abilityToText: attRx1 4dm
   probability: 0
   nOfTotalInDeck: 0
   totalInDeck: 0

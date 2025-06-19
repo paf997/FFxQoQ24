@@ -10,20 +10,26 @@ public class BattleAbility : ScriptableObject
 {
     [Header("Name")]
 
-    public string name;
     public List<StatTypes> type = new List<StatTypes>() { };
 
     //public List <string> type = new List<string>(){};
     public List<int> adjustment = new List<int>() { };
     [SerializeField] int initiative;
+    [SerializeField] string abilityToText;
     public int probability;
     public int nOfTotalInDeck;
     public int totalInDeck;
     public Target target;
-    
+
     public int GetInitiative()
     {
         return initiative;
+    }
+
+    public string GetAbilityToText()
+    {
+        if (abilityToText != null) return  $"{abilityToText} init {initiative}";
+        return "empty";
     }
 }
 

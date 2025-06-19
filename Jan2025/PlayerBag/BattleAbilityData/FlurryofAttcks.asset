@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae131b4fbacdd46ef9087bff1da913ca, type: 3}
   m_Name: FlurryofAttcks
   m_EditorClassIdentifier: 
-  name: FlurryOfAttacks
   type: 000000000000000000000000
   adjustment: 020000000200000002000000
   initiative: 11
+  abilityToText: att x3 (3dm)
   probability: 1
-  nTimePlayed: 0
-  maxPlayed: 0
+  nOfTotalInDeck: 0
+  totalInDeck: 0
+  target: 0

@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae131b4fbacdd46ef9087bff1da913ca, type: 3}
   m_Name: Poison
   m_EditorClassIdentifier: 
-  name: Poison
   type: 04000000
   adjustment: 00000000
   initiative: 12
+  abilityToText: Poison 2
   probability: 1
-  nTimePlayed: 0
-  maxPlayed: 1
-  duration: 2
+  nOfTotalInDeck: 0
+  totalInDeck: 0
   target: 0

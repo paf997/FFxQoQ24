@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae131b4fbacdd46ef9087bff1da913ca, type: 3}
   m_Name: Curse
   m_EditorClassIdentifier: 
-  name: Curse
   type: 
   adjustment: 
   initiative: 13
+  abilityToText: Curse
   probability: 0
   nOfTotalInDeck: 0
   totalInDeck: 0

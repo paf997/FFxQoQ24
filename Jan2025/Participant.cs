@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public enum Target { player, enemy, self }
 public enum Row{ front, back }
@@ -24,6 +25,7 @@ public class Participant : MonoBehaviour
     [SerializeField] List<StatTypes> typeList = new List<StatTypes>() { };
     [SerializeField] Target targetName;
     [SerializeField] Button initiativeIconBtn;
+    [SerializeField] TMP_Text initiativeIconBtnText;
     [SerializeField] Dictionary <string, int> stats = new Dictionary<string, int>();
 
     //[SerializeField] Participant participant;
@@ -33,6 +35,11 @@ public class Participant : MonoBehaviour
     {
 
     }
+    public void SetIconTxt(string data) {
+        Debug.Log("SetIconTxt" + this.name + " ");
+        initiativeIconBtnText.text = data;
+    }
+
 
     public void AdjustStats(string type, int value)
     {
