@@ -108,7 +108,7 @@ MonoBehaviour:
   enemySprite: {fileID: 21300000, guid: cd2d6fa9406f5440cb93be328e99bbae, type: 3}
   abilityList:
   - {fileID: 11400000, guid: 50a5f7f2dfe8246d4bb3bb2a561ef94f, type: 2}
-  - {fileID: 11400000, guid: 1c1fdc726a50449b39ce8c039ec29979, type: 2}
+  - {fileID: 11400000, guid: 21dbba841cb8344648a207cfbfaf49bb, type: 2}
   - {fileID: 11400000, guid: 5f6bc10775666431e8eb0ad9a3d51afb, type: 2}
   ability: {fileID: 11400000, guid: 5f6bc10775666431e8eb0ad9a3d51afb, type: 2}
 --- !u!1001 &4866513453064227759
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547902256958052463, guid: 406920e19b8e049f48755e6f807cdae6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 197.2307
+      value: 240.0661
       objectReference: {fileID: 0}
     - target: {fileID: 8547902256958052463, guid: 406920e19b8e049f48755e6f807cdae6, type: 3}
       propertyPath: m_SizeDelta.y
@@ -181,11 +181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547902256958052463, guid: 406920e19b8e049f48755e6f807cdae6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1369.5458
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8547902256958052463, guid: 406920e19b8e049f48755e6f807cdae6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 400.44284
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8547902256958052463, guid: 406920e19b8e049f48755e6f807cdae6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
