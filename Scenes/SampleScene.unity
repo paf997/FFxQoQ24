@@ -3229,6 +3229,214 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152549762}
   m_CullTransparentMesh: 1
+--- !u!1001 &156851846
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 364797203}
+    m_Modifications:
+    - target: {fileID: 897530201760628960, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 897530201760628960, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 156851848}
+    - target: {fileID: 1077895618356543259, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 1150461209890756603, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 2504803950046237321, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3138218231904203858, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3380677017204725238, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 196.98856
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 307.39783
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4979674
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409952211077803888, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: cardCanvasGO
+      value: 
+      objectReference: {fileID: 2089187167}
+    - target: {fileID: 4685102092861735471, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 4685102092861735471, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 156851849}
+    - target: {fileID: 5487111497284823574, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: PlayAreaGO
+      value: 
+      objectReference: {fileID: 2004472977}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: cardCanvas
+      value: 
+      objectReference: {fileID: 2089187167}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: tokenCanvas
+      value: 
+      objectReference: {fileID: 1869737322}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvasGO
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: playerDeckScript
+      value: 
+      objectReference: {fileID: 1178419294}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: cardData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03b7f385eb022491f9d35b478a612129, type: 2}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: cardData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03b7f385eb022491f9d35b478a612129, type: 2}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: cardData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03b7f385eb022491f9d35b478a612129, type: 2}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: passiveStatType.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: bonusTokensForBag.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: passiveStatAmounts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: passiveStatType.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: passiveStatAmounts.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457067201942729185, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: TokenCanvas
+      value: 
+      objectReference: {fileID: 1869737315}
+    - target: {fileID: 6457067201942729185, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: abilityTextUI
+      value: 
+      objectReference: {fileID: 156851850}
+    - target: {fileID: 7578649938598097475, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: m_Name
+      value: Equipped Armour (Medium)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 347616713116066216, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+    - {fileID: 2444904776498971160, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+    - {fileID: 1924209466629874268, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+    - {fileID: 8734474238711599411, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+--- !u!4 &156851847 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3398885008801945320, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+  m_PrefabInstance: {fileID: 156851846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &156851848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7192258148152049787, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+  m_PrefabInstance: {fileID: 156851846}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &156851849 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 197568354974619640, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+  m_PrefabInstance: {fileID: 156851846}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &156851850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9178907825244013228, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+  m_PrefabInstance: {fileID: 156851846}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &156851851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7578649938598097475, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+  m_PrefabInstance: {fileID: 156851846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &157328823 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6847859000427974592, guid: a6a0ebb8b3a9e4cb390cf9bf9bd97fe1, type: 3}
@@ -4147,6 +4355,7 @@ MonoBehaviour:
   hp: 0
   maxHP: 0
   def: 0
+  armourDef: 0
   poisonDmg: 0
   att: 0
   baseAtt: 0
@@ -4155,6 +4364,7 @@ MonoBehaviour:
   conditions: []
   typeList: 
   targetName: 0
+  row: 0
   initiativeIconBtn: {fileID: 0}
   initiativeIconBtnText: {fileID: 0}
   block: 0
@@ -6841,6 +7051,7 @@ MonoBehaviour:
   hp: 0
   maxHP: 0
   def: 0
+  armourDef: 0
   poisonDmg: 0
   att: 0
   baseAtt: 0
@@ -6849,6 +7060,7 @@ MonoBehaviour:
   conditions: []
   typeList: 
   targetName: 0
+  row: 0
   initiativeIconBtn: {fileID: 0}
   initiativeIconBtnText: {fileID: 0}
   block: 0
@@ -7803,6 +8015,7 @@ Transform:
   - {fileID: 431206396}
   - {fileID: 1666896324}
   - {fileID: 712941785}
+  - {fileID: 156851847}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &379348089
@@ -9173,6 +9386,7 @@ MonoBehaviour:
   hp: 0
   maxHP: 12
   def: 0
+  armourDef: 0
   poisonDmg: 0
   att: 0
   baseAtt: 0
@@ -9181,6 +9395,7 @@ MonoBehaviour:
   conditions: []
   typeList: 
   targetName: 0
+  row: 0
   initiativeIconBtn: {fileID: 1498743322}
   initiativeIconBtnText: {fileID: 0}
   characterClass: {fileID: 11400000, guid: 5fcfb9c68c3784be4a25426bd7b8a3c2, type: 2}
@@ -15399,6 +15614,34 @@ PrefabInstance:
       propertyPath: playerDeckScript
       value: 
       objectReference: {fileID: 1178419294}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: cardData.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: passiveStatType.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: bonusTokensForBag.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: passiveStatAmounts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: passiveStatType.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: bonusTokensForBag.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638155563833672245, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
+      propertyPath: passiveStatAmounts.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6457067201942729185, guid: ba83df00befdb4be18d5a875ad2d5461, type: 3}
       propertyPath: TokenCanvas
       value: 
@@ -18630,6 +18873,7 @@ GameObject:
   - component: {fileID: 864575838}
   - component: {fileID: 864575837}
   - component: {fileID: 864575836}
+  - component: {fileID: 864575840}
   m_Layer: 5
   m_Name: InitiativeScale
   m_TagString: Untagged
@@ -18730,6 +18974,20 @@ RectTransform:
   m_AnchoredPosition: {x: -78.156494, y: -56.9026}
   m_SizeDelta: {x: 236.2581, y: 128.0069}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &864575840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864575835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2185445c9fa3f4b21a08cf9d595ae2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
+  monsters: []
 --- !u!114 &867431141 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1916060929474812227, guid: 75c3a6596c07c410289abc93e429f8f5, type: 3}
@@ -25595,6 +25853,7 @@ MonoBehaviour:
   hp: 0
   maxHP: 12
   def: 0
+  armourDef: 0
   poisonDmg: 0
   att: 0
   baseAtt: 0
@@ -25603,14 +25862,15 @@ MonoBehaviour:
   conditions: []
   typeList: 
   targetName: 0
+  row: 0
   initiativeIconBtn: {fileID: 1272328883}
-  initiativeIconBtnText: {fileID: 0}
+  initiativeIconBtnText: {fileID: 1912669196}
   characterClass: {fileID: 11400000, guid: f1669ccc7d0164b53968fa3f20d6a47b, type: 2}
   startingTokens: []
   tokenBagTokens: []
   mainCanvas: {fileID: 225834726}
   equippedItems:
-  - {fileID: 712941786}
+  - {fileID: 156851851}
   - {fileID: 457825462}
   tokenBagGO: {fileID: 1776140486}
   initiativeScaleGO: {fileID: 864575835}
@@ -28620,6 +28880,7 @@ MonoBehaviour:
   hp: 0
   maxHP: 0
   def: 0
+  armourDef: 0
   poisonDmg: 0
   att: 0
   baseAtt: 0
@@ -28628,6 +28889,7 @@ MonoBehaviour:
   conditions: []
   typeList: 
   targetName: 0
+  row: 0
   initiativeIconBtn: {fileID: 0}
   initiativeIconBtnText: {fileID: 0}
   block: 0
@@ -31090,6 +31352,7 @@ MonoBehaviour:
   hp: 0
   maxHP: 0
   def: 0
+  armourDef: 0
   poisonDmg: 0
   att: 0
   baseAtt: 0
@@ -31098,6 +31361,7 @@ MonoBehaviour:
   conditions: []
   typeList: 
   targetName: 0
+  row: 0
   initiativeIconBtn: {fileID: 0}
   initiativeIconBtnText: {fileID: 0}
   block: 0
@@ -34035,6 +34299,7 @@ MonoBehaviour:
   hp: 0
   maxHP: 0
   def: 0
+  armourDef: 0
   poisonDmg: 0
   att: 0
   baseAtt: 0
@@ -34043,6 +34308,7 @@ MonoBehaviour:
   conditions: []
   typeList: 
   targetName: 0
+  row: 0
   initiativeIconBtn: {fileID: 0}
   initiativeIconBtnText: {fileID: 0}
   block: 0
@@ -38529,6 +38795,7 @@ MonoBehaviour:
   hp: 0
   maxHP: 12
   def: 0
+  armourDef: 0
   poisonDmg: 0
   att: 0
   baseAtt: 0
@@ -38537,6 +38804,7 @@ MonoBehaviour:
   conditions: []
   typeList: 
   targetName: 0
+  row: 1
   initiativeIconBtn: {fileID: 320156478}
   initiativeIconBtnText: {fileID: 0}
   characterClass: {fileID: 11400000, guid: 97bddc559f8de4b25ad53b07b177fb34, type: 2}
@@ -39152,6 +39420,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c119cf4bdaba6431284df49b2a856b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1912669196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5634437043865155168, guid: 406920e19b8e049f48755e6f807cdae6, type: 3}
+  m_PrefabInstance: {fileID: 4485155364937064794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1915027714
@@ -40264,6 +40543,7 @@ MonoBehaviour:
   hp: 0
   maxHP: 0
   def: 1
+  armourDef: 0
   poisonDmg: 0
   att: 0
   baseAtt: 0
@@ -40272,6 +40552,7 @@ MonoBehaviour:
   conditions: []
   typeList: 
   targetName: 0
+  row: 0
   initiativeIconBtn: {fileID: 0}
   initiativeIconBtnText: {fileID: 0}
   defMelee: 0
@@ -42392,7 +42673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21.178, y: -113.33039}
+  m_AnchoredPosition: {x: 162, y: -17}
   m_SizeDelta: {x: 57.644, y: 77.3391}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099125990
@@ -42811,6 +43092,7 @@ MonoBehaviour:
   hp: 0
   maxHP: 0
   def: 0
+  armourDef: 0
   poisonDmg: 0
   att: 0
   baseAtt: 1
@@ -42819,6 +43101,7 @@ MonoBehaviour:
   conditions: []
   typeList: 
   targetName: 0
+  row: 0
   initiativeIconBtn: {fileID: 0}
   initiativeIconBtnText: {fileID: 0}
   defMelee: 0
@@ -43354,10 +43637,30 @@ PrefabInstance:
       propertyPath: playerDeckScript
       value: 
       objectReference: {fileID: 1178419294}
+    - target: {fileID: 290655317559608450, guid: 0065eb6f1da54478798c77131ba978d9, type: 3}
+      propertyPath: passiveStatType.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 290655317559608450, guid: 0065eb6f1da54478798c77131ba978d9, type: 3}
+      propertyPath: passiveStatAmounts.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 290655317559608450, guid: 0065eb6f1da54478798c77131ba978d9, type: 3}
+      propertyPath: passiveStatType.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 290655317559608450, guid: 0065eb6f1da54478798c77131ba978d9, type: 3}
+      propertyPath: passiveStatAmounts.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 436989016296221857, guid: 0065eb6f1da54478798c77131ba978d9, type: 3}
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 1791803582069471431, guid: 0065eb6f1da54478798c77131ba978d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2529501349748815092, guid: 0065eb6f1da54478798c77131ba978d9, type: 3}
       propertyPath: m_Name
       value: Equipped Dagger
@@ -43370,6 +43673,10 @@ PrefabInstance:
       propertyPath: TokenCanvas
       value: 
       objectReference: {fileID: 1869737315}
+    - target: {fileID: 6362990669218197876, guid: 0065eb6f1da54478798c77131ba978d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7267910611728225089, guid: 0065eb6f1da54478798c77131ba978d9, type: 3}
       propertyPath: TokenCanvas
       value: 

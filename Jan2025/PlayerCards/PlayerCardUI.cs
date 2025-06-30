@@ -10,7 +10,9 @@ public class PlayerCardUI : MonoBehaviour
     [SerializeField] private PlayerCardSO card;
     public PlayerCardSO [] cardData = new PlayerCardSO [3];
     [SerializeField] List<Token> bonusTokensForBag = new List<Token>();
-    
+    public List <StatTypes> passiveStatType = new List<StatTypes>();
+    public List<int> passiveStatAmounts = new List<int>();
+
     public int handIndex;
 
     [Header("UI Elements")]
@@ -101,6 +103,16 @@ public class PlayerCardUI : MonoBehaviour
             cardAbility.UpdateAvailabilityOutline();
         }
     }
+
+    public List<int> GetPassiveStatValues()
+    {
+        return passiveStatAmounts;
+    }
+
+    public List<StatTypes> GetPassiveStatTypes()
+    {
+        return passiveStatType;
+    }
     public List<Token> GetBonusTokens()
     {
         if (bonusTokensForBag.Count > 0)
@@ -108,7 +120,7 @@ public class PlayerCardUI : MonoBehaviour
             return bonusTokensForBag;
         }
         return null;
-        
+
     }
 
     private void uploadAvailabilityColors()

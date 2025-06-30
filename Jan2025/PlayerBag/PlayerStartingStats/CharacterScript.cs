@@ -16,8 +16,7 @@ public class CharacterScript : Participant
     private PlayerBag playerBag;
     [SerializeField] GameObject initiativeScaleGO;
     private IntitiativeScale intitiativeScale;
-    
-    CreateCardOrToken createToken;
+        CreateCardOrToken createToken;
 
     // Start is called before the first frame update
     void Start()
@@ -87,8 +86,12 @@ public class CharacterScript : Participant
                         //Debug.Log("CheckingGear: " + token);
                         createToken.AddTokenToBag(token, true);
                     }
-                }
-                else
+                } else if (item.GetComponent<PlayerCardUI>().passiveStatType.Count > 0) {
+                    for (int i = 0; i < item.GetComponent<PlayerCardUI>().passiveStatType.Count; i++)
+                    {
+                        this.SetArmourDef(item.GetComponent<PlayerCardUI>().passiveStatAmounts[i]);
+                    }
+                } else
                 {
                     Debug.Log(" No bonus tokens in list");
                 }

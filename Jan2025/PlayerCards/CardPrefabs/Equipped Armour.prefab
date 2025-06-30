@@ -631,13 +631,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1992245070512958113}
     - target: {fileID: 3966361108582929732, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
-      propertyPath: bonusTokensForBag.Array.size
+      propertyPath: passiveStatType.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966361108582929732, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: bonusTokensForBag.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966361108582929732, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: passiveStatAmounts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966361108582929732, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: passiveStatType.Array.data[0]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3966361108582929732, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
       propertyPath: bonusTokensForBag.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 9a93ad562378241768c5c354d480b42f, type: 2}
+    - target: {fileID: 3966361108582929732, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
+      propertyPath: passiveStatAmounts.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5548917871831065343, guid: 1b8dfa31d158045cda37f1d6dc22142c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

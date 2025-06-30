@@ -15,6 +15,7 @@ public class Participant : MonoBehaviour
     public int hp;
     public int maxHP;
     [SerializeField] int def;
+    [SerializeField] int armourDef = 0;
     [SerializeField] int poisonDmg;
     [SerializeField] int att;
     [SerializeField] int baseAtt;
@@ -24,6 +25,7 @@ public class Participant : MonoBehaviour
     [SerializeField] List<BattleAbility> conditions = new List<BattleAbility>() { };
     [SerializeField] List<StatTypes> typeList = new List<StatTypes>() { };
     [SerializeField] Target targetName;
+    [SerializeField] Row row;
     [SerializeField] Button initiativeIconBtn;
     [SerializeField] TMP_Text initiativeIconBtnText;
     [SerializeField] Dictionary <string, int> stats = new Dictionary<string, int>();
@@ -48,6 +50,16 @@ public class Participant : MonoBehaviour
         //calculate change
     }
 
+    public void SetArmourDef(int data)
+    {
+        armourDef = armourDef + data;
+    }
+
+    public int GetArmourDef()
+    {
+        return armourDef;
+    }
+
     public int GetInitiative()
     {
         return initiative;
@@ -56,6 +68,16 @@ public class Participant : MonoBehaviour
     public Button GetInitiativeIcon()
     {
         return initiativeIconBtn;
+    }
+
+    public Target GetTarget()
+    {
+        return targetName;
+    }
+
+    public Row GetRow()
+    {
+        return row;
     }
 
     public void AddCondition(BattleAbility data)
@@ -67,11 +89,6 @@ public class Participant : MonoBehaviour
     public void SetTurnInitiative(int init)
     {
         initiative = init;
-    }
-
-    public Target GetTarget()
-    {
-        return targetName;
     }
 
     public int GetDef()
@@ -100,6 +117,11 @@ public class Participant : MonoBehaviour
         {
             return currentHealth;
         }
+    }
+
+    public int ResetRoundArmour()
+    {
+        return (armourDef != 0 ? armourDef : 0);
     }
 
     public bool IsDead()

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum TokenColor  {white, red, blue, yellow, green, orange, purple, wild}
+public enum TokenColor  {white, red, blue, yellow, green, orange, purple, wild, armour}
 
 [CreateAssetMenu(fileName = "NewToken", menuName = "Game/Token", order = 1)]
 public class Token : ScriptableObject
